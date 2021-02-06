@@ -38,14 +38,15 @@ ul {
     border-radius: .375rem;
 }
 
-.close {
+.modal-header .close {
     color: inherit !important;
+    padding: .5rem 1rem;
 }
 
 .close:hover {
     background-color: #3F3F46;
-    padding: .5rem;
     border-radius: .375rem;
+    border-radius: 50%;
 }
 
 .close:focus {
