@@ -188,19 +188,19 @@
     "slkauthor": "2Shin",
     "bpm": 109.0
   },
-  "FourInTheMorning": {
-    "ogg": "4InTheMorning.aac",
-    "singer": "Gwen Stefani",
-    "name": "4 in the morning",
-    "slkauthor": "Lousy",
-    "bpm": 92.4
-  },
   "Aloha": {
     "ogg": "Aloha.aac",
     "singer": "Cool",
     "name": "Aloha",
     "slkauthor": "RonBWL",
     "bpm": 101.1
+  },
+  "FourInTheMorning": {
+    "ogg": "4InTheMorning.aac",
+    "singer": "Gwen Stefani",
+    "name": "4 in the morning",
+    "slkauthor": "Lousy",
+    "bpm": 92.4
   },
   "DoItAllNight": {
     "ogg": "DoItAllNight.aac",
@@ -294,7 +294,7 @@
     "bpm": 50.0
   },
   "TheBlackCat": {
-    "ogg": "TheBlackCat.mp3",
+    "ogg": "TheBlackCat.ogg",
     "singer": "Turbo",
     "name": "The Black Cat",
     "slkauthor": "T3",
