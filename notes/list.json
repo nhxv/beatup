@@ -34,12 +34,33 @@
     "slkauthor": "T3",
     "bpm": 150.0
   },
+  "Euro2005": {
+    "ogg": "Euro2005.aac",
+    "singer": "Audition",
+    "name": "Euro 2005",
+    "slkauthor": "Pleskin85 - dnxp",
+    "bpm": 138.0
+  },
+  "FunkyTown": {
+    "ogg": "FunkyTown.aac",
+    "singer": "Audition",
+    "name": "Funky Town",
+    "slkauthor": "Lousy",
+    "bpm": 130.0
+  },
   "GoGo": {
     "ogg": "GoGo.aac",
     "singer": "Audition",
     "name": "Go Go",
     "slkauthor": "Tryo",
     "bpm": 150.0
+  },
+  "UKnow": {
+    "ogg": "UKnow.aac",
+    "singer": "Audition",
+    "name": "U Know",
+    "slkauthor": "RonBWL & whyred10",
+    "bpm": 90.0
   },
   "FourInTheMorning": {
     "ogg": "4InTheMorning.aac",
@@ -97,6 +118,13 @@
     "slkauthor": "T3",
     "bpm": 125.0
   },
+  "Cleopatra": {
+    "ogg": "Cleopatra.aac",
+    "singer": "Lee Hyori",
+    "name": "Cleopatra",
+    "slkauthor": "T3",
+    "bpm": 91.0
+  },
   "DanceDance": {
     "ogg": "DanceDance.aac",
     "singer": "Audition",
@@ -124,20 +152,6 @@
     "name": "Do it all night",
     "slkauthor": "RonBWL",
     "bpm": 143.0
-  },
-  "Euro2005": {
-    "ogg": "Euro2005.aac",
-    "singer": "Audition",
-    "name": "Euro 2005",
-    "slkauthor": "Pleskin85 - dnxp",
-    "bpm": 138.0
-  },
-  "FunkyTown": {
-    "ogg": "FunkyTown.aac",
-    "singer": "Audition",
-    "name": "Funky Town",
-    "slkauthor": "Lousy",
-    "bpm": 130.0
   },
   "GangnamStyle": {
     "ogg": "GNS.aac",
@@ -285,13 +299,6 @@
     "name": "TwilightZone (Club Mix)",
     "slkauthor": "Korean Audition",
     "bpm": 127.9
-  },
-  "UKnow": {
-    "ogg": "UKnow.aac",
-    "singer": "Audition",
-    "name": "U Know",
-    "slkauthor": "RonBWL & whyred10",
-    "bpm": 90.0
   },
   "Winter": {
     "ogg": "Winter.aac",
