@@ -343,11 +343,11 @@ BUJS.Renderer_.prototype.drawResults_ = function () {
     var x = (_this.config_.canvasWidth_ - 135) / 2;
     var y = (_this.consts_.laneYStart_ + _this.consts_.textMarginTop_);
     _this.writeText_({x: x, y: y},
-        'X/P/G/C/B/M: ' + bujs.game_.perx_ + '/' + bujs.game_.pgcbm_[0] + '/'
+        'Perfect/Great/Cool/Bad/Miss: ' + bujs.game_.pgcbm_[0] + '/'
         + bujs.game_.pgcbm_[1] + '/' + bujs.game_.pgcbm_[2] + '/'
         + bujs.game_.pgcbm_[3] + '/' + bujs.game_.pgcbm_[4]);
     _this.writeText_({x: x, y: y + 16}, 'Score:' + Math.round(bujs.game_.score_));
-    _this.writeText_({x: x, y: y + 32}, 'Combo:' + bujs.game_.combo_);
+    _this.writeText_({x: x, y: y + 32}, 'Combo:' + bujs.game_.highestCombo_);
     var pgcbm = bujs.game_.pgcbm_,
         perpercent = 0;
     if (pgcbm[0] !== 0 || pgcbm[1] !== 0 ||
@@ -355,8 +355,8 @@ BUJS.Renderer_.prototype.drawResults_ = function () {
         pgcbm[4] !== 0) {
         perpercent = (pgcbm[0] * 100) / (pgcbm[0] + pgcbm[1] + pgcbm[2] + pgcbm[3] + pgcbm[4]);
     }
-    _this.writeText_({x: x, y: y + 48}, 'Perfect %:' + perpercent.toFixed(2) + '%');
-    _this.writeText_({x: x, y: y + 64}, 'Max X:' + bujs.game_.xmax_);
+    _this.writeText_({x: x, y: y + 48}, 'Perfect%:' + perpercent.toFixed(2) + '%');
+    _this.writeText_({x: x, y: y + 64}, 'PerfectX:' + bujs.game_.xmax_);
 };
 
 /**
@@ -966,7 +966,9 @@ BUJS.Animation_.prototype.process_ = function (currTime) {
     else {
         _this.startTime_ = -1;
     }
-};;BUJS.Game_ = function (songId) {
+};
+
+BUJS.Game_ = function (songId) {
     var _this = this;
     this.songId_ = songId;
     this.loadedComponent_ = [];
@@ -982,6 +984,7 @@ BUJS.Animation_.prototype.process_ = function (currTime) {
     this.pgcbm_ = [0, 0, 0, 0, 0];
     this.score_ = 0;
     this.perx_ = 0;
+    this.highestCombo_ = 0;
     this.combo_ = 0;
     this.xmax_ = 0;
     this.chance_ = 0;
@@ -1072,7 +1075,7 @@ BUJS.Game_.prototype.draw_ = function () {
     // fps
     var fps = _this.calcFps_();
     var posFps = {x: 5, y: 15};
-    _this.renderer_.writeText_(posFps, fps.toFixed(1));
+    _this.renderer_.writeText_(posFps, fps.toFixed(1) + 'fps');
     _this.renderer_.writeText_({x: 5, y: _this.renderer_.config_.canvasHeight_ - 5}, _this.music_.getCurrTime_().toFixed(2));
 
     // song name
@@ -1313,6 +1316,9 @@ BUJS.Game_.prototype.updateScore_ = function (key, keyResult) {
     //var prevCombo = _this.combo_;
     if (keyResult !== 4 && keyResult >= 0) _this.combo_++;
     else _this.combo_ = 0;
+
+    // update highest combo
+    if (_this.highestCombo_ < _this.combo_) _this.highestCombo_ = _this.combo_;
 
     // update perx
     if (_this.lastNoteResult_ === 0 && keyResult === 0) {		// still per?
