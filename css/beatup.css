@@ -36,3 +36,11 @@ ul {
     background-color: #3F3F46;
     border-radius: .375rem;
 }
+
+.close {
+    color: inherit !important;
+}
+
+.close:hover {
+    background-color: #3F3F46;
+}
