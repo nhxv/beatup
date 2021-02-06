@@ -6,12 +6,40 @@
     "slkauthor": "T3",
     "bpm": 142.0
   },
-  "TechnoPartyV2": {
-    "ogg": "3254TechnoParty.aac",
+  "YoDJ": {
+    "ogg": "YoDJ.aac",
     "singer": "Audition",
-    "name": "3254 Techno Party V2",
-    "slkauthor": "?",
-    "bpm": 142.0
+    "name": "Yo! DJ!",
+    "slkauthor": "pleskin85",
+    "bpm": 135.0
+  },
+  "You": {
+    "ogg": "You.aac",
+    "singer": "Audition",
+    "name": "You",
+    "slkauthor": "T3",
+    "bpm": 136.0
+  },
+  "YouAreAlreadyGone": {
+    "ogg": "YouAreAlreadyGone.aac",
+    "singer": "Audition",
+    "name": "You're Already Gone",
+    "slkauthor": "T3",
+    "bpm": 150.0
+  },
+  "CanCan": {
+    "ogg": "CanCan.aac",
+    "singer": "Audition",
+    "name": "Can Can",
+    "slkauthor": "T3",
+    "bpm": 150.0
+  },
+  "GoGo": {
+    "ogg": "GoGo.aac",
+    "singer": "Audition",
+    "name": "Go Go",
+    "slkauthor": "Tryo",
+    "bpm": 150.0
   },
   "FourInTheMorning": {
     "ogg": "4InTheMorning.aac",
@@ -61,13 +89,6 @@
     "name": "Beethoven Virus",
     "slkauthor": "Mad",
     "bpm": 156.0
-  },
-  "CanCan": {
-    "ogg": "CanCan.aac",
-    "singer": "Audition",
-    "name": "Can Can",
-    "slkauthor": "T3",
-    "bpm": 150.0
   },
   "ComeOn": {
     "ogg": "ComeOn.aac",
@@ -124,13 +145,6 @@
     "name": "Gangnam Style",
     "slkauthor": "dnxp",
     "bpm": 132.0
-  },
-  "GoGo": {
-    "ogg": "GoGo.aac",
-    "singer": "Audition",
-    "name": "Go Go",
-    "slkauthor": "Tryo",
-    "bpm": 150.0
   },
   "GoingCrazy": {
     "ogg": "GoingCrazy.aac",
@@ -306,26 +320,5 @@
     "name": "World Dance",
     "slkauthor": "dnxp",
     "bpm": 158.0
-  },
-  "YoDJ": {
-    "ogg": "YoDJ.aac",
-    "singer": "Audition",
-    "name": "Yo! DJ!",
-    "slkauthor": "pleskin85",
-    "bpm": 135.0
-  },
-  "You": {
-    "ogg": "You.aac",
-    "singer": "Audition",
-    "name": "You",
-    "slkauthor": "T3",
-    "bpm": 136.0
-  },
-  "YouAreAlreadyGone": {
-    "ogg": "YouAreAlreadyGone.aac",
-    "singer": "Audition",
-    "name": "You're Already Gone",
-    "slkauthor": "T3",
-    "bpm": 150.0
   }
 }
