@@ -47,10 +47,8 @@ ul {
     color: inherit !important;
 }
 
-i.bi-x:hover {
+.bi-x:hover {
     color: #F4F4F5;
-    background-color: #3F3F46;
-    border-radius: 50%;
 }
 
 .close:focus {
