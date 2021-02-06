@@ -343,7 +343,7 @@ BUJS.Renderer_.prototype.drawResults_ = function () {
     var x = (_this.config_.canvasWidth_ - 135) / 2;
     var y = (_this.consts_.laneYStart_ + _this.consts_.textMarginTop_);
     _this.writeText_({x: x, y: y},
-        'Perfect/Great/Cool/Bad/Miss: ' + bujs.game_.pgcbm_[0] + '/'
+        'P/G/C/B/M: ' + bujs.game_.pgcbm_[0] + '/'
         + bujs.game_.pgcbm_[1] + '/' + bujs.game_.pgcbm_[2] + '/'
         + bujs.game_.pgcbm_[3] + '/' + bujs.game_.pgcbm_[4]);
     _this.writeText_({x: x, y: y + 16}, 'Score:' + Math.round(bujs.game_.score_));
@@ -355,8 +355,8 @@ BUJS.Renderer_.prototype.drawResults_ = function () {
         pgcbm[4] !== 0) {
         perpercent = (pgcbm[0] * 100) / (pgcbm[0] + pgcbm[1] + pgcbm[2] + pgcbm[3] + pgcbm[4]);
     }
-    _this.writeText_({x: x, y: y + 48}, 'Perfect%:' + perpercent.toFixed(2) + '%');
-    _this.writeText_({x: x, y: y + 64}, 'PerfectX:' + bujs.game_.xmax_);
+    _this.writeText_({x: x, y: y + 48}, 'Per %:' + perpercent.toFixed(2) + '%');
+    _this.writeText_({x: x, y: y + 64}, 'Per Combo:' + bujs.game_.xmax_);
 };
 
 /**
@@ -1074,12 +1074,11 @@ BUJS.Game_.prototype.draw_ = function () {
 
     // fps
     var fps = _this.calcFps_();
-    var posFps = {x: 5, y: 15};
-    _this.renderer_.writeText_(posFps, fps.toFixed(1) + 'fps');
-    _this.renderer_.writeText_({x: 5, y: _this.renderer_.config_.canvasHeight_ - 5}, _this.music_.getCurrTime_().toFixed(2));
+    var posFps = {x: 8, y: _this.renderer_.config_.canvasHeight_ + 5 + 16};
+    _this.renderer_.writeText_(posFps, fps.toFixed(1) + ' fps');
 
     // song name
-    _this.renderer_.writeText_({x: 5, y: _this.renderer_.config_.canvasHeight_ - 5 - 16}, _this.music_.songInfo_.name + " - " + _this.music_.songInfo_.singer + " [" + _this.music_.songInfo_.bpm.toFixed(1) + " bpm]");
+    _this.renderer_.writeText_({x: 8, y: _this.renderer_.config_.canvasHeight_ - 5 - 16}, _this.music_.songInfo_.name + " - " + _this.music_.songInfo_.singer + Math.round(_this.music_.songInfo_.bpm) + " bpm");
 
     // lanes, landings, icons, logo, space frame...
     _this.renderer_.drawFixContent_(_this.combo_);
