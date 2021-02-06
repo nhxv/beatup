@@ -39,7 +39,7 @@ ul {
 }
 
 .close {
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 .modal-header .close {
