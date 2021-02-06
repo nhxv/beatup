@@ -40,12 +40,11 @@ ul {
 
 .modal-header .close {
     color: inherit !important;
+    padding: .5rem 1rem !important;
 }
 
 .close:hover {
-    background-color: #3F3F46;
-    padding: .25rem !important;
-    border-radius: 50%;
+    color: #F4F4F5;
 }
 
 .close:focus {
