@@ -1074,7 +1074,7 @@ BUJS.Game_.prototype.draw_ = function () {
 
     // fps
     var fps = _this.calcFps_();
-    var posFps = {x: 20, y: 2};
+    var posFps = {x: 20, y: 5};
     _this.renderer_.writeText_(posFps, fps.toFixed(1) + ' fps');
 
     // song name
