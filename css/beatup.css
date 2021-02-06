@@ -48,7 +48,7 @@ ul {
 }
 
 i.bi-x:hover {
-    padding: .5rem;
+    color: #F4F4F5;
     background-color: #3F3F46;
     border-radius: 50%;
 }
