@@ -23,11 +23,12 @@ ul {
 }
 
 .songListItem {
-    color: #3B82F6;
+    color: #14B8A6;
     cursor: pointer;
 }
 
 .songListItem:hover {
   background-color: #F4F4F5;
-  padding: .25rem;
+  padding: .5rem 1rem;
+  border-radius: .375rem;
 }
