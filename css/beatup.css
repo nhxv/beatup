@@ -40,14 +40,17 @@ ul {
 
 .close {
     opacity: 1 !important;
+    text-shadow: none !important;
 }
 
 .modal-header .close {
     color: inherit !important;
 }
 
-.close:hover {
-    color: #F4F4F5;
+i.bi-x:hover {
+    padding: .5rem;
+    background-color: #3F3F46;
+    border-radius: 50%;
 }
 
 .close:focus {
