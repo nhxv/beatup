@@ -1074,7 +1074,7 @@ BUJS.Game_.prototype.draw_ = function () {
 
     // fps
     var fps = _this.calcFps_();
-    var posFps = {x: 20, y: 5};
+    var posFps = {x: 20, y: 10};
     _this.renderer_.writeText_(posFps, fps.toFixed(1) + ' fps');
 
     // song name
@@ -1263,11 +1263,11 @@ BUJS.Game_.prototype.getKeyResult_ = function (diff) {
     if (diff < 0) {
         diff = -diff;
     }
-    // 5 15 27 40
-    if (diff <= 4 * (tickTime * ratio) / 100) return 0;		// p
-    if (diff <= 14 * (tickTime * ratio) / 100) return 1;	// g
-    if (diff <= 24 * (tickTime * ratio) / 100) return 2;	// c
-    if (diff <= 34 * (tickTime * ratio) / 100) return 3;	// b
+    // initial values: 5 15 27 40
+    if (diff <= 5 * (tickTime * ratio) / 100) return 0;		// p
+    if (diff <= 15 * (tickTime * ratio) / 100) return 1;	// g
+    if (diff <= 25 * (tickTime * ratio) / 100) return 2;	// c
+    if (diff <= 35 * (tickTime * ratio) / 100) return 3;	// b
     return 4;												// m
 };
 
