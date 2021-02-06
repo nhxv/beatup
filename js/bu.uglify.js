@@ -1378,7 +1378,7 @@ BUJS.prototype.showSongListModal_ = function () {
         var li = document.createElement("li");
         li.setAttribute("class", "songListItem");
         li.setAttribute("songid", id);
-        li.innerText = song.bpm.toFixed(1) + " bpm " + song.singer + " " + song.name + " (" + song.slkauthor + ")";
+        li.innerText = Math.round(song.bpm) + " bpm " + song.singer + " " + song.name + " (" + song.slkauthor + ")";
         li.onclick = _this.songItemClick_;
         songlistContainer.append(li);
     }
