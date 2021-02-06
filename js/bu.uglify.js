@@ -1264,10 +1264,10 @@ BUJS.Game_.prototype.getKeyResult_ = function (diff) {
         diff = -diff;
     }
     // 5 15 27 40
-    if (diff <= 3 * (tickTime * ratio) / 100) return 0;		// p
-    if (diff <= 13 * (tickTime * ratio) / 100) return 1;	// g
-    if (diff <= 23 * (tickTime * ratio) / 100) return 2;	// c
-    if (diff <= 33 * (tickTime * ratio) / 100) return 3;	// b
+    if (diff <= 4 * (tickTime * ratio) / 100) return 0;		// p
+    if (diff <= 14 * (tickTime * ratio) / 100) return 1;	// g
+    if (diff <= 24 * (tickTime * ratio) / 100) return 2;	// c
+    if (diff <= 34 * (tickTime * ratio) / 100) return 3;	// b
     return 4;												// m
 };
 
