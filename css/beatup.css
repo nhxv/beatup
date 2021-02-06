@@ -40,7 +40,7 @@ ul {
 
 .modal-header .close {
     color: inherit !important;
-    padding: .5rem 1rem;
+    padding: .5rem 1rem !important;
 }
 
 .close:hover {
