@@ -997,8 +997,8 @@ BUJS.Animation_.prototype.process_ = function (currTime) {
     this.autoplay_ = false;
     this.alwaysCorrect_ = false;
 
-    this.noteScores_ = [480, 240, 120, 60, 0];
-    this.spaceScore_ = 2000;
+    this.noteScores_ = [520, 260, 130, 26, 0];
+    this.spaceScores_ = [2000, 1500, 1000, 500, 0];
     this.yellowBeatupRatio_ = 1.2;
     this.blueBeatupRatio_ = 1.44;
 
@@ -1291,8 +1291,8 @@ BUJS.Game_.prototype.updateScore_ = function (key, keyResult) {
     var _this = this;
     var noteScore = 0;
     if (key === 5) {
-        if (keyResult >= 0 && keyResult !== 4) {
-            noteScore = _this.spaceScore_;
+        if (keyResult >= 0) {
+            noteScore = _this.spaceScores_[keyResult];
         }
     }
     else {
@@ -1380,7 +1380,7 @@ BUJS.prototype.showSongListModal_ = function () {
         var li = document.createElement("li");
         li.setAttribute("class", "songListItem");
         li.setAttribute("songid", id);
-        li.innerText = "[" + song.bpm.toFixed(1) + "] " + song.singer + " " + song.name + " (" + song.slkauthor + ")";
+        li.innerText = song.bpm.toFixed(1) + " bpm " + song.singer + " " + song.name + " (" + song.slkauthor + ")";
         li.onclick = _this.songItemClick_;
         songlistContainer.append(li);
     }
