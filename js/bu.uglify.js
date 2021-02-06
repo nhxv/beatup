@@ -346,8 +346,8 @@ BUJS.Renderer_.prototype.drawResults_ = function () {
         'P/G/C/B/M: ' + bujs.game_.pgcbm_[0] + '/'
         + bujs.game_.pgcbm_[1] + '/' + bujs.game_.pgcbm_[2] + '/'
         + bujs.game_.pgcbm_[3] + '/' + bujs.game_.pgcbm_[4]);
-    _this.writeText_({x: x, y: y + 16}, 'Score:' + Math.round(bujs.game_.score_));
-    _this.writeText_({x: x, y: y + 32}, 'Combo:' + bujs.game_.highestCombo_);
+    _this.writeText_({x: x, y: y + 16}, 'Score: ' + Math.round(bujs.game_.score_));
+    _this.writeText_({x: x, y: y + 32}, 'Combo: ' + bujs.game_.highestCombo_);
     var pgcbm = bujs.game_.pgcbm_,
         perpercent = 0;
     if (pgcbm[0] !== 0 || pgcbm[1] !== 0 ||
@@ -355,8 +355,8 @@ BUJS.Renderer_.prototype.drawResults_ = function () {
         pgcbm[4] !== 0) {
         perpercent = (pgcbm[0] * 100) / (pgcbm[0] + pgcbm[1] + pgcbm[2] + pgcbm[3] + pgcbm[4]);
     }
-    _this.writeText_({x: x, y: y + 48}, 'Per %:' + perpercent.toFixed(2) + '%');
-    _this.writeText_({x: x, y: y + 64}, 'Per Combo:' + bujs.game_.xmax_);
+    _this.writeText_({x: x, y: y + 48}, 'Per %: ' + perpercent.toFixed(2) + '%');
+    _this.writeText_({x: x, y: y + 64}, 'Per Combo: ' + bujs.game_.xmax_);
 };
 
 /**
@@ -1074,11 +1074,11 @@ BUJS.Game_.prototype.draw_ = function () {
 
     // fps
     var fps = _this.calcFps_();
-    var posFps = {x: 8, y: _this.renderer_.config_.canvasHeight_ + 5 + 16};
+    var posFps = {x: 20, y: 2};
     _this.renderer_.writeText_(posFps, fps.toFixed(1) + ' fps');
 
     // song name
-    _this.renderer_.writeText_({x: 8, y: _this.renderer_.config_.canvasHeight_ - 5 - 16}, _this.music_.songInfo_.name + " - " + _this.music_.songInfo_.singer + Math.round(_this.music_.songInfo_.bpm) + " bpm");
+    _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ - 5 - 16}, _this.music_.songInfo_.name + " - " + _this.music_.songInfo_.singer + " (" + Math.round(_this.music_.songInfo_.bpm) + " bpm)");
 
     // lanes, landings, icons, logo, space frame...
     _this.renderer_.drawFixContent_(_this.combo_);
@@ -1263,10 +1263,11 @@ BUJS.Game_.prototype.getKeyResult_ = function (diff) {
     if (diff < 0) {
         diff = -diff;
     }
-    if (diff <= 5 * (tickTime * ratio) / 100) return 0;		// p
-    if (diff <= 15 * (tickTime * ratio) / 100) return 1;	// g
-    if (diff <= 27 * (tickTime * ratio) / 100) return 2;	// c
-    if (diff <= 40 * (tickTime * ratio) / 100) return 3;	// b
+    // 5 15 27 40
+    if (diff <= 1 * (tickTime * ratio) / 100) return 0;		// p
+    if (diff <= 10 * (tickTime * ratio) / 100) return 1;	// g
+    if (diff <= 20 * (tickTime * ratio) / 100) return 2;	// c
+    if (diff <= 30 * (tickTime * ratio) / 100) return 3;	// b
     return 4;												// m
 };
 
