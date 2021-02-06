@@ -2,7 +2,7 @@ const fs = require('fs');
 let notes = require('./Cleopatra.json');
 let notesArr = json2array(notes);
 for (let i = 1; i < notesArr.length; i++) {
-    notesArr[i].t++;
+    notesArr[i].t--;
 }
 
 fs.writeFile("Cleopatra.json", JSON.stringify(notesArr), err => {
