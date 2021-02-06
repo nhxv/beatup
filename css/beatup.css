@@ -38,9 +38,12 @@ ul {
     border-radius: .375rem;
 }
 
+.close {
+    opacity: 1;
+}
+
 .modal-header .close {
     color: inherit !important;
-    padding: .5rem 1rem !important;
 }
 
 .close:hover {

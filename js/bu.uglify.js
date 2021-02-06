@@ -1350,14 +1350,6 @@ BUJS.prototype.loadTemplate_ = function (id) {
     document.body.appendChild(clone);
 };
 
-BUJS.prototype.showLogin_ = function () {
-    var login = $('#login-modal');
-    login.on("shown.bs.modal", function () {
-        login.find("#username").focus();
-    });
-    login.modal('show');
-};
-
 BUJS.prototype.loadSongList_ = function () {
     var _this = this;
     _this.showLoadingMsg_("Loading songs");
