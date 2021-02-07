@@ -1,11 +1,4 @@
 {
-  "IDontCare": {
-    "ogg": "IDontCare.mp3",
-    "singer": "2NE1",
-    "name": "I Dont Care",
-    "slkauthor": "T3",
-    "bpm": 131.9
-  },
   "TwilightZone": {
     "ogg": "TwilightZone.aac",
     "singer": "2 Unlimited",
@@ -104,6 +97,13 @@
     "slkauthor": "T3",
     "bpm": 107.0
   },
+  "Night": {
+    "ogg": "Night.aac",
+    "singer": "Audition",
+    "name": "Night",
+    "slkauthor": "T3",
+    "bpm": 128.0
+  },
   "NoSpace": {
     "ogg": "NoSpace.aac",
     "singer": "Audition",
@@ -124,13 +124,6 @@
     "name": "U Know",
     "slkauthor": "RonBWL & whyred10",
     "bpm": 90.0
-  },
-  "WhoWho": {
-    "ogg": "WhoWho.ogg",
-    "singer": "Audition",
-    "name": "Who Who",
-    "slkauthor": "2Shin",
-    "bpm": 108.8
   },
   "WithYou": {
     "ogg": "WithYou.aac",
@@ -223,13 +216,6 @@
     "slkauthor": "ticanpertrum",
     "bpm": 132.0
   },
-  "LoveLockdown": {
-    "ogg": "LoveLockdown.ogg",
-    "singer": "Kanye",
-    "name": "Love Lockdown",
-    "slkauthor": "T3",
-    "bpm": 119.6
-  },
   "Cleopatra": {
     "ogg": "Cleopatra.mp3",
     "singer": "Lee Hyori",
@@ -243,13 +229,6 @@
     "name": "Despre tine",
     "slkauthor": "T3",
     "bpm": 130.0
-  },
-  "Sober": {
-    "ogg": "Sober.ogg",
-    "singer": "Pink",
-    "name": "Sober",
-    "slkauthor": "T3",
-    "bpm": 91.0
   },
   "GangnamStyle": {
     "ogg": "GNS.aac",
@@ -271,13 +250,6 @@
     "name": "Miracle",
     "slkauthor": "cdiu",
     "bpm": 50.0
-  },
-  "TheBlackCat": {
-    "ogg": "TheBlackCat.ogg",
-    "singer": "Turbo",
-    "name": "The Black Cat",
-    "slkauthor": "T3",
-    "bpm": 131.0
   },
   "Airplane": {
     "ogg": "Airplane.aac",
