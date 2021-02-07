@@ -1094,7 +1094,7 @@ BUJS.Game_.prototype.draw_ = function () {
     _this.checkMiss_();
 
     _this.renderer_.drawTable_();
-    _this.renderer_.drawTouchArrows_();
+    // _this.renderer_.drawTouchArrows_(); remove this method later
 };
 
 /**

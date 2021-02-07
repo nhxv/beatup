@@ -2,7 +2,7 @@
   "TwilightZone": {
     "ogg": "TwilightZone.aac",
     "singer": "2 Unlimited",
-    "name": "TwilightZone (Club Mix)",
+    "name": "Twilight Zone (Club Mix)",
     "slkauthor": "T3",
     "bpm": 127.9
   },
@@ -30,14 +30,14 @@
   "BabyCat": {
     "ogg": "BabyCat.mp3",
     "singer": "Audition",
-    "name": "BabyCat",
+    "name": "Baby Cat",
     "slkauthor": "tru3luv",
     "bpm": 110.0
   },
   "BeatCity": {
     "ogg": "BeatCity.aac",
     "singer": "Audition",
-    "name": "BeatCity",
+    "name": "Beat City",
     "slkauthor": "RonBWL",
     "bpm": 120.0
   },
@@ -73,7 +73,7 @@
     "ogg": "FunkyTown.aac",
     "singer": "Audition",
     "name": "Funky Town",
-    "slkauthor": "Lousy",
+    "slkauthor": "Losy",
     "bpm": 130.0
   },
   "GoGo": {
@@ -226,7 +226,7 @@
   "Despretine": {
     "ogg": "Despretine.aac",
     "singer": "O-Zone",
-    "name": "Despre tine",
+    "name": "Despre Tine",
     "slkauthor": "T3",
     "bpm": 130.0
   },
@@ -261,7 +261,7 @@
   "ComeOn": {
     "ogg": "ComeOn.aac",
     "singer": "Turtles",
-    "name": "Come on",
+    "name": "Come On",
     "slkauthor": "T3",
     "bpm": 125.0
   }
