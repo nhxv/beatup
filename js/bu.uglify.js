@@ -1382,7 +1382,7 @@ BUJS.prototype.showSongListModal_ = function () {
     // randomLi.innerText = "Random song";
     // randomLi.onclick = _this.songItemClick_;
     // songlistContainer.append(randomLi);
-    connsole.log("song list length " + _this.songList_.length);
+    console.log("song list length " + _this.songList_.length);
     for (var id in _this.songList_) {
         console.log(id);
         var song = _this.songList_[id];
