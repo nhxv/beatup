@@ -128,7 +128,7 @@
   "WhoWho": {
     "ogg": "WhoWho.ogg",
     "singer": "Audition",
-    "name": "WhoWho",
+    "name": "Who Who",
     "slkauthor": "2Shin",
     "bpm": 108.8
   },
@@ -181,13 +181,6 @@
     "slkauthor": "Mad",
     "bpm": 168.0
   },
-  "WhenYouLookAtMe": {
-    "ogg": "WhenYouLookAtMe.ogg",
-    "singer": "Christina Milian",
-    "name": "When You Look At Me",
-    "slkauthor": "2Shin",
-    "bpm": 109.0
-  },
   "Aloha": {
     "ogg": "Aloha.aac",
     "singer": "Cool",
@@ -232,17 +225,10 @@
   },
   "LoveLockdown": {
     "ogg": "LoveLockdown.ogg",
-    "singer": "Kanye West",
+    "singer": "Kanye",
     "name": "Love Lockdown",
-    "slkauthor": "2Shin",
-    "bpm": 130.0
-  },
-  "Mister": {
-    "ogg": "Mister.mp3",
-    "singer": "Audition",
-    "name": "Mister",
     "slkauthor": "T3",
-    "bpm": 126.0
+    "bpm": 119.6
   },
   "Cleopatra": {
     "ogg": "Cleopatra.mp3",
@@ -271,13 +257,6 @@
     "name": "Gangnam Style",
     "slkauthor": "dnxp",
     "bpm": 132.0
-  },
-  "LetsGoOnAVacation": {
-    "ogg": "LetsGoOnAVacation.mp3",
-    "singer": "SM Town",
-    "name": "Let's go on a vacation",
-    "slkauthor": "T3",
-    "bpm": 159.0
   },
   "DejaVu": {
     "ogg": "DejaVu.aac",
