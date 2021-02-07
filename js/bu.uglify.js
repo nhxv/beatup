@@ -699,7 +699,9 @@ BUJS.Renderer_.prototype.drawBigNoteResultText_ = function () {
             bujs.game_.lastNoteTime_ = 0;
         }
     }
-};;BUJS.Input_ = function () {
+};
+
+BUJS.Input_ = function () {
     var _this = this;
     $("body")[0].onkeydown = function (e) {
         var keyCode = e.keyCode;
@@ -1094,7 +1096,7 @@ BUJS.Game_.prototype.draw_ = function () {
     _this.checkMiss_();
 
     _this.renderer_.drawTable_();
-    // _this.renderer_.drawTouchArrows_(); remove this method later
+    // _this.renderer_.drawTouchArrows_(); remove this method by toggle later
 };
 
 /**
@@ -1373,6 +1375,13 @@ BUJS.prototype.showSongListModal_ = function () {
     _this.loadTemplate_("#songlist-template");
     var songlistModal = $('#songlist-modal');
     var songlistContainer = songlistModal.find("#songlist-container");
+    // create random selected element
+    var randomLi = document.createElement("li");
+    randomLi.setAttribute("class", "songListItem");
+    randomLi.setAttribute("songid", Math.floor(Math.random() * _this.songList_.length));
+    randomLi.innerText = "Random song";
+    randomLi.onclick = _this.songItemClick_;
+    songlistContainer.append(randomLi);
     for (var id in _this.songList_) {
         var song = _this.songList_[id];
         var li = document.createElement("li");
