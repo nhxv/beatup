@@ -1364,7 +1364,7 @@ BUJS.prototype.loadSongList_ = function () {
     // fetch list from server
     $.get("notes/list.json", function (list) {
         console.log("song list: ", list);
-        _this.songList_ = list;
+        _this.songList_ = list; // List object, not array
         _this.showSongListModal_();
     });
 };
@@ -1377,14 +1377,15 @@ BUJS.prototype.showSongListModal_ = function () {
     var songlistContainer = songlistModal.find("#songlist-container");
     // create random selected element
     var randomLi = document.createElement("li");
-    // randomLi.setAttribute("class", "songListItem");
-    // randomLi.setAttribute("songid", Math.floor(Math.random() * _this.songList_.length));
-    // randomLi.innerText = "Random song";
-    // randomLi.onclick = _this.songItemClick_;
-    // songlistContainer.append(randomLi);
-    console.log("song list length " + _this.songList_.length);
+    randomLi.setAttribute("class", "songListItem");
+    var songFileNames = Object.keys(_this.songList_);
+    console.log(songFileNames.length);
+    randomLi.setAttribute("songid", songFileNames[Math.floor(Math.random() * songFileNames.length)]);
+    randomLi.innerText = "Random song";
+    randomLi.onclick = _this.songItemClick_;
+    songlistContainer.append(randomLi);
     for (var id in _this.songList_) {
-        console.log(id);
+        // id is json filename
         var song = _this.songList_[id];
         var li = document.createElement("li");
         li.setAttribute("class", "songListItem");
