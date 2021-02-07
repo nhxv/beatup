@@ -1377,12 +1377,14 @@ BUJS.prototype.showSongListModal_ = function () {
     var songlistContainer = songlistModal.find("#songlist-container");
     // create random selected element
     var randomLi = document.createElement("li");
-    randomLi.setAttribute("class", "songListItem");
-    randomLi.setAttribute("songid", Math.floor(Math.random() * _this.songList_.length));
-    randomLi.innerText = "Random song";
-    randomLi.onclick = _this.songItemClick_;
-    songlistContainer.append(randomLi);
+    // randomLi.setAttribute("class", "songListItem");
+    // randomLi.setAttribute("songid", Math.floor(Math.random() * _this.songList_.length));
+    // randomLi.innerText = "Random song";
+    // randomLi.onclick = _this.songItemClick_;
+    // songlistContainer.append(randomLi);
+    connsole.log("song list length " + _this.songList_.length);
     for (var id in _this.songList_) {
+        console.log(id);
         var song = _this.songList_[id];
         var li = document.createElement("li");
         li.setAttribute("class", "songListItem");
