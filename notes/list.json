@@ -90,6 +90,13 @@
     "slkauthor": "T3",
     "bpm": 135.0
   },
+  "HappyEnding": {
+    "ogg": "HappyEnding.ogg",
+    "singer": "Audition",
+    "name": "Happy Ending",
+    "slkauthor": "T3",
+    "bpm": 128.0
+  },
   "MovMov": {
     "ogg": "MovMov.aac",
     "singer": "Audition",
