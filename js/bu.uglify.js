@@ -1381,7 +1381,7 @@ BUJS.prototype.showSongListModal_ = function () {
     var songFileNames = Object.keys(_this.songList_);
     console.log(songFileNames.length);
     randomLi.setAttribute("songid", songFileNames[Math.floor(Math.random() * songFileNames.length)]);
-    randomLi.innerText = "Random song";
+    randomLi.innerText = "Random (Normal)";
     randomLi.onclick = _this.songItemClick_;
     songlistContainer.append(randomLi);
     for (var id in _this.songList_) {
@@ -1400,7 +1400,7 @@ BUJS.prototype.showSongListModal_ = function () {
 BUJS.prototype.initCanvas_ = function () {
     var canvas = document.getElementById("cvs");
     canvas.width = 980;
-    canvas.height = 400;
+    canvas.height = 720;
 };
 
 BUJS.prototype.songItemClick_ = function () {
