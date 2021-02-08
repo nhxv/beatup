@@ -773,7 +773,8 @@ BUJS.Input_.prototype.checkKeyboard_ = function (keyCode) {
         case 34:    // pg dn
             if (!bujs.game_.autoplay_) _this.keyDown_(3);
             break;
-        case 48:    // 9
+        case 17:    // ctrl
+        case 48:    // 0
         case 53:    // 5
         case 32:    // space
         case 96:    // numpad0
@@ -1221,7 +1222,7 @@ BUJS.Game_.prototype.processNoteResult_ = function (keyMap) {
                     }
 
                     // sound
-                    if (noteKey === 5) _this.music_.playSound_(_this.music_.sounds_.space_);
+                    if (noteKey === 5 && noteResult !== 4) _this.music_.playSound_(_this.music_.sounds_.space_);
                     else if (noteResult === 0) _this.music_.playSound_(_this.music_.sounds_.perfect_);  // arrow per?
                     else if (noteResult === 4) _this.music_.playSound_(_this.music_.sounds_.miss_);     // arrow miss?
                     else _this.music_.playSound_(_this.music_.sounds_.normal_);                         // arrow normal
@@ -1265,11 +1266,11 @@ BUJS.Game_.prototype.getKeyResult_ = function (diff) {
     if (diff < 0) {
         diff = -diff;
     }
-    // initial values: 5 15 27 40
+    // initial values: 5 15 27 40, change difficulty here
     if (diff <= 5 * (tickTime * ratio) / 100) return 0;		// p
     if (diff <= 15 * (tickTime * ratio) / 100) return 1;	// g
-    if (diff <= 25 * (tickTime * ratio) / 100) return 2;	// c
-    if (diff <= 35 * (tickTime * ratio) / 100) return 3;	// b
+    if (diff <= 27 * (tickTime * ratio) / 100) return 2;	// c
+    if (diff <= 40 * (tickTime * ratio) / 100) return 3;	// b
     return 4;												// m
 };
 
@@ -1400,7 +1401,7 @@ BUJS.prototype.showSongListModal_ = function () {
 BUJS.prototype.initCanvas_ = function () {
     var canvas = document.getElementById("cvs");
     canvas.width = 980;
-    canvas.height = 720;
+    canvas.height = 400;
 };
 
 BUJS.prototype.songItemClick_ = function () {
