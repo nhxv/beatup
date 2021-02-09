@@ -1318,8 +1318,11 @@ BUJS.Game_.prototype.updateScore_ = function (key, keyResult) {
 
     // update combo
     //var prevCombo = _this.combo_;
-    if (keyResult !== 4 && keyResult >= 0) _this.combo_++;
-    else _this.combo_ = 0;
+    if (keyResult !== 3 || keyResult !== 4 && keyResult >= 0) {
+        _this.combo_++;
+    } else {
+        if (keyResult === 4) _this.combo_ = 0;
+    } 
 
     // update highest combo
     if (_this.highestCombo_ < _this.combo_) _this.highestCombo_ = _this.combo_;
