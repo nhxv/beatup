@@ -181,19 +181,19 @@
     "slkauthor": "RonBWL",
     "bpm": 101.1
   },
-  "FourInTheMorning": {
-    "ogg": "4InTheMorning.aac",
-    "singer": "Gwen Stefani",
-    "name": "4 in the morning",
-    "slkauthor": "Losy",
-    "bpm": 92.4
-  },
   "DoItAllNight": {
     "ogg": "DoItAllNight.aac",
     "singer": "E-Rotic",
     "name": "Do it all night",
     "slkauthor": "RonBWL",
     "bpm": 143.0
+  },
+  "Fan": {
+    "ogg": "Fan.ogg",
+    "singer": "Epik High",
+    "name": "Fan",
+    "slkauthor": "Ohno",
+    "bpm": 83.0
   },
   "ProudOfYou": {
     "ogg": "ProudOfYou.aac",
@@ -209,6 +209,13 @@
     "slkauthor": "T3",
     "bpm": 130.0
   },
+  "FourInTheMorning": {
+    "ogg": "4InTheMorning.aac",
+    "singer": "Gwen Stefani",
+    "name": "4 in the morning",
+    "slkauthor": "Losy",
+    "bpm": 92.4
+  },
   "GoingCrazy": {
     "ogg": "GoingCrazy.aac",
     "singer": "Jung Hyun Lee",
@@ -222,6 +229,20 @@
     "name": "Cleopatra",
     "slkauthor": "T3",
     "bpm": 91.0
+  },
+  "NguoiLaNoiCuoiConDuong": {
+    "ogg": "NguoiLaNoiCuoiConDuong.ogg",
+    "singer": "LK ft Justatee",
+    "name": "Người lạ nơi cuối con đường",
+    "slkauthor": "Ohno",
+    "bpm": 103.0
+  },
+  "SickEnoughToDie": {
+    "ogg": "SickEnoughToDie.ogg",
+    "singer": "MC Mong ft Mellow",
+    "name": "Sick Enough To Die",
+    "slkauthor": "Ohno",
+    "bpm": 122.0
   },
   "Despretine": {
     "ogg": "Despretine.aac",
@@ -237,6 +258,13 @@
     "slkauthor": "dnxp",
     "bpm": 132.0
   },
+  "Hoot": {
+    "ogg": "Hoot.ogg",
+    "singer": "SNSD",
+    "name": "Hoot",
+    "slkauthor": "Ohno",
+    "bpm": 128.0
+  },
   "DejaVu": {
     "ogg": "DejaVu.aac",
     "singer": "SS501",
@@ -250,6 +278,13 @@
     "name": "Miracle",
     "slkauthor": "cdiu",
     "bpm": 50.0
+  },
+  "CryCry": {
+    "ogg": "CryCry.ogg",
+    "singer": "T-ara",
+    "name": "Cry Cry",
+    "slkauthor": "Ohno",
+    "bpm": 115.0
   },
   "Airplane": {
     "ogg": "Airplane.aac",

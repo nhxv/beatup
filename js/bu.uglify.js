@@ -777,6 +777,7 @@ BUJS.Input_.prototype.checkKeyboard_ = function (keyCode) {
         case 48:    // 0
         case 53:    // 5
         case 32:    // space
+        case 71:    // b
         case 96:    // numpad0
         case 101:   // numpad5
             if (!bujs.game_.autoplay_) _this.keyDown_(5);
