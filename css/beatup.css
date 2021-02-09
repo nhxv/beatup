@@ -55,3 +55,7 @@ ul {
     outline: 0;
     border: 0;
 }
+
+.modal-content {
+    width: 110% !important;
+}
