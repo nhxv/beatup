@@ -1321,7 +1321,22 @@ BUJS.Game_.prototype.updateScore_ = function (key, keyResult) {
     if (keyResult !== 4 && keyResult >= 0) {
         if (keyResult !== 3) _this.combo_++;
     } else {
-        if (keyResult === 4) _this.combo_ = 0; 
+        if (keyResult === 4) {
+            if (_this.combo_ > 99 || _this.combo_ < 11) {
+                _this.combo_ = 0; 
+            } else if (_this.combo_ > 80) {
+                _this.combo_ = 80;
+            } else if (_this.combo_ > 60) {
+                _this.combo_ = 60;
+            } else if (_this.combo_ > 40) {
+                _this.combo_ = 40;
+            } else if (_this.combo_ > 20) {
+                _this.combo_ = 20;
+            } else {
+                _this.combo_ = 10;
+            }
+
+        } 
     } 
 
     // update highest combo
