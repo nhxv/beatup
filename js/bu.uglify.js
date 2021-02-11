@@ -547,7 +547,7 @@ BUJS.Renderer_.prototype.initSpritePos_ = function () {
  */
 BUJS.Renderer_.prototype.drawArrow_ = function (arrowSprite, xOfs, yOfs, leftLane, noteTime) {
     var _this = this;
-    var delta = 50; // initial value 0
+    var delta = 0; // initial value 0
     var x = 0;
     var y = _this.consts_.laneYStart_ + yOfs;
     var currTime = bujs.game_.music_.getCurrTime_();
