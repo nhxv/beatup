@@ -215,7 +215,7 @@ BUJS.Renderer_.prototype.setupSpriteInfo_ = function () {
 BUJS.Renderer_.prototype.setupSpriteConsts_ = function () {
     var _this = this;
     _this.consts_ = {
-        chanceDist_         : 100, // initial value 80
+        chanceDist_         : 90, // initial value 80
         baseResultLine_     : 150,
         arrowAnimationTime_ : 135,
         laneYStart_         : _this.config_.canvasHeight_ - 350,
@@ -227,7 +227,7 @@ BUJS.Renderer_.prototype.setupSpriteConsts_ = function () {
         tableWidth_         : 123,
         tableWidthTrans_    : 3,
         arrowLaneOfs_       : 1,
-        spaceMarginBottom_  : 100, // initial value 80
+        spaceMarginBottom_  : 90, // initial value 80
         beatupLetterDist_   : 46,
         dnxpLogoMargin_     : 20,
         textHeight_         : 20,
@@ -566,7 +566,11 @@ BUJS.Renderer_.prototype.drawArrow_ = function (arrowSprite, xOfs, yOfs, leftLan
     }
 
     // skip out of visible areas
-    if (x > _this.config_.canvasWidth_ - _this.consts_.tableWidth_ || x + arrowSprite.width < _this.consts_.tableWidth_) {
+    // if (x > _this.config_.canvasWidth_ - _this.consts_.tableWidth_ || x + arrowSprite.width < _this.consts_.tableWidth_) {
+    //     return;
+    // }
+
+    if (x > _this.config_.canvasWidth_ - _this.consts_.tableWidth_ - 10 || x + arrowSprite.width < _this.consts_.tableWidth_) {
         return;
     }
 
@@ -1269,17 +1273,17 @@ BUJS.Game_.prototype.getKeyResult_ = function (diff) {
         diff = -diff;
     }
     // initial values: 5 15 27 40, change difficulty here
+    if (diff <= 5 * (tickTime * ratio) / 100) return 0;		// p
+    if (diff <= 15 * (tickTime * ratio) / 100) return 1;	// g
+    if (diff <= 27 * (tickTime * ratio) / 100) return 2;	// c
+    if (diff <= 40 * (tickTime * ratio) / 100) return 3;	// b
+    return 4;												// m
+
     // if (diff <= 5 * (tickTime * ratio) / 100) return 0;		// p
     // if (diff <= 15 * (tickTime * ratio) / 100) return 1;	// g
     // if (diff <= 27 * (tickTime * ratio) / 100) return 2;	// c
     // if (diff <= 40 * (tickTime * ratio) / 100) return 3;	// b
     // return 4;												// m
-
-    if (diff <= 5 * (tickTime * ratio) / 100) return 0;		// p
-    if (diff <= 15 * (tickTime * ratio) / 100) return 1;	// g
-    if (diff <= 25 * (tickTime * ratio) / 100) return 2;	// c
-    if (diff <= 30 * (tickTime * ratio) / 100) return 3;	// b
-    return 4;												// m
 };
 
 /**
