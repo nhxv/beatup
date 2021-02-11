@@ -217,7 +217,7 @@ BUJS.Renderer_.prototype.setupSpriteConsts_ = function () {
     _this.consts_ = {
         chanceDist_         : 90, // initial value 80
         baseResultLine_     : 150,
-        arrowAnimationTime_ : 135,
+        arrowAnimationTime_ : 1, // initial value 135
         laneYStart_         : _this.config_.canvasHeight_ - 350,
         lane1Yofs_          : 3,
         lane2Yofs_          : 3+64,        // Renderer_.spritePos_.lane1Yofs + 64,
