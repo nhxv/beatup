@@ -215,7 +215,7 @@ BUJS.Renderer_.prototype.setupSpriteInfo_ = function () {
 BUJS.Renderer_.prototype.setupSpriteConsts_ = function () {
     var _this = this;
     _this.consts_ = {
-        chanceDist_         : 80,
+        chanceDist_         : 60, // initial value 80
         baseResultLine_     : 150,
         arrowAnimationTime_ : 135,
         laneYStart_         : _this.config_.canvasHeight_ - 350,
@@ -227,7 +227,7 @@ BUJS.Renderer_.prototype.setupSpriteConsts_ = function () {
         tableWidth_         : 123,
         tableWidthTrans_    : 3,
         arrowLaneOfs_       : 1,
-        spaceMarginBottom_  : 80,
+        spaceMarginBottom_  : 60,
         beatupLetterDist_   : 46,
         dnxpLogoMargin_     : 20,
         textHeight_         : 20,
