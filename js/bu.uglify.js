@@ -1264,7 +1264,7 @@ BUJS.Game_.prototype.getKeyResult_ = function (diff) {
     var ratio = 4;
     var tickTime = _this.music_.tickTime_;
     // initial value 80
-    if (diff > 70 * (tickTime * ratio) / 100 || diff < -tickTime * ratio) return -1;	// don't process
+    if (diff > 60 * (tickTime * ratio) / 100 || diff < -tickTime * ratio) return -1;	// don't process
     if (diff < 0) {
         diff = -diff;
     }
@@ -1278,7 +1278,7 @@ BUJS.Game_.prototype.getKeyResult_ = function (diff) {
     if (diff <= 5 * (tickTime * ratio) / 100) return 0;		// p
     if (diff <= 15 * (tickTime * ratio) / 100) return 1;	// g
     if (diff <= 25 * (tickTime * ratio) / 100) return 2;	// c
-    if (diff <= 35 * (tickTime * ratio) / 100) return 3;	// b
+    if (diff <= 30 * (tickTime * ratio) / 100) return 3;	// b
     return 4;												// m
 };
 
