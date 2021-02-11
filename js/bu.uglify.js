@@ -1263,22 +1263,23 @@ BUJS.Game_.prototype.getKeyResult_ = function (diff) {
     if (_this.autoplay_) return 0;
     var ratio = 4;
     var tickTime = _this.music_.tickTime_;
-    if (diff > 80 * (tickTime * ratio) / 100 || diff < -tickTime * ratio) return -1;	// don't process
+    // initial value 80
+    if (diff > 70 * (tickTime * ratio) / 100 || diff < -tickTime * ratio) return -1;	// don't process
     if (diff < 0) {
         diff = -diff;
     }
     // initial values: 5 15 27 40, change difficulty here
+    // if (diff <= 5 * (tickTime * ratio) / 100) return 0;		// p
+    // if (diff <= 15 * (tickTime * ratio) / 100) return 1;	// g
+    // if (diff <= 27 * (tickTime * ratio) / 100) return 2;	// c
+    // if (diff <= 40 * (tickTime * ratio) / 100) return 3;	// b
+    // return 4;												// m
+
     if (diff <= 5 * (tickTime * ratio) / 100) return 0;		// p
     if (diff <= 15 * (tickTime * ratio) / 100) return 1;	// g
-    if (diff <= 27 * (tickTime * ratio) / 100) return 2;	// c
-    if (diff <= 40 * (tickTime * ratio) / 100) return 3;	// b
+    if (diff <= 25 * (tickTime * ratio) / 100) return 2;	// c
+    if (diff <= 35 * (tickTime * ratio) / 100) return 3;	// b
     return 4;												// m
-
-    // if (diff <= 4 * (tickTime * ratio) / 100) return 0;		// p
-    // if (diff <= 12 * (tickTime * ratio) / 100) return 1;	// g
-    // if (diff <= 24 * (tickTime * ratio) / 100) return 2;	// c
-    // if (diff <= 36 * (tickTime * ratio) / 100) return 3;	// b
-    // return 4;												// m
 };
 
 /**
