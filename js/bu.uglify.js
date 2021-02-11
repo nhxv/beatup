@@ -356,8 +356,8 @@ BUJS.Renderer_.prototype.drawResults_ = function () {
         pgcbm[4] !== 0) {
         perpercent = (pgcbm[0] * 100) / (pgcbm[0] + pgcbm[1] + pgcbm[2] + pgcbm[3] + pgcbm[4]);
     }
-    _this.writeText_({x: x, y: y + 48}, 'Per %: ' + perpercent.toFixed(2) + '%');
-    _this.writeText_({x: x, y: y + 64}, 'Per Combo: ' + bujs.game_.xmax_);
+    _this.writeText_({x: x, y: y + 64}, 'Per %: ' + perpercent.toFixed(2) + '%');
+    _this.writeText_({x: x, y: y + 80}, 'Per Combo: ' + bujs.game_.xmax_);
 };
 
 /**
