@@ -347,7 +347,8 @@ BUJS.Renderer_.prototype.drawResults_ = function () {
         + bujs.game_.pgcbm_[1] + '/' + bujs.game_.pgcbm_[2] + '/'
         + bujs.game_.pgcbm_[3] + '/' + bujs.game_.pgcbm_[4]);
     _this.writeText_({x: x, y: y + 16}, 'Score: ' + Math.round(bujs.game_.score_));
-    _this.writeText_({x: x, y: y + 32}, 'Combo: ' + bujs.game_.highestCombo_);
+    _this.writeText_({x: x, y: y + 32}, 'Current Combo: ' + bujs.game_.combo_);
+    _this.writeText_({x: x, y: y + 48}, 'Highest Combo: ' + bujs.game_.highestCombo_);
     var pgcbm = bujs.game_.pgcbm_,
         perpercent = 0;
     if (pgcbm[0] !== 0 || pgcbm[1] !== 0 ||
