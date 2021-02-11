@@ -217,7 +217,7 @@ BUJS.Renderer_.prototype.setupSpriteConsts_ = function () {
     _this.consts_ = {
         chanceDist_         : 90, // initial value 80
         baseResultLine_     : 150,
-        arrowAnimationTime_ : 1, // initial value 135
+        arrowAnimationTime_ : 135, // initial value 135
         laneYStart_         : _this.config_.canvasHeight_ - 350,
         lane1Yofs_          : 3,
         lane2Yofs_          : 3+64,        // Renderer_.spritePos_.lane1Yofs + 64,
@@ -290,7 +290,7 @@ BUJS.Renderer_.prototype.clear_ = function () {
 BUJS.Renderer_.prototype.writeText_ = function (pos, text, font, size, color) {
     var _this = this;
     if (!size) size = "12px";
-    if (!font) font = "Arial";
+    if (!font) font = "Segoe UI";
     if (!color) color = "white";
     _this.ctx_.font = size + " " + font;
     _this.ctx_.fillStyle = color;
@@ -547,7 +547,7 @@ BUJS.Renderer_.prototype.initSpritePos_ = function () {
  */
 BUJS.Renderer_.prototype.drawArrow_ = function (arrowSprite, xOfs, yOfs, leftLane, noteTime) {
     var _this = this;
-    var delta = 0;
+    var delta = 50; // initial value 0
     var x = 0;
     var y = _this.consts_.laneYStart_ + yOfs;
     var currTime = bujs.game_.music_.getCurrTime_();
@@ -1443,7 +1443,7 @@ BUJS.prototype.showLoadingMsg_ = function (msg) {
     var height = canvas.height;
     ctx.fillStyle = "black";
     ctx.clearRect(0, 0, width, height);
-    ctx.font = "12px Arial";
+    ctx.font = "12px Segoe UI";
     ctx.fillStyle = "white";
     ctx.textAlign = "center";
     ctx.fillText(msg, width / 2, height / 2);
