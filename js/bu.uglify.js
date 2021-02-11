@@ -570,7 +570,7 @@ BUJS.Renderer_.prototype.drawArrow_ = function (arrowSprite, xOfs, yOfs, leftLan
     //     return;
     // }
 
-    if (x > _this.config_.canvasWidth_ - _this.consts_.tableWidth_ - 100 || x + arrowSprite.width < _this.consts_.tableWidth_) {
+    if (x > _this.config_.canvasWidth_ - _this.consts_.tableWidth_ - 100000 || x + arrowSprite.width < _this.consts_.tableWidth_) {
         return;
     }
 
