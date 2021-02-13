@@ -6,6 +6,13 @@
     "slkauthor": "T3",
     "bpm": 127.9
   },
+  "Why": {
+    "ogg": "WHY.ogg",
+    "singer": "4Minute",
+    "name": "WHY",
+    "slkauthor": "Team",
+    "bpm": 130.0
+  },
   "BackForMore": {
     "ogg": "BackForMore.aac",
     "singer": "A-Teens",
@@ -96,6 +103,13 @@
     "name": "Happy Ending",
     "slkauthor": "T3",
     "bpm": 128.0
+  },
+  "ItsAlright": {
+    "ogg": "ItsAlright.ogg",
+    "singer": "Audition",
+    "name": "It's alright",
+    "slkauthor": "T3",
+    "bpm": 120.0
   },
   "MovMov": {
     "ogg": "MovMov.aac",
@@ -195,6 +209,13 @@
     "slkauthor": "Ohno",
     "bpm": 83.0
   },
+  "Pinocchio": {
+    "ogg": "Pinocchio.ogg",
+    "singer": "f(x)",
+    "name": "Pinocchio",
+    "slkauthor": "Team",
+    "bpm": 118.0
+  },
   "ProudOfYou": {
     "ogg": "ProudOfYou.aac",
     "singer": "Fiona Fung",
@@ -251,6 +272,13 @@
     "slkauthor": "T3",
     "bpm": 130.0
   },
+  "DeathMoon": {
+    "ogg": "DeathMoon.ogg",
+    "singer": "O2 Jam",
+    "name": "Death Moon",
+    "slkauthor": "Team",
+    "bpm": 160.0
+  },
   "GangnamStyle": {
     "ogg": "GNS.aac",
     "singer": "PSY",
@@ -271,6 +299,13 @@
     "name": "Deja Vu",
     "slkauthor": "RonBWL",
     "bpm": 117.0
+  },
+  "Bonamana": {
+    "ogg": "Bonamana.ogg",
+    "singer": "Super Junior",
+    "name": "Bonamana",
+    "slkauthor": "Team",
+    "bpm": 125.0
   },
   "Miracle": {
     "ogg": "Miracle.aac",
