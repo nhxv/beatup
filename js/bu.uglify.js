@@ -1007,8 +1007,8 @@ BUJS.Game_ = function (songId) {
 
     this.noteScores_ = [520, 260, 130, 26, 0];
     this.spaceScores_ = [2000, 1500, 1000, 500, 0];
-    this.yellowBeatupRatio_ = 1.25;
-    this.blueBeatupRatio_ = 1.5;
+    this.yellowBeatupRatio_ = 1.2;
+    this.blueBeatupRatio_ = 1.55;
 
 
     // load music and renderer
