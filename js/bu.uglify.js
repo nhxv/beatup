@@ -1402,9 +1402,8 @@ BUJS.prototype.showSongListModal_ = function () {
     _this.showLoadingMsg_("");
     _this.loadTemplate_("#songlist-template");
     var songlistModal = $('#songlist-modal');
-    console.log(songlistModal);
-    // songlistModal.setAttribute("data-keyboard", "false");
-    songlistModal.setAttribute("data-backdrop", "static");
+    songlistModal[0].setAttribute("data-keyboard", "false");
+    songlistModal[0].setAttribute("data-backdrop", "static");
     var songlistContainer = songlistModal.find("#songlist-container");
     // create random selected element
     var randomLi = document.createElement("li");
