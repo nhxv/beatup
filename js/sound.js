@@ -10,7 +10,6 @@ export class Sound {
             songInfo.slkauthor,
             songInfo.bpm
             );
-        this.songList = songList;
         this.sounds = {
             perfect: "perfect.wav",
             normal : "normal.wav",

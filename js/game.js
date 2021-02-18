@@ -42,5 +42,6 @@ export class Game {
         // load sound, renderer, input system
         this.sound = new Sound(songList[songId]);
         this.renderer = new Renderer();
+        this.renderer.loadSprites();
     }
 }
