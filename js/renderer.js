@@ -7,6 +7,7 @@ export class Renderer {
         this.config = this.setupConfig();
         this.sprites = this.setupSpriteInfo();
         this.spriteConsts = this.setupSpriteConsts();
+        this.ctx;
     }
 
     setupConfig() {
@@ -113,7 +114,7 @@ export class Renderer {
             });
     }
 
-    loadSpritesForType() {
+    loadSpritesForType(spriteInfo, key, callback) {
         async.each(spriteInfo, function (fileName, urlCallback) {
             if (typeof fileName !== "string") return;
             // console.log("sprite", key, "fetching ", fileName);
