@@ -1270,10 +1270,10 @@ BUJS.Game_.prototype.getKeyResult_ = function (diff) {
         diff = -diff;
     }
     // initial values: 5 15 27 40, change difficulty here
-    if (diff <= 4 * (tickTime * ratio) / 100) return 0;		// p
-    if (diff <= 12 * (tickTime * ratio) / 100) return 1;	// g
-    if (diff <= 24 * (tickTime * ratio) / 100) return 2;	// c
-    if (diff <= 36 * (tickTime * ratio) / 100) return 3;	// b
+    if (diff <= 5 * (tickTime * ratio) / 100) return 0;		// p
+    if (diff <= 15 * (tickTime * ratio) / 100) return 1;	// g
+    if (diff <= 25 * (tickTime * ratio) / 100) return 2;	// c
+    if (diff <= 35 * (tickTime * ratio) / 100) return 3;	// b
     return 4;												// m
 
     // if (diff <= 5 * (tickTime * ratio) / 100) return 0;		// p
