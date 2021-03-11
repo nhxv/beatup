@@ -140,11 +140,11 @@
     "bpm": 90.0
   },
   "WithYou": {
-    "ogg": "WithYou110.mp3",
+    "ogg": "WithYou.aac",
     "singer": "Audition",
     "name": "With You",
     "slkauthor": "T3-Kr",
-    "bpm": 110.0
+    "bpm": 150.0
   },
   "YoDJ": {
     "ogg": "YoDJ.aac",
