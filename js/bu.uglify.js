@@ -8,6 +8,7 @@ BUJS.Music_ = function (onComponentFinishLoading_) {
     _this.context_ = new (window.AudioContext || window.webkitAudioContext)();
     _this.onComponentFinishLoading_ = onComponentFinishLoading_;
 
+    // from async.js
     async.eachOf(_this.sounds_, function (sound, index, callback) {
         var request = new XMLHttpRequest();
         request.open('GET', "sound/" + sound, true);
@@ -100,7 +101,7 @@ BUJS.Music_.prototype.convertTickToMs_ = function () {
 
 BUJS.Music_.prototype.getCurrTime_ = function () {
     return (this.context_.currentTime - this.musicStartTime_) * 1000;
-};;// interesting read: https://webglfundamentals.org/webgl/lessons/webgl-2d-drawimage.html
+};// interesting read: https://webglfundamentals.org/webgl/lessons/webgl-2d-drawimage.html
 
 
 // alrite, let's go WebGL later for some more challenge :)
@@ -1011,7 +1012,7 @@ BUJS.Game_ = function (songId) {
     this.blueBeatupRatio_ = 1.55;
 
 
-    // load music and renderer
+    // load music and renderer; why setTimeout here?
     setTimeout(function () {
         _this.music_ = new BUJS.Music_(_this.onComponentFinishLoading_);
     }, 0);
@@ -1361,8 +1362,9 @@ BUJS.Game_.prototype.updateScore_ = function (key, keyResult) {
     }
 
     // TODO: send to server
-};;function BUJS () {
-}
+};
+
+function BUJS () {}
 
 BUJS.prototype.start_ = function () {
     var _this = this;
