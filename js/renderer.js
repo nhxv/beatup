@@ -524,4 +524,24 @@ export class Renderer {
         }
     }
 
+    drawBigNoteResultText() {
+        if (this.game.lastNoteTime > 0) {
+            var diff = this.sound.getCurrTime() - this.game.lastNoteTime;
+            var noteResult = this.sprites.noteResults[this.game.lastNoteResult];
+    
+            // result width / height
+            var ratio = 1;
+            if (diff < 50) ratio = 1 + (50 - diff) / 90;
+    
+            // draw it with ratio
+            this.setSpritePos(noteResult, (this.config.canvasWidth - noteResult.width * ratio) / 2, (this.consts.baseResultLine - noteResult.height * ratio) / 2);
+            this.drawSprite(noteResult, ratio);
+    
+            if (diff > 200) {
+                this.game.lastNoteResult = 0;
+                this.game.lastNoteTime = 0;
+            }
+        }
+    }
+
 }

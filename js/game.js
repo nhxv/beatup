@@ -39,8 +39,6 @@ export class Game {
         this.spaceScores = [2000, 1500, 1000, 500, 0];
         this.yellowBeatupRatio = 1.2;
         this.blueBeatupRatio = 1.55;
-
-
     }
 
     load(game) {
@@ -49,9 +47,5 @@ export class Game {
         this.renderer = new Renderer(this.sound, game); // render visual
         this.renderer.loadSprites();
         this.input = new Input();
-    }
-
-    get firstAvailNote() {
-        return this.firstAvailNote;
     }
 }
