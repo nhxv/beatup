@@ -1,13 +1,14 @@
 import {Game} from './game';
 
 export class Renderer {
-    constructor(sound) {
+    constructor(sound, game) {
         this.images = [];
         this.config = this.setupConfig();
         this.sprites = this.setupSpriteInfo();
         this.spriteConsts = this.setupSpriteConsts();
         this.ctx = null; // initialize when loadSprites
         this.sound = sound;
+        this.game = game;
     }
 
     setupConfig() {
@@ -440,11 +441,10 @@ export class Renderer {
     }
 
     drawNotes() {
-        // TODO: how can firstAvailNote lower than 0?
-        var lastAvailNote = Math.min(bujs.game.firstAvailNote + this.consts.numNotes, this.sound.notes.length);
-        if (bujs.game.firstAvailNote >= 0) {
+        var lastAvailNote = Math.min(this.game.firstAvailNote + this.consts.numNotes, this.sound.notes.length);
+        if (this.game.firstAvailNote >= 0) {
             var tickTime = this.sound.tickTime;
-            for (var i = bujs.game.firstAvailNote; i < lastAvailNote; i++) {
+            for (var i = this.game.firstAvailNote; i < lastAvailNote; i++) {
                 var note = this.sound.songInfo.notes[i];
                 var noteTime = note.t;
                 var noteKey = note.n;

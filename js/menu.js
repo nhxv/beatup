@@ -55,18 +55,20 @@ export class Menu {
 
     chooseSong(id) {
         // TODO: hide modal
-        new Game(id, songList);
+        var game = new Game(id, songList);
+        this.closeModal(songlistModal);
+        game.load(game);
     }
 
-    closeModal(modalId) {
+    closeModal(modal) {
         // get modal
-        const modal = document.getElementById(modalId);
+        var modal = modal;
         // change state like in hidden modal
         modal.classList.remove('show');
         modal.setAttribute('aria-hidden', 'true');
         modal.setAttribute('style', 'display: none');
         // get modal backdrop
-        const modalBackdrops = document.getElementsByClassName('modal-backdrop');
+        var modalBackdrops = document.getElementsByClassName('modal-backdrop');
         // remove opened modal backdrop
         document.body.removeChild(modalBackdrops[0]);
     }

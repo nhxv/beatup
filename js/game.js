@@ -40,9 +40,13 @@ export class Game {
         this.yellowBeatupRatio = 1.2;
         this.blueBeatupRatio = 1.55;
 
+
+    }
+
+    load(game) {
         // load sound, renderer, input system
         this.sound = new Sound(songList[songId]); // load music & beat notes after selecting song
-        this.renderer = new Renderer(this.sound); // render visual
+        this.renderer = new Renderer(this.sound, game); // render visual
         this.renderer.loadSprites();
         this.input = new Input();
     }
