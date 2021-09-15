@@ -42,7 +42,7 @@ export class Game {
 
         // load sound, renderer, input system
         this.sound = new Sound(songList[songId]); // load music & beat notes after selecting song
-        this.renderer = new Renderer(); // render visual
+        this.renderer = new Renderer(this.sound); // render visual
         this.renderer.loadSprites();
         this.input = new Input();
     }
