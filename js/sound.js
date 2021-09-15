@@ -3,7 +3,8 @@ import { Song } from './song';
 
 // DONE
 export class Sound {
-    constructor(songInfo) {
+    constructor(songInfo, menu) {
+        this.menu = menu;
         this.song = new Song(
             songInfo.ogg,
             songInfo.singer,
@@ -11,12 +12,14 @@ export class Sound {
             songInfo.slkauthor,
             songInfo.bpm
             );
+
         this.sounds = {
             perfect: "perfect.wav",
             normal : "normal.wav",
             miss   : "miss.wav",
             space  : "space.wav"
         };
+
         this.tickTime = 0;
         this.musicStartTime = 0;
 
@@ -65,7 +68,7 @@ export class Sound {
             this.context.decodeAudioData(request.response, function (buffer) {
                 this.musicStartTime = this.context.currentTime;
                 this.playSound(buffer);
-                Game.loadedComponentCount++; // TODO: maybe check null before increment
+                this.menu.loadedComponentCount += 1;
             },
             function(error) {
                 console.log("Error decoding audio data", error);

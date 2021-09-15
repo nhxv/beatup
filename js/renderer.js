@@ -1,14 +1,15 @@
 import {Game} from './game';
 
+// DONE
 export class Renderer {
-    constructor(sound, game) {
+    constructor(sound, menu) {
+        this.menu = menu;
         this.images = [];
         this.config = this.setupConfig();
         this.sprites = this.setupSpriteInfo();
         this.spriteConsts = this.setupSpriteConsts();
         this.ctx = null; // initialize when loadSprites
         this.sound = sound;
-        this.game = game;
     }
 
     setupConfig() {
@@ -115,7 +116,7 @@ export class Renderer {
                     canvas.width = width;
                     canvas.height = height;
 
-                    Game.loadedComponentCount++; // increase count after loading Renderer, might have to check for null
+                    this.menu.loadedComponentCount++;
                 }
             });
     }
@@ -441,10 +442,10 @@ export class Renderer {
     }
 
     drawNotes() {
-        var lastAvailNote = Math.min(this.game.firstAvailNote + this.consts.numNotes, this.sound.notes.length);
-        if (this.game.firstAvailNote >= 0) {
+        var lastAvailNote = Math.min(this.sound.firstAvailNote + this.consts.numNotes, this.sound.notes.length);
+        if (this.sound.firstAvailNote >= 0) {
             var tickTime = this.sound.tickTime;
-            for (var i = this.game.firstAvailNote; i < lastAvailNote; i++) {
+            for (var i = this.sound.firstAvailNote; i < lastAvailNote; i++) {
                 var note = this.sound.songInfo.notes[i];
                 var noteTime = note.t;
                 var noteKey = note.n;
@@ -525,9 +526,9 @@ export class Renderer {
     }
 
     drawBigNoteResultText() {
-        if (this.game.lastNoteTime > 0) {
-            var diff = this.sound.getCurrTime() - this.game.lastNoteTime;
-            var noteResult = this.sprites.noteResults[this.game.lastNoteResult];
+        if (this.sound.lastNoteTime > 0) {
+            var diff = this.sound.getCurrTime() - this.sound.lastNoteTime;
+            var noteResult = this.sprites.noteResults[this.sound.lastNoteResult];
     
             // result width / height
             var ratio = 1;
@@ -538,8 +539,8 @@ export class Renderer {
             this.drawSprite(noteResult, ratio);
     
             if (diff > 200) {
-                this.game.lastNoteResult = 0;
-                this.game.lastNoteTime = 0;
+                this.sound.lastNoteResult = 0;
+                this.sound.lastNoteTime = 0;
             }
         }
     }

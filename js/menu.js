@@ -2,7 +2,12 @@ import {Game} from './game';
 
 // TODO: rename to UI class maybe
 export class Menu {
-    start() {
+    constructor() {
+        loadedComponentCount = 0; // want this to be 2
+        this.game = null;
+    }
+
+    display() {
         this.createCanvas();
 
         fetch('template/modal.html').then((html) => {
@@ -55,9 +60,8 @@ export class Menu {
 
     chooseSong(id) {
         // TODO: hide modal
-        var game = new Game(id, songList);
+        this.game = new Game(id, songList); // initialize game loading
         this.closeModal(songlistModal);
-        game.load(game);
     }
 
     closeModal(modal) {
@@ -84,5 +88,11 @@ export class Menu {
         ctx.fillStyle = "white";
         ctx.textAlign = "center";
         ctx.fillText(msg, width / 2, height / 2);
+    }
+
+    set loadedComponentCount() {
+        if (this.loadedComponentCount == 2) { 
+            this.game.onFinishLoading(); 
+        }
     }
 }
