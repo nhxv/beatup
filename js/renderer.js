@@ -3,11 +3,10 @@ import {Game} from './game';
 export class Renderer {
     constructor() {
         this.images = [];
-        Game.loadedComponentCount++;
         this.config = this.setupConfig();
         this.sprites = this.setupSpriteInfo();
         this.spriteConsts = this.setupSpriteConsts();
-        this.ctx;
+        this.ctx = null; // initialize when loadSprites
     }
 
     setupConfig() {
@@ -64,6 +63,9 @@ export class Renderer {
         };
     }
 
+    /**
+     * Some special constants for drawing
+     */
     setupSpriteConsts() {
         return {
             chanceDist         : 90, // initial value 80
@@ -110,10 +112,16 @@ export class Renderer {
                     var height = this.config.canvasHeight * this.config.scaleRatio;
                     canvas.width = width;
                     canvas.height = height;
+
+                    Game.loadedComponentCount++; // increase count after loading Renderer, might have to check for null
                 }
             });
     }
 
+    /**
+    * Load a set of images for a type, e.g.
+    * { noteResults   : ["perfect.png", "great.png", "cool.png", "bad.png", "miss.png"] },
+    */
     loadSpritesForType(spriteInfo, key, callback) {
         async.each(spriteInfo, function (fileName, urlCallback) {
             if (typeof fileName !== "string") return;
@@ -139,4 +147,29 @@ export class Renderer {
             }
         });
     }
+
+    /**
+    * Clear the whole canvas
+    */
+    clear() {
+        this.ctx.fillStyle = "black";
+        this.ctx.clearRect(0, 0, this.config.canvasWidth, this.config.canvasHeight);
+    }
+
+    /**
+    * Write scoreboard and song info on canvas
+    */
+    writeText(pos, text, font, size, color) {
+        if (!size) size = "12px";
+        if (!font) font = "Segoe UI";
+        if (!color) color = "white";
+        this.ctx.font = size + " " + font;
+        this.ctx.fillStyle = color;
+        this.ctx.textAlign = "left";
+        this.ctx.fillText(text, pos.x, pos.y);
+    }
+
+    drawSprite(sprite, scale) {}
+
+
 }

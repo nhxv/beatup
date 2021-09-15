@@ -1,8 +1,9 @@
 import { Sound } from "./sound";
 import { Renderer } from "./renderer";
+import { Input } from "./input";
 
 export class Game {
-    static loadedComponentCount = 0;
+    static loadedComponentCount = 0; // count renderer and sound
 
     constructor(songId, songList) {
         this.songId = songId;
@@ -40,8 +41,9 @@ export class Game {
         this.blueBeatupRatio = 1.55;
 
         // load sound, renderer, input system
-        this.sound = new Sound(songList[songId]);
-        this.renderer = new Renderer();
+        this.sound = new Sound(songList[songId]); // load music & beat notes after selecting song
+        this.renderer = new Renderer(); // render visual
         this.renderer.loadSprites();
+        this.input = new Input();
     }
 }

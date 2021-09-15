@@ -1012,7 +1012,7 @@ BUJS.Game_ = function (songId) {
     this.blueBeatupRatio_ = 1.55;
 
 
-    // load music and renderer; why setTimeout here?
+    // load music and renderer; why setTimeout here, to test loading?
     setTimeout(function () {
         _this.music_ = new BUJS.Music_(_this.onComponentFinishLoading_);
     }, 0);

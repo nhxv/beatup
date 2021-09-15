@@ -19,7 +19,7 @@ export class Menu {
     }
 
     showSongList(songList) {
-        // TODO: append this list of items to html
+        // TODO: append this list of items to html??
         var randomLi = document.createElement("li");
         randomLi.setAttribute("class", "songListItem");
         var songFileNames = Object.keys(this.songList);
