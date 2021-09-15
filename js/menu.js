@@ -1,9 +1,14 @@
 import {Game} from './game';
 
+// TODO: rename to UI class maybe
 export class Menu {
     start() {
         this.createCanvas();
-        this.loadSongList();
+
+        fetch('template/modal.html').then((html) => {
+            document.querySelector('#template-container').html(html); 
+            this.loadSongList(); 
+        }).catch(err => console.log(err));
     }
 
     createCanvas() {
@@ -18,8 +23,18 @@ export class Menu {
         }).catch(err => console.log(err));
     }
 
+    loadTemplate() {
+        var t = document.querySelector(id);
+        var clone = document.importNode(t.content, true);
+        document.body.appendChild(clone);
+    }
+
     showSongList(songList) {
-        // TODO: append this list of items to html??
+        this.showLoadingMsg("");
+        this.loadTemplate_("#songlist-template");
+        var songlistModal = document.querySelector('#songlist-modal');
+        var songlistContainer = songlistModal.find("#songlist-container");
+
         var randomLi = document.createElement("li");
         randomLi.setAttribute("class", "songListItem");
         var songFileNames = Object.keys(this.songList);
@@ -41,5 +56,18 @@ export class Menu {
     chooseSong(id) {
         // TODO: navigation maybe
         new Game(id, songList);
+    }
+
+    showLoadingMsg() {
+        var canvas = document.getElementById("cvs");
+        var ctx = canvas.getContext("2d");
+        var width = canvas.width;
+        var height = canvas.height;
+        ctx.fillStyle = "black";
+        ctx.clearRect(0, 0, width, height);
+        ctx.font = "12px Segoe UI";
+        ctx.fillStyle = "white";
+        ctx.textAlign = "center";
+        ctx.fillText(msg, width / 2, height / 2);
     }
 }

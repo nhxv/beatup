@@ -46,4 +46,8 @@ export class Game {
         this.renderer.loadSprites();
         this.input = new Input();
     }
+
+    get firstAvailNote() {
+        return this.firstAvailNote;
+    }
 }

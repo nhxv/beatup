@@ -440,7 +440,7 @@ export class Renderer {
     }
 
     drawNotes() {
-        // TODO: when does firstAvailNote change??
+        // TODO: how can firstAvailNote lower than 0?
         var lastAvailNote = Math.min(bujs.game.firstAvailNote + this.consts.numNotes, this.sound.notes.length);
         if (bujs.game.firstAvailNote >= 0) {
             var tickTime = this.sound.tickTime;
