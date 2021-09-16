@@ -9,10 +9,10 @@ class Menu {
 
     display() {
         this.createCanvas();
-        this.loadSongList('hello function');
+        var _this = this;
         $.get('template/modal.html', function (html) {
             $('#template-container').html(html);
-            this.loadSongList('hello function');
+            _this.loadSongList('hello function');
         });
     }
 
@@ -29,10 +29,11 @@ class Menu {
         console.log(str);
         this.showLoadingMsg("Loading songs");
         // fetch list from server
+        var _this = this;
         $.get("notes/list.json", function (list) {
             console.log("song list: ", list);
-            this.songList = list; // List object, not array
-            this.showSongList(this.songList);
+            _this.songList = list; // List object, not array
+            _this.showSongList(this.songList);
     });
     }
 
