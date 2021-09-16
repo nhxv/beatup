@@ -1,17 +1,8 @@
-import {Game} from 'game';
-import { Song } from 'song';
-
-// DONE
-export class Sound {
-    constructor(songInfo, menu) {
+class Sound {
+    constructor(songList, songId, menu) {
         this.menu = menu;
-        this.song = new Song(
-            songInfo.ogg,
-            songInfo.singer,
-            songInfo.name,
-            songInfo.slkauthor,
-            songInfo.bpm
-            );
+        this.song = songList[songId];
+        this.songId = songId;
 
         this.sounds = {
             perfect: "perfect.wav",
@@ -26,13 +17,13 @@ export class Sound {
         this.context = new (window.AudioContext || window.webkitAudioContext)();
     
         // from async.js lib
-        async.eachOf(this.sounds, function (sound, index, callback) {
+        async.eachOf(this.sounds, (sound, index, callback) => {
             // TODO: maybe change to fetch?
             var request = new XMLHttpRequest();
             request.open('GET', "sound/" + sound, true);
             request.responseType = 'arraybuffer';
-            request.onload = function () {
-                this.context.decodeAudioData(request.response, function (buffer) {
+            request.onload = () => {
+                this.context.decodeAudioData(request.response, (buffer) => {
                     console.log("Loaded sound", sound);
                     this.sounds[index] = buffer;
                 }, function (error) {
@@ -42,7 +33,7 @@ export class Sound {
             };
             request.send();
         });
-        this.parseNotes("notes/" + songId + ".json");
+        this.parseNotes("notes/" + this.songId + ".json");
     }
 
     parseNotes(url) {
@@ -64,13 +55,13 @@ export class Sound {
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.responseType = 'arraybuffer';
-        request.onload = function() {
-            this.context.decodeAudioData(request.response, function (buffer) {
+        request.onload = () => {
+            this.context.decodeAudioData(request.response, (buffer) => {
                 this.musicStartTime = this.context.currentTime;
                 this.playSound(buffer);
-                this.menu.loadedComponentCount += 1;
+                this.menu.setLoadedComponentCount(true);
             },
-            function(error) {
+            (error) => {
                 console.log("Error decoding audio data", error);
             });
         };

@@ -1,4 +1,4 @@
-export class Animation {
+class Animation {
     constructor (renderer, startTime, duration, sprite, x, y) {
         this.renderer = renderer;
         this.startTime = startTime;

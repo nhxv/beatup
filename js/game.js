@@ -1,9 +1,4 @@
-import { Sound } from "sound";
-import { Renderer } from "renderer";
-import { Input } from "input";
-import { Menu } from "menu";
-
-export class Game {
+class Game {
     constructor(songId, songList) {
         this.songId = songId;
 
@@ -42,7 +37,7 @@ export class Game {
         this.menu = new Menu();
 
         // load sound, renderer
-        this.sound = new Sound(songList[songId], this.menu); // load sound & notes after selecting song
+        this.sound = new Sound(songList, songId, this.menu); // load sound & notes after selecting song
         this.renderer = new Renderer(this.sound, this.menu);
         this.renderer.loadSprites(); // render the visuals
         this.input = null;
@@ -166,7 +161,7 @@ export class Game {
                 if (noteKey === keyMap || this.autoplay || this.alwaysCorrect) {
                     noteResult = this.getKeyResult(keyTime);
                     if (noteKey === 5) {
-                        this.animations.push(new BUJS.Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.spaceFrameExplode[0],
+                        this.animations.push(new Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.spaceFrameExplode[0],
                             (this.renderer.config.canvasWidth - this.renderer.sprites.spaceFrameExplode[0].width) / 2,
                             this.renderer.config.canvasHeight - this.renderer.consts.spaceMarginBottom - this.renderer.sprites.spaceFrameExplode[0].height / 2));
                     }
@@ -174,7 +169,7 @@ export class Game {
                     if (noteResult >= 0 || this.autoplay) {
                         switch (noteKey) {
                             // TODO: add Animation class
-                            case 5 : this.animations.push(new BUJS.Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.spaceExplode[0],
+                            case 5 : this.animations.push(new Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.spaceExplode[0],
                                 (this.renderer.config.canvasWidth - this.renderer.sprites.spaceExplode[0].width) / 2,
                                 this.renderer.config.canvasHeight - this.renderer.consts.spaceMarginBottom - this.renderer.sprites.spaceExplode[0].height / 2));
                                 break;
@@ -195,11 +190,11 @@ export class Game {
                                 }
                                 yOfs = this.renderer.consts.laneYStart + yOfs + this.renderer.sprites.a1[0].height / 2;
                                 if (leftLane)
-                                    this.animations.push(new BUJS.Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.arrowExplode[0],
+                                    this.animations.push(new Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.arrowExplode[0],
                                         this.renderer.consts.tableWidth - this.renderer.consts.tableWidthTrans + this.renderer.consts.laneWidth - this.renderer.consts.chanceDist + this.renderer.consts.arrowLaneOfs + this.renderer.sprites.a1[0].width / 2 - this.renderer.sprites.arrowExplode[0].width / 2,
                                         yOfs - this.renderer.sprites.arrowExplode[0].width / 2));
                                 else
-                                    this.animations.push(new BUJS.Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.arrowExplode[0],
+                                    this.animations.push(new Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.arrowExplode[0],
                                         this.renderer.config.canvasWidth - (this.renderer.consts.tableWidth - this.renderer.consts.tableWidthTrans + this.renderer.consts.laneWidth - this.renderer.consts.chanceDist + this.renderer.consts.arrowLaneOfs + this.renderer.sprites.a1[0].width / 2) - this.renderer.sprites.arrowExplode[0].width / 2,
                                         yOfs - this.renderer.sprites.arrowExplode[0].height / 2));
                             }

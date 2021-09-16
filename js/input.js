@@ -1,4 +1,4 @@
-export class Input {
+class Input {
     constructor(game, renderer) {
         this.game = game;
         this.renderer = renderer;

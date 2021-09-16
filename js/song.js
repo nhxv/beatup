@@ -1,4 +1,4 @@
-export class Song {
+class Song {
     constructor(ogg, singer, name, slkauthor, bpm) {
         this.notes = [];
         this.ogg = ogg;
@@ -6,9 +6,5 @@ export class Song {
         this.name = name;
         this.slkauthor = slkauthor;
         this.bpm = bpm;
-    }
-
-    set notes(notes) {
-        this.notes = notes;
     }
 }
