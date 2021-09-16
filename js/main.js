@@ -10,8 +10,7 @@ class Menu {
         this.createCanvas();
 
         fetch('template/modal.html').then((html) => {
-            console.log(html);
-            document.querySelector('#template-container').innerHTML = html; 
+            $('#template-container').html(html);
             this.loadSongList(); 
         }).catch(err => console.log(err));
     }
@@ -29,9 +28,7 @@ class Menu {
     }
 
     loadTemplate(id) {
-        console.log(id);
         var t = document.querySelector(id);
-        console.log(t);
         console.log(document.querySelector("#songlist-template"));
         var clone = document.importNode(t.content, true);
         document.body.appendChild(clone);
@@ -40,7 +37,7 @@ class Menu {
     showSongList(songList) {
         this.showLoadingMsg("");
         this.loadTemplate("#songlist-template");
-        var songlistModal = document.querySelector('#songlist-modal');
+        var songlistModal = $('#songlist-modal');
         var songlistContainer = songlistModal.find("#songlist-container");
 
         var randomLi = document.createElement("li");
@@ -59,12 +56,13 @@ class Menu {
             li.innerText = song.singer + " " + song.name + " (" + song.slkauthor + ") " + Math.round(song.bpm) + " bpm";
             li.onclick = this.chooseSong(id, songList);
         }
+        songlistModal.modal("show");
     }
 
     chooseSong(id) {
         // TODO: hide modal
         this.game = new Game(id, songList); // initialize game loading
-        this.closeModal(songlistModal);
+        $('#songlist-modal').modal("hide");
     }
 
     closeModal(modal) {
