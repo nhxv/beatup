@@ -1,3 +1,4 @@
 var exp = new Experiment();
 exp.hello();
-new ExperimentOne().helloOne();
+var expOne = new ExperimentOne();
+expOne.helloOne();
