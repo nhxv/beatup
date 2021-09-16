@@ -76,7 +76,7 @@ class Menu {
         document.body.removeChild(modalBackdrops[0]);
     }
 
-    showLoadingMsg() {
+    showLoadingMsg(msg) {
         var canvas = document.getElementById("cvs");
         var ctx = canvas.getContext("2d");
         var width = canvas.width;
