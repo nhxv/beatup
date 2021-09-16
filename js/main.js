@@ -12,7 +12,7 @@ class Menu {
 
         $.get('template/modal.html', function (html) {
             $('#template-container').html(html);
-            this.loadSongList();
+            this.loadSongList('hello function');
         });
     }
 
@@ -22,13 +22,17 @@ class Menu {
         canvas.height = 400;
     }
 
-    loadSongList() {
+    /*
+    ** hello
+    */
+    loadSongList(str) {
+        console.log(str);
         this.showLoadingMsg("Loading songs");
         // fetch list from server
         $.get("notes/list.json", function (list) {
             console.log("song list: ", list);
             this.songList = list; // List object, not array
-            this.showSongListModal();
+            this.showSongList(this.songList);
     });
     }
 
