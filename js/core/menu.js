@@ -111,11 +111,10 @@ BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
 }
 
 BUJS.prototype.loadMenuShortcut_ = function(selectedLi) {
-    console.log('load event...');
     $(document).keydown(function (e) {
         if (e.which == '13') {
             e.preventDefault();
-            console.log(selectedLi);
+            $(selectedLi).click();
         }
     });
 }
