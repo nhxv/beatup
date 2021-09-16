@@ -691,7 +691,7 @@ class Renderer {
 
     drawResults() {
         var x = (this.config.canvasWidth - 135) / 2;
-        var y = (this.consts.laneYStart + this.consts.textMarginTop);
+        var y = (this.spriteConsts.laneYStart + this.spriteConsts.textMarginTop);
         this.writeText({x: x, y: y},
             'P/G/C/B/M: ' + bujs.game.pgcbm[0] + '/'
             + bujs.game.pgcbm[1] + '/' + bujs.game.pgcbm[2] + '/'
@@ -755,8 +755,8 @@ class Renderer {
             for (var i = 0; i < numGlow1; i++) {
                 // the glow
                 this.setSpritePos(letterGlow1[0],
-                    this.config.canvasWidth / 2 - this.consts.beatupLetterDist / 2 * (5 - i * 2) - this.sprites.spaceFrameLetterGlowBlue[0].width / 2,
-                    this.config.canvasHeight - this.consts.spaceMarginBottom - this.sprites.spaceFrameLetterGlowBlue[0].height / 2);
+                    this.config.canvasWidth / 2 - this.spriteConsts.beatupLetterDist / 2 * (5 - i * 2) - this.sprites.spaceFrameLetterGlowBlue[0].width / 2,
+                    this.config.canvasHeight - this.spriteConsts.spaceMarginBottom - this.sprites.spaceFrameLetterGlowBlue[0].height / 2);
                 this.drawSprite(letterGlow1[0]);
 
                 // and its letter
@@ -767,8 +767,8 @@ class Renderer {
             for (var i = numGlow1; i < numGlow1 + numGlow2; i++) {
                 // the glow
                 this.setSpritePos(letterGlow2[0],
-                    this.config.canvasWidth / 2 - this.consts.beatupLetterDist / 2 * (5 - i * 2) - this.sprites.spaceFrameLetterGlowBlue[0].width / 2,
-                    this.config.canvasHeight - this.consts.spaceMarginBottom - this.sprites.spaceFrameLetterGlowBlue[0].height / 2);
+                    this.config.canvasWidth / 2 - this.spriteConsts.beatupLetterDist / 2 * (5 - i * 2) - this.sprites.spaceFrameLetterGlowBlue[0].width / 2,
+                    this.config.canvasHeight - this.spriteConsts.spaceMarginBottom - this.sprites.spaceFrameLetterGlowBlue[0].height / 2);
                 this.drawSprite(letterGlow2[0]);
 
                 // and its letter
@@ -794,87 +794,87 @@ class Renderer {
     */
     initSpritePos() {
         this.setSpritePos(this.sprites.dnxpLogo[0],
-            this.config.canvasWidth - this.sprites.dnxpLogo[0].width - this.consts.dnxpLogoMargin,
-            this.config.canvasHeight - this.sprites.dnxpLogo[0].height - this.consts.dnxpLogoMargin);
+            this.config.canvasWidth - this.sprites.dnxpLogo[0].width - this.spriteConsts.dnxpLogoMargin,
+            this.config.canvasHeight - this.sprites.dnxpLogo[0].height - this.spriteConsts.dnxpLogoMargin);
     
         this.setSpritePos(this.sprites.tableL[0],
             0,
-            this.consts.laneYStart);
+            this.spriteConsts.laneYStart);
     
         this.setSpritePos(this.sprites.laneL[0],
-            this.consts.tableWidth - this.consts.tableWidthTrans - this.consts.chanceDist,
-            this.consts.laneYStart);
+            this.spriteConsts.tableWidth - this.spriteConsts.tableWidthTrans - this.spriteConsts.chanceDist,
+            this.spriteConsts.laneYStart);
     
         this.setSpritePos(this.sprites.landingL[0],
-            this.sprites.laneL[0].pos.x + this.consts.laneWidth,
-            this.consts.laneYStart);
+            this.sprites.laneL[0].pos.x + this.spriteConsts.laneWidth,
+            this.spriteConsts.laneYStart);
     
     
         this.setSpritePos(this.sprites.tableR[0],
-            this.config.canvasWidth - this.consts.tableWidth,
-            this.consts.laneYStart);
+            this.config.canvasWidth - this.spriteConsts.tableWidth,
+            this.spriteConsts.laneYStart);
     
         this.setSpritePos(this.sprites.laneR[0],
-            this.config.canvasWidth - this.consts.tableWidth + this.consts.tableWidthTrans - this.consts.laneWidth + this.consts.chanceDist,
-            this.consts.laneYStart);
+            this.config.canvasWidth - this.spriteConsts.tableWidth + this.spriteConsts.tableWidthTrans - this.spriteConsts.laneWidth + this.spriteConsts.chanceDist,
+            this.spriteConsts.laneYStart);
     
         this.setSpritePos(this.sprites.landingR[0],
-            this.config.canvasWidth - this.consts.tableWidth + this.consts.tableWidthTrans - this.consts.laneWidth - this.sprites.landingR[0].width + this.consts.chanceDist,
-            this.consts.laneYStart);
+            this.config.canvasWidth - this.spriteConsts.tableWidth + this.spriteConsts.tableWidthTrans - this.spriteConsts.laneWidth - this.sprites.landingR[0].width + this.spriteConsts.chanceDist,
+            this.spriteConsts.laneYStart);
     
         this.setSpritePos(this.sprites.spaceFrame[0],
             (this.config.canvasWidth - this.sprites.spaceFrame[0].width) / 2,
-            this.config.canvasHeight - this.consts.spaceMarginBottom - this.sprites.spaceFrame[0].height / 2);
+            this.config.canvasHeight - this.spriteConsts.spaceMarginBottom - this.sprites.spaceFrame[0].height / 2);
     
         // del icons
         this.setSpritePos(this.sprites.delIcons[0], 
             this.config.canvasWidth/2 + this.sprites.spaceFrame[0].width/2, 
-            this.config.canvasHeight - this.consts.spaceMarginBottom - this.sprites.delIcons[0].height / 2);
+            this.config.canvasHeight - this.spriteConsts.spaceMarginBottom - this.sprites.delIcons[0].height / 2);
     
         this.setSpritePos(this.sprites.delIcons[1],
             this.config.canvasWidth/2 + this.sprites.spaceFrame[0].width/2,
-            this.config.canvasHeight - this.consts.spaceMarginBottom - this.sprites.delIcons[1].height / 2);
+            this.config.canvasHeight - this.spriteConsts.spaceMarginBottom - this.sprites.delIcons[1].height / 2);
     
         // chance icons
         this.setSpritePos(this.sprites.chanceIcons[0],
             this.config.canvasWidth/2 - this.sprites.spaceFrame[0].width/2 - this.sprites.chanceIcons[0].width,
-            this.config.canvasHeight - this.consts.spaceMarginBottom - this.sprites.chanceIcons[0].height / 2);
+            this.config.canvasHeight - this.spriteConsts.spaceMarginBottom - this.sprites.chanceIcons[0].height / 2);
     
         this.setSpritePos(this.sprites.chanceIcons[1],
             this.config.canvasWidth/2 - this.sprites.spaceFrame[0].width/2 - this.sprites.chanceIcons[1].width,
-            this.config.canvasHeight - this.consts.spaceMarginBottom - this.sprites.chanceIcons[1].height / 2);
+            this.config.canvasHeight - this.spriteConsts.spaceMarginBottom - this.sprites.chanceIcons[1].height / 2);
     
         this.setSpritePos(this.sprites.chanceIcons[2],
             this.config.canvasWidth/2 - this.sprites.spaceFrame[0].width/2 - this.sprites.chanceIcons[2].width,
-            this.config.canvasHeight - this.consts.spaceMarginBottom - this.sprites.chanceIcons[2].height / 2);
+            this.config.canvasHeight - this.spriteConsts.spaceMarginBottom - this.sprites.chanceIcons[2].height / 2);
     
         this.setSpritePos(this.sprites.chanceIcons[3],
             this.config.canvasWidth/2 - this.sprites.spaceFrame[0].width/2 - this.sprites.chanceIcons[3].width,
-            this.config.canvasHeight - this.consts.spaceMarginBottom - this.sprites.chanceIcons[3].height / 2);
+            this.config.canvasHeight - this.spriteConsts.spaceMarginBottom - this.sprites.chanceIcons[3].height / 2);
     
         // space glows
         this.setSpritePos(this.sprites.spaceFrameGlowBlue[0],
             (this.config.canvasWidth - this.sprites.spaceFrame[0].width) / 2,
-            this.config.canvasHeight - this.consts.spaceMarginBottom - this.sprites.spaceFrame[0].height / 2);
+            this.config.canvasHeight - this.spriteConsts.spaceMarginBottom - this.sprites.spaceFrame[0].height / 2);
     
         this.setSpritePos(this.sprites.spaceFrameGlowYellow[0],
             (this.config.canvasWidth - this.sprites.spaceFrame[0].width) / 2,
-            this.config.canvasHeight - this.consts.spaceMarginBottom - this.sprites.spaceFrame[0].height / 2);
+            this.config.canvasHeight - this.spriteConsts.spaceMarginBottom - this.sprites.spaceFrame[0].height / 2);
     
         // B-E-A-T-U-P letters
         for (var i = 0; i < 6; i++) {
             this.setSpritePos(this.sprites.spaceFrameLetters[i],
-                this.config.canvasWidth / 2 - this.consts.beatupLetterDist / 2 * (5 - i * 2) - this.sprites.spaceFrameLetters[0].width / 2,
-                this.config.canvasHeight - this.consts.spaceMarginBottom - this.sprites.spaceFrameLetters[0].height / 2);
+                this.config.canvasWidth / 2 - this.spriteConsts.beatupLetterDist / 2 * (5 - i * 2) - this.sprites.spaceFrameLetters[0].width / 2,
+                this.config.canvasHeight - this.spriteConsts.spaceMarginBottom - this.sprites.spaceFrameLetters[0].height / 2);
         }
         var leftX = 0;
         var rightX = this.config.canvasWidth - this.sprites.a7[0].width;
-        this.setSpritePos(this.sprites.c7[0], leftX, this.consts.laneYStart + this.consts.lane1Yofs);
-        this.setSpritePos(this.sprites.c9[0], rightX, this.consts.laneYStart + this.consts.lane1Yofs);
-        this.setSpritePos(this.sprites.c4[0], leftX, this.consts.laneYStart + this.consts.lane2Yofs);
-        this.setSpritePos(this.sprites.c6[0], rightX, this.consts.laneYStart + this.consts.lane2Yofs);
-        this.setSpritePos(this.sprites.c1[0], leftX, this.consts.laneYStart + this.consts.lane3Yofs);
-        this.setSpritePos(this.sprites.c3[0], rightX, this.consts.laneYStart + this.consts.lane3Yofs);
+        this.setSpritePos(this.sprites.c7[0], leftX, this.spriteConsts.laneYStart + this.spriteConsts.lane1Yofs);
+        this.setSpritePos(this.sprites.c9[0], rightX, this.spriteConsts.laneYStart + this.spriteConsts.lane1Yofs);
+        this.setSpritePos(this.sprites.c4[0], leftX, this.spriteConsts.laneYStart + this.spriteConsts.lane2Yofs);
+        this.setSpritePos(this.sprites.c6[0], rightX, this.spriteConsts.laneYStart + this.spriteConsts.lane2Yofs);
+        this.setSpritePos(this.sprites.c1[0], leftX, this.spriteConsts.laneYStart + this.spriteConsts.lane3Yofs);
+        this.setSpritePos(this.sprites.c3[0], rightX, this.spriteConsts.laneYStart + this.spriteConsts.lane3Yofs);
     }
 
     /**
@@ -883,24 +883,24 @@ class Renderer {
     drawArrow(arrowSprite, xOfs, yOfs, leftLane, noteTime) {
         var delta = 0; // initial value 0
         var x = 0;
-        var y = this.consts.laneYStart + yOfs;
+        var y = this.spriteConsts.laneYStart + yOfs;
         var currTime = this.sound.getCurrTime();
         if (leftLane) {
-            x = (xOfs + this.consts.tableWidth - this.consts.tableWidthTrans +
-                this.consts.laneWidth - this.consts.chanceDist +
-                this.consts.arrowLaneOfs) -
+            x = (xOfs + this.spriteConsts.tableWidth - this.spriteConsts.tableWidthTrans +
+                this.spriteConsts.laneWidth - this.spriteConsts.chanceDist +
+                this.spriteConsts.arrowLaneOfs) -
                 (noteTime - currTime - delta) * 40.0 / this.sound.tickTime;
         }
         else {
             x = this.config.canvasWidth -
-                (xOfs + this.consts.tableWidth - this.consts.tableWidthTrans +
-                    this.consts.laneWidth - this.consts.chanceDist +
-                    this.consts.arrowLaneOfs + arrowSprite.width) +
+                (xOfs + this.spriteConsts.tableWidth - this.spriteConsts.tableWidthTrans +
+                    this.spriteConsts.laneWidth - this.spriteConsts.chanceDist +
+                    this.spriteConsts.arrowLaneOfs + arrowSprite.width) +
                 (noteTime - currTime - delta) * 40.0 / this.sound.tickTime;
         }
     
         // skip out of visible areas
-        if (x > this.config.canvasWidth - this.consts.tableWidth || x + arrowSprite.width < this.consts.tableWidth) {
+        if (x > this.config.canvasWidth - this.spriteConsts.tableWidth || x + arrowSprite.width < this.spriteConsts.tableWidth) {
             return;
         }
     
@@ -913,16 +913,16 @@ class Renderer {
     */
     drawPerfectArrows() {
         var xOfs = 1;
-        this.drawArrow(this.sprites.a7[0], xOfs, this.consts.lane1Yofs, true, this.sound.getCurrTime());
-        this.drawArrow(this.sprites.a9[0], xOfs, this.consts.lane1Yofs, false, this.sound.getCurrTime());
-        this.drawArrow(this.sprites.a4[0], xOfs + this.consts.lane2Xofs, this.consts.lane2Yofs, true, this.sound.getCurrTime());
-        this.drawArrow(this.sprites.a6[0], xOfs + this.consts.lane2Xofs, this.consts.lane2Yofs, false, this.sound.getCurrTime());
-        this.drawArrow(this.sprites.a1[0], xOfs, this.consts.lane3Yofs, true, this.sound.getCurrTime());
-        this.drawArrow(this.sprites.a3[0], xOfs, this.consts.lane3Yofs, false, this.sound.getCurrTime());
+        this.drawArrow(this.sprites.a7[0], xOfs, this.spriteConsts.lane1Yofs, true, this.sound.getCurrTime());
+        this.drawArrow(this.sprites.a9[0], xOfs, this.spriteConsts.lane1Yofs, false, this.sound.getCurrTime());
+        this.drawArrow(this.sprites.a4[0], xOfs + this.spriteConsts.lane2Xofs, this.spriteConsts.lane2Yofs, true, this.sound.getCurrTime());
+        this.drawArrow(this.sprites.a6[0], xOfs + this.spriteConsts.lane2Xofs, this.spriteConsts.lane2Yofs, false, this.sound.getCurrTime());
+        this.drawArrow(this.sprites.a1[0], xOfs, this.spriteConsts.lane3Yofs, true, this.sound.getCurrTime());
+        this.drawArrow(this.sprites.a3[0], xOfs, this.spriteConsts.lane3Yofs, false, this.sound.getCurrTime());
     }
 
     drawNotes() {
-        var lastAvailNote = Math.min(this.sound.firstAvailNote + this.consts.numNotes, this.sound.notes.length);
+        var lastAvailNote = Math.min(this.sound.firstAvailNote + this.spriteConsts.numNotes, this.sound.notes.length);
         if (this.sound.firstAvailNote >= 0) {
             var tickTime = this.sound.tickTime;
             for (var i = this.sound.firstAvailNote; i < lastAvailNote; i++) {
@@ -931,7 +931,7 @@ class Renderer {
                 var noteKey = note.n;
 
                 // max note time for drawing
-                var maxArrowAvailTime = currTime + tickTime * (this.consts.numNotes + 1);
+                var maxArrowAvailTime = currTime + tickTime * (this.spriteConsts.numNotes + 1);
                 var maxSpaceAvailTime = currTime + tickTime * 8;
                 if ((noteKey !== 5 && noteTime > maxArrowAvailTime) ||
                     (noteKey === 5 && noteTime > maxSpaceAvailTime)) break;
@@ -954,34 +954,34 @@ class Renderer {
                     // default
                     if (bujs.game.chance === 0) {
                         switch (noteKey) {
-                            case 7 : arrowToDraw = this.sprites.a7[imageIndex]; yOfs = this.consts.lane1Yofs; break;
-                            case 4 : arrowToDraw = this.sprites.a4[imageIndex]; yOfs = this.consts.lane2Yofs; break;
-                            case 1 : arrowToDraw = this.sprites.a1[imageIndex]; yOfs = this.consts.lane3Yofs; break;
-                            case 9 : leftLane = false; arrowToDraw = this.sprites.a9[imageIndex]; yOfs = this.consts.lane1Yofs;  break;
-                            case 6 : leftLane = false; arrowToDraw = this.sprites.a6[imageIndex]; yOfs = this.consts.lane2Yofs; break;
-                            case 3 : leftLane = false; arrowToDraw = this.sprites.a3[imageIndex]; yOfs = this.consts.lane3Yofs; break;
+                            case 7 : arrowToDraw = this.sprites.a7[imageIndex]; yOfs = this.spriteConsts.lane1Yofs; break;
+                            case 4 : arrowToDraw = this.sprites.a4[imageIndex]; yOfs = this.spriteConsts.lane2Yofs; break;
+                            case 1 : arrowToDraw = this.sprites.a1[imageIndex]; yOfs = this.spriteConsts.lane3Yofs; break;
+                            case 9 : leftLane = false; arrowToDraw = this.sprites.a9[imageIndex]; yOfs = this.spriteConsts.lane1Yofs;  break;
+                            case 6 : leftLane = false; arrowToDraw = this.sprites.a6[imageIndex]; yOfs = this.spriteConsts.lane2Yofs; break;
+                            case 3 : leftLane = false; arrowToDraw = this.sprites.a3[imageIndex]; yOfs = this.spriteConsts.lane3Yofs; break;
                         }
                     }
                     // set chance number 1 : all mid lane
                     if (bujs.game.chance === 1) {
                         switch (noteKey) {
-                            case 7 : arrowToDraw = this.sprites.a7[imageIndex]; yOfs = this.consts.lane2Yofs; break;
-                            case 4 : arrowToDraw = this.sprites.a4[imageIndex]; yOfs = this.consts.lane2Yofs; break;
-                            case 1 : arrowToDraw = this.sprites.a1[imageIndex]; yOfs = this.consts.lane2Yofs; break;
-                            case 9 : leftLane = false; arrowToDraw = this.sprites.a9[imageIndex]; yOfs = this.consts.lane2Yofs;  break;
-                            case 6 : leftLane = false; arrowToDraw = this.sprites.a6[imageIndex]; yOfs = this.consts.lane2Yofs; break;
-                            case 3 : leftLane = false; arrowToDraw = this.sprites.a3[imageIndex]; yOfs = this.consts.lane2Yofs; break;
+                            case 7 : arrowToDraw = this.sprites.a7[imageIndex]; yOfs = this.spriteConsts.lane2Yofs; break;
+                            case 4 : arrowToDraw = this.sprites.a4[imageIndex]; yOfs = this.spriteConsts.lane2Yofs; break;
+                            case 1 : arrowToDraw = this.sprites.a1[imageIndex]; yOfs = this.spriteConsts.lane2Yofs; break;
+                            case 9 : leftLane = false; arrowToDraw = this.sprites.a9[imageIndex]; yOfs = this.spriteConsts.lane2Yofs;  break;
+                            case 6 : leftLane = false; arrowToDraw = this.sprites.a6[imageIndex]; yOfs = this.spriteConsts.lane2Yofs; break;
+                            case 3 : leftLane = false; arrowToDraw = this.sprites.a3[imageIndex]; yOfs = this.spriteConsts.lane2Yofs; break;
                         }
                     }
                     // set chance number 2 : invert up/down
                     if (bujs.game.chance === 2) {
                         switch (noteKey) {
-                            case 7 : arrowToDraw = this.sprites.a7[imageIndex]; yOfs = this.consts.lane3Yofs; break;
-                            case 4 : arrowToDraw = this.sprites.a4[imageIndex]; yOfs = this.consts.lane2Yofs; break;
-                            case 1 : arrowToDraw = this.sprites.a1[imageIndex]; yOfs = this.consts.lane1Yofs; break;
-                            case 9 : leftLane = false; arrowToDraw = this.sprites.a9[imageIndex]; yOfs = this.consts.lane3Yofs;  break;
-                            case 6 : leftLane = false; arrowToDraw = this.sprites.a6[imageIndex]; yOfs = this.consts.lane2Yofs; break;
-                            case 3 : leftLane = false; arrowToDraw = this.sprites.a3[imageIndex]; yOfs = this.consts.lane1Yofs; break;
+                            case 7 : arrowToDraw = this.sprites.a7[imageIndex]; yOfs = this.spriteConsts.lane3Yofs; break;
+                            case 4 : arrowToDraw = this.sprites.a4[imageIndex]; yOfs = this.spriteConsts.lane2Yofs; break;
+                            case 1 : arrowToDraw = this.sprites.a1[imageIndex]; yOfs = this.spriteConsts.lane1Yofs; break;
+                            case 9 : leftLane = false; arrowToDraw = this.sprites.a9[imageIndex]; yOfs = this.spriteConsts.lane3Yofs;  break;
+                            case 6 : leftLane = false; arrowToDraw = this.sprites.a6[imageIndex]; yOfs = this.spriteConsts.lane2Yofs; break;
+                            case 3 : leftLane = false; arrowToDraw = this.sprites.a3[imageIndex]; yOfs = this.spriteConsts.lane1Yofs; break;
                         }
                     }
 
@@ -993,7 +993,7 @@ class Renderer {
                         // a space?
                         var cursorLx = (this.config.canvasWidth - this.sprites.spaceFrameCursor[0].width) / 2 - (noteTime - currTime)/tickTime*31.0/2;
                         var cursorRx = (this.config.canvasWidth - this.sprites.spaceFrameCursor[0].width)/  2 + (noteTime - currTime)/tickTime*31.0/2;
-                        var cursorY = this.config.canvasHeight - this.consts.spaceMarginBottom - this.sprites.spaceFrameCursor[0].height / 2;
+                        var cursorY = this.config.canvasHeight - this.spriteConsts.spaceMarginBottom - this.sprites.spaceFrameCursor[0].height / 2;
                         this.setSpritePos(this.sprites.spaceFrameCursor[0], cursorLx, cursorY);
                         this.drawSprite(this.sprites.spaceFrameCursor[0]);
 
@@ -1015,7 +1015,7 @@ class Renderer {
             if (diff < 50) ratio = 1 + (50 - diff) / 90;
     
             // draw it with ratio
-            this.setSpritePos(noteResult, (this.config.canvasWidth - noteResult.width * ratio) / 2, (this.consts.baseResultLine - noteResult.height * ratio) / 2);
+            this.setSpritePos(noteResult, (this.config.canvasWidth - noteResult.width * ratio) / 2, (this.spriteConsts.baseResultLine - noteResult.height * ratio) / 2);
             this.drawSprite(noteResult, ratio);
     
             if (diff > 200) {
