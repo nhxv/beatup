@@ -102,11 +102,12 @@ BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
 
 BUJS.prototype.loadMenuShortcut_ = function(songListContainer) {
     console.log('load event...');
-    document.addEventListener('keydown', (e) => {
-        if (e.code === 13) { // enter
-            console.log(songListContainer);
+    $(document).onKeyDown(function (e) {
+        if (e.which == '13') {
+            e.preventDefault();
+            console.log('press enter...');
         }
-    })
+    });
 }
 
 BUJS.prototype.loadTemplate_ = function (id) {
