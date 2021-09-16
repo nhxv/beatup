@@ -12,7 +12,7 @@ class Menu {
         var _this = this;
         $.get('template/modal.html', function (html) {
             $('#template-container').html(html);
-            _this.loadSongList('hello function');
+            _this.loadSongList();
         });
     }
 
@@ -25,14 +25,13 @@ class Menu {
     /*
     ** hello
     */
-    loadSongList(str) {
-        console.log(str);
+    loadSongList() {
         this.showLoadingMsg("Loading songs");
         // fetch list from server
         var _this = this;
         $.get("notes/list.json", function (list) {
-            console.log("song list: ", list);
-            _this.songList = list; // List object, not array
+            this.songList = list; // List object, not array
+            console.log(this.songList);
             _this.showSongList(this.songList);
     });
     }
@@ -69,7 +68,7 @@ class Menu {
         songlistModal.modal("show");
     }
 
-    chooseSong(id) {
+    chooseSong(id, songList) {
         // TODO: hide modal
         this.game = new Game(id, songList); // initialize game loading
         $('#songlist-modal').modal("hide");
