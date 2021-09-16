@@ -1066,7 +1066,7 @@ class Sound {
             };
             request.send();
         });
-        this.parseNotes("notes/" + this.song.name + ".json");
+        this.parseNotes("notes/" + this.song.ogg + ".json");
     }
 
     parseNotes(url) {
