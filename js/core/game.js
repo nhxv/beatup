@@ -62,7 +62,7 @@ BUJS.Game_.prototype.onComponentFinishLoading_ = function (component) {
             _this.onFinishLoading_();
         }
     }
-    $('html,body').animate({scrollTop: document.body.scrollHeight},"fast"); // scroll to bottom
+    $('html,body').animate({scrollTop: document.body.scrollHeight}, "fast"); // auto scroll to bottom
 };
 
 /**
@@ -109,7 +109,7 @@ BUJS.Game_.prototype.draw_ = function () {
     _this.renderer_.writeText_(posFps, fps.toFixed(1) + ' fps');
     
     // song time
-    _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ - 2}, _this.processSongTime_() );
+    _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ - 100}, _this.processSongTime_() );
 
     // song name
     _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ - 2 - 16}, _this.music_.songInfo_.name + " - " + _this.music_.songInfo_.singer + " (" + Math.round(_this.music_.songInfo_.bpm) + " bpm)");
