@@ -35,7 +35,7 @@ class Menu {
 
     showSongList(songList) {
         this.showLoadingMsg("");
-        this.loadTemplate_("#songlist-template");
+        this.loadTemplate("#songlist-template");
         var songlistModal = document.querySelector('#songlist-modal');
         var songlistContainer = songlistModal.find("#songlist-container");
 
