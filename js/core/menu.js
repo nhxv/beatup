@@ -102,7 +102,7 @@ BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
 
 BUJS.prototype.loadMenuShortcut_ = function(songListContainer) {
     console.log('load event...');
-    $(document).keyDown(function (e) {
+    $(document).keydown(function (e) {
         if (e.which == '13') {
             e.preventDefault();
             console.log('press enter...');
