@@ -7,5 +7,5 @@ class ExperimentOne {
         console.log('exp 2222');
     }
 
-    saySth() { console.log('bum bum bum'); }
+    say() { console.log('bum bum bum'); }
 }

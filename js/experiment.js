@@ -5,6 +5,6 @@ class Experiment {
     hello() {
         var expOne = new ExperimentOne();
         console.log('hello exp');
-        expOne.saySth();
+        expOne.say();
     }
 }
