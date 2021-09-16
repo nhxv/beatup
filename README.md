@@ -12,3 +12,4 @@ https://nhxv.github.io/beatup
     - fix note count bug in the song No Space
     - autoplay
     - toggle background
+    - create note for music
