@@ -10,7 +10,7 @@ BUJS.prototype.start_ = function () {
     _this.initCanvas_();
     _this.showLoadingMsg_("Loading extra UI components");
 
-    // load extra contents
+    // load modal
     $.get('template/modal.html', function (html) {
         $('#template-container').html(html);
         _this.loadSongList_();
@@ -72,6 +72,9 @@ BUJS.prototype.showSongListModal_ = function () {
         songlistContainer.append(li);
     }
     songlistModal.modal("show");
+    
+    // load menu shortcut
+    this.loadMenuShortcut_(songlistContainer);
 };
 
 BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
@@ -95,6 +98,14 @@ BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
     }
     li.setAttribute("songid", songId);
     return li;
+}
+
+BUJS.prototype.loadMenuShortcut_ = function(songListContainer) {
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 13) { // enter
+            console.log(songListContainer);
+        }
+    })
 }
 
 BUJS.prototype.loadTemplate_ = function (id) {
