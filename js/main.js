@@ -4,6 +4,7 @@ class Menu {
     constructor() {
         this.loadedComponentCount = 0; // want this to be 2
         this.game = null;
+        this.songList = null;
     }
 
     display() {
@@ -22,9 +23,13 @@ class Menu {
     }
 
     loadSongList() {
-        fetch('notes/list.json').then(list => {
-            this.showSongList(list);
-        }).catch(err => console.log(err));
+        _this.showLoadingMsg_("Loading songs");
+        // fetch list from server
+        $.get("notes/list.json", function (list) {
+            console.log("song list: ", list);
+            this.songList = list; // List object, not array
+            this.showSongListModal();
+    });
     }
 
     loadTemplate(id) {
