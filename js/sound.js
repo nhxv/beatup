@@ -1,5 +1,5 @@
-import {Game} from './game';
-import { Song } from './song';
+import {Game} from 'game';
+import { Song } from 'song';
 
 // DONE
 export class Sound {

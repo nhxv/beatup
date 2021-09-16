@@ -1,4 +1,4 @@
-import {Game} from './game';
+import {Game} from 'game';
 
 // TODO: rename to UI class maybe
 export class Menu {

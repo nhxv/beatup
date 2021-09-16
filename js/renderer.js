@@ -1,4 +1,4 @@
-import {Game} from './game';
+import {Game} from 'game';
 
 // DONE
 export class Renderer {

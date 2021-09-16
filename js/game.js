@@ -1,7 +1,7 @@
-import { Sound } from "./sound";
-import { Renderer } from "./renderer";
-import { Input } from "./input";
-import { Menu } from "./menu";
+import { Sound } from "sound";
+import { Renderer } from "renderer";
+import { Input } from "input";
+import { Menu } from "menu";
 
 export class Game {
     constructor(songId, songList) {
