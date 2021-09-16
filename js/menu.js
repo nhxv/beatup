@@ -1,19 +1,19 @@
-import {Game} from 'game';
+// need class Game
 
-// TODO: rename to UI class maybe
-export class Menu {
+class Menu {
     constructor() {
-        loadedComponentCount = 0; // want this to be 2
+        this.loadedComponentCount = 0; // want this to be 2
         this.game = null;
+        this.songList = null;
     }
 
     display() {
         this.createCanvas();
-
-        fetch('template/modal.html').then((html) => {
-            document.querySelector('#template-container').html(html); 
-            this.loadSongList(); 
-        }).catch(err => console.log(err));
+        var _this = this;
+        $.get('template/modal.html', (html) => {
+            $('#template-container').html(html);
+            _this.loadSongList();
+        });
     }
 
     createCanvas() {
@@ -23,21 +23,26 @@ export class Menu {
     }
 
     loadSongList() {
-        fetch('notes/list.json').then(list => {
-            this.showSongList(list);
-        }).catch(err => console.log(err));
+        this.showLoadingMsg("Loading songs");
+        // fetch list from server
+        var _this = this;
+        $.get("notes/list.json", (list) => {
+            this.songList = list; // List object, not array
+            _this.showSongList(this.songList);
+    });
     }
 
-    loadTemplate() {
+    loadTemplate(id) {
         var t = document.querySelector(id);
+        console.log(document.querySelector("#songlist-template"));
         var clone = document.importNode(t.content, true);
         document.body.appendChild(clone);
     }
 
     showSongList(songList) {
         this.showLoadingMsg("");
-        this.loadTemplate_("#songlist-template");
-        var songlistModal = document.querySelector('#songlist-modal');
+        this.loadTemplate("#songlist-template");
+        var songlistModal = $('#songlist-modal');
         var songlistContainer = songlistModal.find("#songlist-container");
 
         var randomLi = document.createElement("li");
@@ -45,9 +50,9 @@ export class Menu {
         var songFileNames = Object.keys(this.songList);
         randomLi.setAttribute("songid", songFileNames[Math.floor(Math.random() * songFileNames.length)]);
         randomLi.innerText = "Random (Normal)";
-        randomLi.onclick = this.chooseSong();
+        // randomLi.onclick = this.chooseSong();
         songlistContainer.append(randomLi);
-        for (var id of songList) {
+        for (var id in songList) {
             // id is json filename
             var song = this.songList[id];
             var li = document.createElement("li");
@@ -56,12 +61,12 @@ export class Menu {
             li.innerText = song.singer + " " + song.name + " (" + song.slkauthor + ") " + Math.round(song.bpm) + " bpm";
             li.onclick = this.chooseSong(id, songList);
         }
+        songlistModal.modal("show");
     }
 
-    chooseSong(id) {
-        // TODO: hide modal
+    chooseSong(id, songList) {
         this.game = new Game(id, songList); // initialize game loading
-        this.closeModal(songlistModal);
+        $('#songlist-modal').modal("hide");
     }
 
     closeModal(modal) {
@@ -77,7 +82,7 @@ export class Menu {
         document.body.removeChild(modalBackdrops[0]);
     }
 
-    showLoadingMsg() {
+    showLoadingMsg(msg) {
         var canvas = document.getElementById("cvs");
         var ctx = canvas.getContext("2d");
         var width = canvas.width;
@@ -90,7 +95,7 @@ export class Menu {
         ctx.fillText(msg, width / 2, height / 2);
     }
 
-    set loadedComponentCount(isLoaded) {
+    setLoadedComponentCount(isLoaded) {
         if (isLoaded) this.loadedComponentCount++;
         if (this.loadedComponentCount == 2) this.game.onFinishLoading();
     }
