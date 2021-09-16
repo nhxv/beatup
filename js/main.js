@@ -95,7 +95,7 @@ class Menu {
         ctx.fillText(msg, width / 2, height / 2);
     }
 
-    set loadedComponentCount(isLoaded) {
+    setLoadedComponentCount(isLoaded) {
         if (isLoaded) this.loadedComponentCount++;
         if (this.loadedComponentCount == 2) this.game.onFinishLoading();
     }
@@ -542,7 +542,7 @@ class Renderer {
                     var height = this.config.canvasHeight * this.config.scaleRatio;
                     canvas.width = width;
                     canvas.height = height;
-                    this.menu.loadedComponentCount(true);
+                    this.menu.setLoadedComponentCount(true);
                 }
             });
     }
@@ -1036,7 +1036,7 @@ class Sound {
             this.context.decodeAudioData(request.response, function (buffer) {
                 this.musicStartTime = this.context.currentTime;
                 this.playSound(buffer);
-                this.menu.loadedComponentCount(true);
+                this.menu.setLoadedComponentCount(true);
             },
             function(error) {
                 console.log("Error decoding audio data", error);
