@@ -53,7 +53,7 @@ class Menu {
         var songFileNames = Object.keys(this.songList);
         randomLi.setAttribute("songid", songFileNames[Math.floor(Math.random() * songFileNames.length)]);
         randomLi.innerText = "Random (Normal)";
-        randomLi.onclick = this.chooseSong();
+        // randomLi.onclick = this.chooseSong();
         songlistContainer.append(randomLi);
 
         console.log('before loop songList');
