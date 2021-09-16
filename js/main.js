@@ -433,8 +433,6 @@ class Renderer {
         this.menu = menu;
         this.images = [];
         this.config = this.setupConfig();
-        console.log('initializing config');
-        console.log(this.config);
         this.sprites = this.setupSpriteInfo();
         this.spriteConsts = this.setupSpriteConsts();
         this.ctx = null; // initialize when loadSprites
@@ -529,8 +527,8 @@ class Renderer {
     }
 
     loadSprites() {
-        console.log('call this here');
-        console.log(this.config);
+        console.log('this first: ');
+        console.log(this);
         async.eachOf(this.sprites, this.loadSpritesForType,
             (err) => {
                 if (err) {
@@ -556,6 +554,8 @@ class Renderer {
     * { noteResults   : ["perfect.png", "great.png", "cool.png", "bad.png", "miss.png"] },
     */
     loadSpritesForType(spriteInfo, key, callback) {
+        console.log('this second: ');
+        console.log(this);
         console.log('load sprite');
         // var _this = spriteInfo._this;
         // async.each(spriteInfo, function (fileName, urlCallback) {
