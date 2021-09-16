@@ -60,6 +60,7 @@ class Menu {
             li.setAttribute("songid", id);
             li.innerText = song.singer + " " + song.name + " (" + song.slkauthor + ") " + Math.round(song.bpm) + " bpm";
             li.onclick = this.chooseSong(id, songList);
+            songlistContainer.append(li);
         }
         songlistModal.modal("show");
     }
