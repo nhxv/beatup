@@ -116,6 +116,7 @@ BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
 BUJS.prototype.loadMenuShortcut_ = function(selectedLi) {
     $(document).keydown(function (e) {
         if (e.which === 13 || e.which === 112) { // F1 or Enter to start
+            e.preventDefault();
             $(selectedLi).click();
         }
     });
