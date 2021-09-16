@@ -555,10 +555,15 @@ class Renderer {
     * { noteResults   : ["perfect.png", "great.png", "cool.png", "bad.png", "miss.png"] },
     */
     loadSpritesForType(spriteInfo, key, callback) {
-        var config = this.setupConfig();
-        console.log(config);
-        console.log('lexicalll');
-        console.log(_this.config);
+        // TODO: cannot use this here
+        var cfg = {
+            imagePath          : "img/",
+            scaleRatio         : 1,
+            canvasWidth        : 980,
+            canvasHeight       : 400
+        };
+        console.log(cfg);
+
         async.each(spriteInfo, (fileName, urlCallback) => {
             if (typeof fileName !== "string") return;
             // console.log("sprite", key, "fetching ", fileName);
@@ -570,7 +575,7 @@ class Renderer {
                 this.sprites[key][spriteInfo.indexOf(fileName)] = img;
                 urlCallback();
             };
-            img.src = _this.config.imagePath + fileName;
+            img.src = cfg.imagePath + fileName;
         },
         (err) => {
             // loaded all images for one spriteInfo ok.
