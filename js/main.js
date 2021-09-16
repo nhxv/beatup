@@ -555,7 +555,8 @@ class Renderer {
     * { noteResults   : ["perfect.png", "great.png", "cool.png", "bad.png", "miss.png"] },
     */
     loadSpritesForType(spriteInfo, key, callback) {
-        var _this = this;
+        var config = this.setupConfig();
+        console.log(config);
         console.log('lexicalll');
         console.log(_this.config);
         async.each(spriteInfo, (fileName, urlCallback) => {
