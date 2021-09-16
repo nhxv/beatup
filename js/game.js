@@ -41,14 +41,15 @@ export class Game {
 
         this.menu = new Menu();
 
-        // load sound, renderer, input system
+        // load sound, renderer
         this.sound = new Sound(songList[songId], this.menu); // load sound & notes after selecting song
         this.renderer = new Renderer(this.sound, this.menu);
         this.renderer.loadSprites(); // render the visuals
-        this.input = new Input();
+        this.input = null;
     }
 
-    onFinishLoading() {
+    onFinishLoading(game) {
+        this.input = new Input(game, renderer);
        this.gl(); 
     }
 
@@ -91,7 +92,7 @@ export class Game {
         this.processAnimations();
         this.renderer.drawNotes(this.sound.getCurrTime());
         this.renderer.drawBigNoteResultText();
-        this.checkMiss(); // TODO
+        this.checkMiss();
         this.renderer.drawTable();
         // this.renderer.drawTouchArrows(); remove this method by toggle later
     }
