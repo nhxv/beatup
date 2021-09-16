@@ -78,6 +78,7 @@ BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
     var li = document.createElement("li");
     if (isRandom) {
         li.setAttribute("choice", "random");
+        li.setAttribute("songid", songId);
         if (sessionStorage.getItem('selected') === "random") {
             li.setAttribute("class", "songListItem selected");
         } else {
@@ -91,7 +92,7 @@ BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
     } else {
         li.setAttribute("class", "songListItem");
     }
-    li.setAttribute("choice", songId);
+    li.setAttribute("songid", songId);
     return li;
 }
 
@@ -102,8 +103,12 @@ BUJS.prototype.loadTemplate_ = function (id) {
 };
 
 BUJS.prototype.songItemClick_ = function () {
-    var songId = this.getAttribute("choice");
-    sessionStorage.setItem("selected", songId);
+    var songId = this.getAttribute("songid");
+    if (this.getAttribute("choice") === "random") {
+        sessionStorage.setItem("selected", "random");
+    } else {
+        sessionStorage.setItem("selected", songId);
+    }
     bujs.game_ = new BUJS.Game_(songId);
     $('#songlist-modal').modal("hide");
 };
