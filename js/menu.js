@@ -90,9 +90,8 @@ export class Menu {
         ctx.fillText(msg, width / 2, height / 2);
     }
 
-    set loadedComponentCount() {
-        if (this.loadedComponentCount == 2) { 
-            this.game.onFinishLoading(); 
-        }
+    set loadedComponentCount(isLoaded) {
+        if (isLoaded) this.loadedComponentCount++;
+        if (this.loadedComponentCount == 2) this.game.onFinishLoading();
     }
 }
