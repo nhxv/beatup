@@ -793,6 +793,8 @@ class Renderer {
     * Define sprite position. These are fixed.
     */
     initSpritePos() {
+        console.log('width: ' + this.sprites.dnxpLogo[0].width);
+        console.log('height: ' + this.sprites.dnxpLogo[0].height);
         this.setSpritePos(this.sprites.dnxpLogo[0],
             this.config.canvasWidth - this.sprites.dnxpLogo[0].width - this.spriteConsts.dnxpLogoMargin,
             this.config.canvasHeight - this.sprites.dnxpLogo[0].height - this.spriteConsts.dnxpLogoMargin);
