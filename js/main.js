@@ -529,6 +529,8 @@ class Renderer {
     }
 
     loadSprites() {
+        console.log('call this here');
+        console.log(this.config);
         async.eachOf(this.sprites, this.loadSpritesForType,
             (err) => {
                 if (err) {
