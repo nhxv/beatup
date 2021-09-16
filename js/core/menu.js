@@ -56,7 +56,7 @@ BUJS.prototype.showSongListModal_ = function () {
     var songlistContainer = songlistModal.find("#songlist-container");
 
     // previously selected element; default to random if nothing else is selected
-    var selectedLi = null;
+    var selectedLi = _this.songItemClick_;
 
     // create random selected choice
     var songFileNames = Object.keys(_this.songList_);
@@ -113,7 +113,7 @@ BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
 BUJS.prototype.loadMenuShortcut_ = function(selectedLi) {
     $(document).keydown(function (e) {
         if (e.which == '13') {
-            selectedLi.songItemClick_();
+            $(selectedLi).click();
             console.log('clicked pleaseee');
         }
     });
