@@ -10,7 +10,7 @@ class Menu {
     display() {
         this.createCanvas();
         var _this = this;
-        $.get('template/modal.html', function (html) {
+        $.get('template/modal.html', (html) => {
             $('#template-container').html(html);
             _this.loadSongList();
         });
@@ -29,7 +29,7 @@ class Menu {
         this.showLoadingMsg("Loading songs");
         // fetch list from server
         var _this = this;
-        $.get("notes/list.json", function (list) {
+        $.get("notes/list.json", (list) => {
             this.songList = list; // List object, not array
             console.log(this.songList);
             _this.showSongList(this.songList);
@@ -44,6 +44,8 @@ class Menu {
     }
 
     showSongList(songList) {
+        console.log('hey song list again');
+        console.log(songList);
         this.showLoadingMsg("");
         this.loadTemplate("#songlist-template");
         var songlistModal = $('#songlist-modal');
