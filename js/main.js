@@ -1083,10 +1083,6 @@ class Song {
         this.slkauthor = slkauthor;
         this.bpm = bpm;
     }
-
-    set notes(notes) {
-        this.notes = notes;
-    }
 }
 
 class Input {
