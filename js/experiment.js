@@ -1,6 +1,10 @@
 class Experiment {
     constructor() {
-        this.expOne = new ExperimentOne();
+        this.name = "exp";
     }
-    hello() {console.log('hello exp');}
+    hello() {
+        var expOne = new ExperimentOne();
+        console.log('hello exp');
+        expOne.saySth();
+    }
 }
