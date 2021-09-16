@@ -29,9 +29,9 @@ class Menu {
 
     loadTemplate(id) {
         console.log(id);
-        console.log('how is t null??');
         var t = document.querySelector(id);
         console.log(t);
+        console.log(document.querySelector("#songlist-template"));
         var clone = document.importNode(t.content, true);
         document.body.appendChild(clone);
     }
