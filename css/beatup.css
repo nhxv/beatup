@@ -38,6 +38,11 @@ ul {
     border-radius: .375rem;
 }
 
+.songListItem.selected {
+    border-radius: .375rem;
+    border: 1px solid #3F3F46;
+}
+
 .close {
     opacity: 1 !important;
     text-shadow: none !important;

@@ -66,7 +66,11 @@ BUJS.prototype.showSongListModal_ = function () {
         // id is json filename
         var song = _this.songList_[id];
         var li = document.createElement("li");
-        li.setAttribute("class", "songListItem");
+        if (id === sessionStorage.getItem('selectedSong')) {
+            li.setAttribute("class", "songListItem selected");
+        } else {
+            li.setAttribute("class", "songListItem");
+        }
         li.setAttribute("songid", id);
         li.innerText =  song.singer + " " + song.name + " (" + song.slkauthor + ") " + Math.round(song.bpm) + " bpm";
         li.onclick = _this.songItemClick_;
@@ -83,6 +87,7 @@ BUJS.prototype.loadTemplate_ = function (id) {
 
 BUJS.prototype.songItemClick_ = function () {
     var songId = this.getAttribute("songid");
+    sessionStorage.setItem("selectedSong", songId);
     bujs.game_ = new BUJS.Game_(songId);
     $('#songlist-modal').modal("hide");
 };
