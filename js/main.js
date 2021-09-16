@@ -1030,6 +1030,7 @@ class Sound {
     constructor(songList, songId, menu) {
         this.menu = menu;
         this.song = songList[songId];
+        this.songId = songId;
 
         this.sounds = {
             perfect: "perfect.wav",
