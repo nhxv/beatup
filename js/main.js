@@ -140,7 +140,7 @@ class Game {
         this.menu = new Menu();
 
         // load sound, renderer
-        this.sound = new Sound(songList[songId], this.menu); // load sound & notes after selecting song
+        this.sound = new Sound(songList, songId, this.menu); // load sound & notes after selecting song
         this.renderer = new Renderer(this.sound, this.menu);
         this.renderer.loadSprites(); // render the visuals
         this.input = null;
@@ -1027,15 +1027,9 @@ class Renderer {
 }
 
 class Sound {
-    constructor(songInfo, menu) {
+    constructor(songList, songId, menu) {
         this.menu = menu;
-        this.song = new Song(
-            songInfo.ogg,
-            songInfo.singer,
-            songInfo.name,
-            songInfo.slkauthor,
-            songInfo.bpm
-            );
+        this.song = songList[songId];
 
         this.sounds = {
             perfect: "perfect.wav",
@@ -1066,7 +1060,7 @@ class Sound {
             };
             request.send();
         });
-        this.parseNotes("notes/" + this.song.ogg + ".json");
+        this.parseNotes("notes/" + this.songId + ".json");
     }
 
     parseNotes(url) {
