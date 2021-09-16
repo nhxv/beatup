@@ -109,6 +109,9 @@ BUJS.Game_.prototype.draw_ = function () {
 
     // song name
     _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ - 5 - 16}, _this.music_.songInfo_.name + " - " + _this.music_.songInfo_.singer + " (" + Math.round(_this.music_.songInfo_.bpm) + " bpm)");
+    
+    // song time
+    _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ - 5 - 24}, _this.music_.getCurrTime_());
 
     // lanes, landings, icons, logo, space frame...
     _this.renderer_.drawFixContent_(_this.combo_);
@@ -370,7 +373,7 @@ BUJS.Game_.prototype.updateScore_ = function (key, keyResult) {
     if (_this.highestCombo_ < _this.combo_) _this.highestCombo_ = _this.combo_;
 
     // update perx
-    if (_this.lastNoteResult_ === 0 && keyResult === 0) {		// still per?
+    if (_this.lastNoteResult_ === 0 && keyResult === 0) {
         _this.perx_++;
     }
     else _this.perx_ = 0;
