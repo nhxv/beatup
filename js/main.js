@@ -23,7 +23,7 @@ class Menu {
     }
 
     loadSongList() {
-        _this.showLoadingMsg_("Loading songs");
+        this.showLoadingMsg("Loading songs");
         // fetch list from server
         $.get("notes/list.json", function (list) {
             console.log("song list: ", list);
