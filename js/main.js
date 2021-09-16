@@ -11,7 +11,7 @@ class Menu {
 
         $.get('template/modal.html', function (html) {
             $('#template-container').html(html);
-            this.loadSongList(); 
+            this.loadSongList();
         });
     }
 
