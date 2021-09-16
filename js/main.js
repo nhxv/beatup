@@ -2,7 +2,7 @@
 
 class Menu {
     constructor() {
-        loadedComponentCount = 0; // want this to be 2
+        this.loadedComponentCount = 0; // want this to be 2
         this.game = null;
     }
 
@@ -258,7 +258,7 @@ class Game {
                 if (noteKey === keyMap || this.autoplay || this.alwaysCorrect) {
                     noteResult = this.getKeyResult(keyTime);
                     if (noteKey === 5) {
-                        this.animations.push(new BUJS.Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.spaceFrameExplode[0],
+                        this.animations.push(new Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.spaceFrameExplode[0],
                             (this.renderer.config.canvasWidth - this.renderer.sprites.spaceFrameExplode[0].width) / 2,
                             this.renderer.config.canvasHeight - this.renderer.consts.spaceMarginBottom - this.renderer.sprites.spaceFrameExplode[0].height / 2));
                     }
@@ -266,7 +266,7 @@ class Game {
                     if (noteResult >= 0 || this.autoplay) {
                         switch (noteKey) {
                             // TODO: add Animation class
-                            case 5 : this.animations.push(new BUJS.Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.spaceExplode[0],
+                            case 5 : this.animations.push(new Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.spaceExplode[0],
                                 (this.renderer.config.canvasWidth - this.renderer.sprites.spaceExplode[0].width) / 2,
                                 this.renderer.config.canvasHeight - this.renderer.consts.spaceMarginBottom - this.renderer.sprites.spaceExplode[0].height / 2));
                                 break;
@@ -287,11 +287,11 @@ class Game {
                                 }
                                 yOfs = this.renderer.consts.laneYStart + yOfs + this.renderer.sprites.a1[0].height / 2;
                                 if (leftLane)
-                                    this.animations.push(new BUJS.Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.arrowExplode[0],
+                                    this.animations.push(new Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.arrowExplode[0],
                                         this.renderer.consts.tableWidth - this.renderer.consts.tableWidthTrans + this.renderer.consts.laneWidth - this.renderer.consts.chanceDist + this.renderer.consts.arrowLaneOfs + this.renderer.sprites.a1[0].width / 2 - this.renderer.sprites.arrowExplode[0].width / 2,
                                         yOfs - this.renderer.sprites.arrowExplode[0].width / 2));
                                 else
-                                    this.animations.push(new BUJS.Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.arrowExplode[0],
+                                    this.animations.push(new Animation(this.renderer, currTime, this.renderer.consts.arrowAnimationTime, this.renderer.sprites.arrowExplode[0],
                                         this.renderer.config.canvasWidth - (this.renderer.consts.tableWidth - this.renderer.consts.tableWidthTrans + this.renderer.consts.laneWidth - this.renderer.consts.chanceDist + this.renderer.consts.arrowLaneOfs + this.renderer.sprites.a1[0].width / 2) - this.renderer.sprites.arrowExplode[0].width / 2,
                                         yOfs - this.renderer.sprites.arrowExplode[0].height / 2));
                             }
@@ -537,7 +537,7 @@ class Renderer {
                     canvas.width = width;
                     canvas.height = height;
 
-                    this.menu.loadedComponentCount++;
+                    this.menu.loadedComponentCount(true);
                 }
             });
     }
@@ -1033,7 +1033,7 @@ class Sound {
             this.context.decodeAudioData(request.response, function (buffer) {
                 this.musicStartTime = this.context.currentTime;
                 this.playSound(buffer);
-                this.menu.loadedComponentCount += 1;
+                this.menu.loadedComponentCount(true);
             },
             function(error) {
                 console.log("Error decoding audio data", error);
