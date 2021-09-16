@@ -998,13 +998,13 @@ class Sound {
         this.context = new (window.AudioContext || window.webkitAudioContext)();
     
         // from async.js lib
-        async.eachOf(this.sounds, function (sound, index, callback) {
+        async.eachOf(this.sounds, (sound, index, callback) => {
             // TODO: maybe change to fetch?
             var request = new XMLHttpRequest();
             request.open('GET', "sound/" + sound, true);
             request.responseType = 'arraybuffer';
-            request.onload = function () {
-                this.context.decodeAudioData(request.response, function (buffer) {
+            request.onload = () => {
+                this.context.decodeAudioData(request.response, (buffer) => {
                     console.log("Loaded sound", sound);
                     this.sounds[index] = buffer;
                 }, function (error) {
@@ -1014,7 +1014,7 @@ class Sound {
             };
             request.send();
         });
-        this.parseNotes("notes/" + songId + ".json");
+        this.parseNotes("notes/" + this.sound.name + ".json");
     }
 
     parseNotes(url) {
