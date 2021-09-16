@@ -31,7 +31,6 @@ class Menu {
         var _this = this;
         $.get("notes/list.json", (list) => {
             this.songList = list; // List object, not array
-            console.log(this.songList);
             _this.showSongList(this.songList);
     });
     }
@@ -71,7 +70,8 @@ class Menu {
     }
 
     chooseSong(id, songList) {
-        // TODO: hide modal
+        console.log(id);
+        console.log(songList);
         this.game = new Game(id, songList); // initialize game loading
         $('#songlist-modal').modal("hide");
     }
