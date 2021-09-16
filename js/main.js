@@ -27,7 +27,7 @@ class Menu {
         }).catch(err => console.log(err));
     }
 
-    loadTemplate() {
+    loadTemplate(id) {
         var t = document.querySelector(id);
         var clone = document.importNode(t.content, true);
         document.body.appendChild(clone);
