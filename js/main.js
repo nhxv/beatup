@@ -433,6 +433,8 @@ class Renderer {
         this.menu = menu;
         this.images = [];
         this.config = this.setupConfig();
+        console.log('initializing config');
+        console.log(this.config);
         this.sprites = this.setupSpriteInfo();
         this.spriteConsts = this.setupSpriteConsts();
         this.ctx = null; // initialize when loadSprites
