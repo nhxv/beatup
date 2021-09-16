@@ -1,8 +1,5 @@
 // import {Menu} from 'menu';
 
-var menu = new Menu();
-menu.display();
-
 class Menu {
     constructor() {
         loadedComponentCount = 0; // want this to be 2
@@ -1225,3 +1222,6 @@ class Animation {
         return alpha;
     }
 }
+
+var menu = new Menu();
+menu.display();
