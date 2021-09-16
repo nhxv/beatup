@@ -552,7 +552,7 @@ class Renderer {
     * { noteResults   : ["perfect.png", "great.png", "cool.png", "bad.png", "miss.png"] },
     */
     loadSpritesForType(spriteInfo, key, callback) {
-        console.log(this.config);
+        console.log(this.sprites.a7);
         async.each(spriteInfo, (fileName, urlCallback) => {
             if (typeof fileName !== "string") return;
             console.log("sprite", key, "fetching ", fileName);
@@ -740,8 +740,6 @@ class Renderer {
     * Define sprite position. These are fixed.
     */
     initSpritePos() {
-        console.log('width: ' + this.sprites.dnxpLogo[0]);
-        console.log('height: ' + this.sprites.dnxpLogo[0]);
         this.setSpritePos(this.sprites.dnxpLogo[0],
             this.config.canvasWidth - this.sprites.dnxpLogo[0].width - this.spriteConsts.dnxpLogoMargin,
             this.config.canvasHeight - this.sprites.dnxpLogo[0].height - this.spriteConsts.dnxpLogoMargin);
@@ -1032,13 +1030,13 @@ class Sound {
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.responseType = 'arraybuffer';
-        request.onload = function() {
-            this.context.decodeAudioData(request.response, function (buffer) {
+        request.onload = () => {
+            this.context.decodeAudioData(request.response, (buffer) => {
                 this.musicStartTime = this.context.currentTime;
                 this.playSound(buffer);
                 this.menu.setLoadedComponentCount(true);
             },
-            function(error) {
+            (error) => {
                 console.log("Error decoding audio data", error);
             });
         };
