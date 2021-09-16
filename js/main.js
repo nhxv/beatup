@@ -552,11 +552,12 @@ class Renderer {
     * { noteResults   : ["perfect.png", "great.png", "cool.png", "bad.png", "miss.png"] },
     */
     loadSpritesForType(spriteInfo, key, callback) {
+        console.log(this.config);
         async.each(spriteInfo, (fileName, urlCallback) => {
             if (typeof fileName !== "string") return;
             console.log("sprite", key, "fetching ", fileName);
             var img = new Image();
-            img.onload = function () {
+            img.onload = () => {
                 if (typeof this.sprites[key] === "undefined") {
                     this.sprites[key] = [];
                 }
