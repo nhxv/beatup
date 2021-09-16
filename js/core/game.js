@@ -65,7 +65,7 @@ BUJS.Game_.prototype.onComponentFinishLoading_ = function (component) {
 };
 
 /**
- * Callback whenever we have ALL components finished loading
+ * Callback whenever we have ALL components (Renderer & Music) finished loading
  */
 BUJS.Game_.prototype.onFinishLoading_ = function () {
     gl_();
@@ -299,13 +299,7 @@ BUJS.Game_.prototype.getKeyResult_ = function (diff) {
     if (diff <= 15 * (tickTime * ratio) / 100) return 1;	// g
     if (diff <= 27 * (tickTime * ratio) / 100) return 2;	// c
     if (diff <= 40 * (tickTime * ratio) / 100) return 3;	// b
-    return 4;												// m
-
-    // if (diff <= 5 * (tickTime * ratio) / 100) return 0;		// p
-    // if (diff <= 15 * (tickTime * ratio) / 100) return 1;	// g
-    // if (diff <= 27 * (tickTime * ratio) / 100) return 2;	// c
-    // if (diff <= 40 * (tickTime * ratio) / 100) return 3;	// b
-    // return 4;												// m
+    return 4;												// m												// m
 };
 
 /**

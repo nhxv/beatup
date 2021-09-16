@@ -4,7 +4,8 @@ BUJS.Music_ = function (onComponentFinishLoading_) {
         perfect_: "perfect.wav",
         normal_ : "normal.wav",
         miss_   : "miss.wav",
-        space_  : "space.wav" };
+        space_  : "space.wav" 
+    };
     _this.context_ = new (window.AudioContext || window.webkitAudioContext)();
     _this.onComponentFinishLoading_ = onComponentFinishLoading_;
 
