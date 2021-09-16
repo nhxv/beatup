@@ -135,7 +135,8 @@ BUJS.Game_.prototype.processSongTime_ = function() {
     var time = Math.round(_this.music_.getCurrTime_() / 1000); // in second
     var minutes = Math.floor(time / 60);
     var seconds = time - minutes * 60;
-    return minutes + ':' + seconds;
+    var formatSec = seconds.toLocaleString('en-US', {minimumIntegerDigits: 2});
+    return minutes + ':' + formatSec;
 }
 
 /**
