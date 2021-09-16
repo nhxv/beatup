@@ -44,6 +44,12 @@ ul {
     color: inherit;
 }
 
+.songListItem.selected:hover {
+    color: #F4F4F5;
+    background-color: #3F3F46;
+    border-radius: .375rem;
+}
+
 .close {
     opacity: 1 !important;
     text-shadow: none !important;

@@ -54,17 +54,19 @@ BUJS.prototype.showSongListModal_ = function () {
     _this.loadTemplate_("#songlist-template");
     var songlistModal = $('#songlist-modal');
     var songlistContainer = songlistModal.find("#songlist-container");
-    // create random selected element
+    // create random selected choice
     var songFileNames = Object.keys(_this.songList_);
     var randomId = songFileNames[Math.floor(Math.random() * songFileNames.length)];
-    var randomLi = _this.setSongAttr_(randomId);
+    var randomLi = _this.setSongAttr_(randomId, true);
     randomLi.innerText = "Random (Normal)";
     randomLi.onclick = _this.songItemClick_;
     songlistContainer.append(randomLi);
+
+    // create song list
     for (var id in _this.songList_) {
         // id is json filename
         var song = _this.songList_[id];
-        var li = _this.setSongAttr_(id);
+        var li = _this.setSongAttr_(id, false);
         li.innerText =  song.singer + " " + song.name + " (" + song.slkauthor + ") " + Math.round(song.bpm) + " bpm";
         li.onclick = _this.songItemClick_;
         songlistContainer.append(li);
@@ -72,14 +74,24 @@ BUJS.prototype.showSongListModal_ = function () {
     songlistModal.modal("show");
 };
 
-BUJS.prototype.setSongAttr_ = function(songId) {
+BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
     var li = document.createElement("li");
+    if (isRandom) {
+        li.setAttribute("choice", "random");
+        if (sessionStorage.getItem('selected') === "random") {
+            li.setAttribute("class", "songListItem selected");
+        } else {
+            li.setAttribute("class", "songListItem");
+        }
+        return li;
+    }
+
     if (songId === sessionStorage.getItem('selected')) {
         li.setAttribute("class", "songListItem selected");
     } else {
         li.setAttribute("class", "songListItem");
     }
-    li.setAttribute("songid", songId);
+    li.setAttribute("choice", songId);
     return li;
 }
 
@@ -90,7 +102,7 @@ BUJS.prototype.loadTemplate_ = function (id) {
 };
 
 BUJS.prototype.songItemClick_ = function () {
-    var songId = this.getAttribute("songid");
+    var songId = this.getAttribute("choice");
     sessionStorage.setItem("selected", songId);
     bujs.game_ = new BUJS.Game_(songId);
     $('#songlist-modal').modal("hide");
