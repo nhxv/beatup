@@ -108,7 +108,7 @@ BUJS.Game_.prototype.draw_ = function () {
     _this.renderer_.writeText_(posFps, fps.toFixed(1) + ' fps');
 
     // song name
-    _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ + 32}, _this.music_.songInfo_.name + " - " + _this.music_.songInfo_.singer + " (" + Math.round(_this.music_.songInfo_.bpm) + " bpm)");
+    _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ + 12}, _this.music_.songInfo_.name + " - " + _this.music_.songInfo_.singer + " (" + Math.round(_this.music_.songInfo_.bpm) + " bpm)");
     
     // song time
     _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ - 5 - 16}, Math.round( Math.floor(_this.music_.getCurrTime_() / Math.pow(10, 5)) ));
