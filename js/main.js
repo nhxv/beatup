@@ -22,9 +22,6 @@ class Menu {
         canvas.height = 400;
     }
 
-    /*
-    ** hello
-    */
     loadSongList() {
         this.showLoadingMsg("Loading songs");
         // fetch list from server
@@ -55,12 +52,8 @@ class Menu {
         randomLi.innerText = "Random (Normal)";
         // randomLi.onclick = this.chooseSong();
         songlistContainer.append(randomLi);
-
         console.log('before loop songList');
-        console.log(songList);
-        console.log('this this');
-        console.log(this.songList);
-        for (var id of songList) {
+        for (var id in songList) {
             // id is json filename
             var song = this.songList[id];
             var li = document.createElement("li");
