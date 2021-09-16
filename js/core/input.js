@@ -2,7 +2,6 @@ BUJS.Input_ = function () {
     var _this = this;
     $("body")[0].onkeydown = function (e) {
         var keyCode = e.keyCode;
-        if (keyCode === 144) e.preventDefault(); // prevent numlock
         _this.checkKeyboard_(keyCode);
     };
     var el = document.getElementsByTagName("canvas")[0];

@@ -62,6 +62,7 @@ BUJS.Game_.prototype.onComponentFinishLoading_ = function (component) {
             _this.onFinishLoading_();
         }
     }
+    $('html,body').animate({scrollTop: document.body.scrollHeight},"fast"); // scroll to bottom
 };
 
 /**
