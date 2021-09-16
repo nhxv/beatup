@@ -529,7 +529,7 @@ class Renderer {
     loadSprites() {
         console.log('this first: ');
         console.log(this);
-        async.eachOf(this.sprites, this.loadSpritesForType,
+        async.eachOf(this.sprites, this.loadSpritesForType.bind(this),
             (err) => {
                 if (err) {
                     console.log("Meh. Error", err);
