@@ -9,7 +9,7 @@ class Menu {
     display() {
         this.createCanvas();
 
-        $.get('template/modal.html').then(function (html) {
+        $.get('template/modal.html', function (html) {
             $('#template-container').html(html);
             this.loadSongList(); 
         });
