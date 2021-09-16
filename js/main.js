@@ -556,8 +556,6 @@ class Renderer {
     */
     loadSpritesForType(spriteInfo, key, callback) {
         var _this = this;
-        console.log('print config');
-        console.log(this.config);
         console.log('lexicalll');
         console.log(_this.config);
         async.each(spriteInfo, (fileName, urlCallback) => {
@@ -571,9 +569,9 @@ class Renderer {
                 this.sprites[key][spriteInfo.indexOf(fileName)] = img;
                 urlCallback();
             };
-            img.src = this.config.imagePath + fileName;
+            img.src = _this.config.imagePath + fileName;
         },
-        function (err) {
+        (err) => {
             // loaded all images for one spriteInfo ok.
             if (err) {
                 console.error("Meh. Error", err);
