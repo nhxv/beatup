@@ -530,7 +530,7 @@ class Renderer {
 
     loadSprites() {
         async.eachOf(this.sprites, this.loadSpritesForType,
-            function (err) {
+            (err) => {
                 if (err) {
                     console.log("Meh. Error", err);
                 }
@@ -555,8 +555,11 @@ class Renderer {
     * { noteResults   : ["perfect.png", "great.png", "cool.png", "bad.png", "miss.png"] },
     */
     loadSpritesForType(spriteInfo, key, callback) {
+        var _this = this;
         console.log('print config');
         console.log(this.config);
+        console.log('lexicalll');
+        console.log(_this.config);
         async.each(spriteInfo, (fileName, urlCallback) => {
             if (typeof fileName !== "string") return;
             // console.log("sprite", key, "fetching ", fileName);
