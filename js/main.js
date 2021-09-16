@@ -10,7 +10,7 @@ class Menu {
         this.createCanvas();
 
         fetch('template/modal.html').then((html) => {
-            document.querySelector('#template-container').html(html); 
+            document.querySelector('#template-container').innerHTML = html; 
             this.loadSongList(); 
         }).catch(err => console.log(err));
     }
