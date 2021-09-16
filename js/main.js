@@ -9,10 +9,10 @@ class Menu {
     display() {
         this.createCanvas();
 
-        fetch('template/modal.html').then((html) => {
+        $.get('template/modal.html').then(function (html) {
             $('#template-container').html(html);
             this.loadSongList(); 
-        }).catch(err => console.log(err));
+        });
     }
 
     createCanvas() {
