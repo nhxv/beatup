@@ -79,7 +79,8 @@ BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
     if (isRandom) {
         li.setAttribute("choice", "random");
         li.setAttribute("songid", songId);
-        if (sessionStorage.getItem('selected') === "random") {
+        if (sessionStorage.getItem('selected') === "random" || 
+            sessionStorage.getItem('selected') === null) {
             li.setAttribute("class", "songListItem selected");
         } else {
             li.setAttribute("class", "songListItem");
