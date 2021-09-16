@@ -55,29 +55,33 @@ BUJS.prototype.showSongListModal_ = function () {
     var songlistModal = $('#songlist-modal');
     var songlistContainer = songlistModal.find("#songlist-container");
     // create random selected element
-    var randomLi = document.createElement("li");
-    randomLi.setAttribute("class", "songListItem");
     var songFileNames = Object.keys(_this.songList_);
-    randomLi.setAttribute("songid", songFileNames[Math.floor(Math.random() * songFileNames.length)]);
+    var randomId = songFileNames[Math.floor(Math.random() * songFileNames.length)];
+    var randomLi = _this.setSongAttr_(randomId);
     randomLi.innerText = "Random (Normal)";
     randomLi.onclick = _this.songItemClick_;
     songlistContainer.append(randomLi);
     for (var id in _this.songList_) {
         // id is json filename
         var song = _this.songList_[id];
-        var li = document.createElement("li");
-        if (id === sessionStorage.getItem('selectedSong')) {
-            li.setAttribute("class", "songListItem selected");
-        } else {
-            li.setAttribute("class", "songListItem");
-        }
-        li.setAttribute("songid", id);
+        var li = _this.setSongAttr_(id);
         li.innerText =  song.singer + " " + song.name + " (" + song.slkauthor + ") " + Math.round(song.bpm) + " bpm";
         li.onclick = _this.songItemClick_;
         songlistContainer.append(li);
     }
     songlistModal.modal("show");
 };
+
+BUJS.prototype.setSongAttr_ = function(songId) {
+    var li = document.createElement("li");
+    if (songId === sessionStorage.getItem('selected')) {
+        li.setAttribute("class", "songListItem selected");
+    } else {
+        li.setAttribute("class", "songListItem");
+    }
+    li.setAttribute("songid", songId);
+    return li;
+}
 
 BUJS.prototype.loadTemplate_ = function (id) {
     var t = document.querySelector(id);
@@ -87,7 +91,7 @@ BUJS.prototype.loadTemplate_ = function (id) {
 
 BUJS.prototype.songItemClick_ = function () {
     var songId = this.getAttribute("songid");
-    sessionStorage.setItem("selectedSong", songId);
+    sessionStorage.setItem("selected", songId);
     bujs.game_ = new BUJS.Game_(songId);
     $('#songlist-modal').modal("hide");
 };

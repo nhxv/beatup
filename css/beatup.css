@@ -40,7 +40,8 @@ ul {
 
 .songListItem.selected {
     border-radius: .375rem;
-    border: 1px solid #3F3F46;
+    background-color: #18181B;
+    color: inherit;
 }
 
 .close {
