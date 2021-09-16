@@ -113,8 +113,8 @@ BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
 BUJS.prototype.loadMenuShortcut_ = function(selectedLi) {
     $(document).keydown(function (e) {
         if (e.which == '13') {
-            e.preventDefault();
-            $(selectedLi).click();
+            selectedLi.songItemClick_();
+            console.log('clicked pleaseee');
         }
     });
 }
