@@ -43,8 +43,6 @@ class Menu {
     }
 
     showSongList(songList) {
-        console.log('hey song list again');
-        console.log(songList);
         this.showLoadingMsg("");
         this.loadTemplate("#songlist-template");
         var songlistModal = $('#songlist-modal');
@@ -64,6 +62,8 @@ class Menu {
             li.setAttribute("class", "songListItem");
             li.setAttribute("songid", id);
             li.innerText = song.singer + " " + song.name + " (" + song.slkauthor + ") " + Math.round(song.bpm) + " bpm";
+            console.log("id: " + id);
+            console.log(songList);
             li.onclick = this.chooseSong(id, songList);
         }
         songlistModal.modal("show");
