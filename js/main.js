@@ -55,6 +55,11 @@ class Menu {
         randomLi.innerText = "Random (Normal)";
         randomLi.onclick = this.chooseSong();
         songlistContainer.append(randomLi);
+
+        console.log('before loop songList');
+        console.log(songList);
+        console.log('this this');
+        console.log(this.songList);
         for (var id of songList) {
             // id is json filename
             var song = this.songList[id];
@@ -62,16 +67,12 @@ class Menu {
             li.setAttribute("class", "songListItem");
             li.setAttribute("songid", id);
             li.innerText = song.singer + " " + song.name + " (" + song.slkauthor + ") " + Math.round(song.bpm) + " bpm";
-            console.log("id: " + id);
-            console.log(songList);
             li.onclick = this.chooseSong(id, songList);
         }
         songlistModal.modal("show");
     }
 
     chooseSong(id, songList) {
-        console.log(id);
-        console.log(songList);
         this.game = new Game(id, songList); // initialize game loading
         $('#songlist-modal').modal("hide");
     }
