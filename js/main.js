@@ -562,17 +562,59 @@ class Renderer {
             canvasWidth        : 980,
             canvasHeight       : 400
         };
-        console.log(cfg);
+
+        var sprites = {
+            background: ["bg/lafesta.jpg"],
+            dnxpLogo  : ["dnxp.png"],
+            laneDown  : ["lane7.png", "lane4.png", "lane1.png",
+                         "lane9.png", "lane6.png", "lane3.png"],
+            beatDown  : ["beatdown7.png", "beatdown4.png", "beatdown1.png",
+                          "beatdown9.png", "beatdown6.png", "beatdown3.png"],
+            tableL    : ["tableL.png"],
+            laneL     : ["laneL.png"],
+            landingL  : ["landingL.png"],
+            tableR    : ["tableR.png"],
+            laneR     : ["laneR.png"],
+            landingR  : ["landingR.png"],
+            spaceFrame: ["spaceframe.png"],
+            spaceFrameCursor  : ["spaceframecursor.png"],
+            spaceFrameExplode : ["spaceframeexplode.png"],
+            spaceExplode      : ["spaceframespaceexplode.png"],
+            arrowExplode      : ["arrowexplode.png"],
+            a7        : ["a71.png", "a72.png", "a73.png", "a74.png", "a75.png", "a76.png", "a77.png", "a78.png"],
+            a4        : ["a41.png", "a42.png", "a43.png", "a44.png", "a45.png", "a46.png", "a47.png", "a48.png"],
+            a1        : ["a11.png", "a12.png", "a13.png", "a14.png", "a15.png", "a16.png", "a17.png", "a18.png"],
+            a9        : ["a91.png", "a92.png", "a93.png", "a94.png", "a95.png", "a96.png", "a97.png", "a98.png"],
+            a6        : ["a61.png", "a62.png", "a63.png", "a64.png", "a65.png", "a66.png", "a67.png", "a68.png"],
+            a3        : ["a31.png", "a32.png", "a33.png", "a34.png", "a35.png", "a36.png", "a37.png", "a38.png"],
+            spaceFrameLetters             : ["spaceframeletterb.png", "spaceframelettere.png", "spaceframelettera.png",
+                                            "spaceframelettert.png", "spaceframeletteru.png", "spaceframeletterp.png"],
+            spaceFrameLetterGlowBlue      : ["spaceframeletterglowblue.png"],
+            spaceFrameLetterGlowYellow    : ["spaceframeletterglowyellow.png"],
+            spaceFrameGlowBlue            : ["spaceframeglowblue.png"],
+            spaceFrameGlowYellow         : ["spaceframeglowyellow.png"],
+            blueUp        : ["up1.png"],
+            yellowUp      : ["up.png"],
+            noteResults   : ["perfect.png", "great.png", "cool.png", "bad.png", "miss.png"],
+            delIcons      : ["del1.png", "del2.png"],
+            chanceIcons      : ["chance1.png", "chance2.png", "chance3.png", "chance4.png"],
+            c7        : ["c71.png"],
+            c4        : ["c41.png"],
+            c1        : ["c11.png"],
+            c9        : ["c91.png"],
+            c6        : ["c61.png"],
+            c3        : ["c31.png"]
+        };
 
         async.each(spriteInfo, (fileName, urlCallback) => {
             if (typeof fileName !== "string") return;
             // console.log("sprite", key, "fetching ", fileName);
             var img = new Image();
             img.onload = () => {
-                if (typeof this.sprites[key] === "undefined") {
-                    this.sprites[key] = [];
+                if (typeof sprites[key] === "undefined") {
+                    sprites[key] = [];
                 }
-                this.sprites[key][spriteInfo.indexOf(fileName)] = img;
+                sprites[key][spriteInfo.indexOf(fileName)] = img;
                 urlCallback();
             };
             img.src = cfg.imagePath + fileName;
