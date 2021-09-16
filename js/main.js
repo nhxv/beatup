@@ -527,8 +527,6 @@ class Renderer {
     }
 
     loadSprites() {
-        console.log('this first: ');
-        console.log(this);
         async.eachOf(this.sprites, this.loadSpritesForType.bind(this),
             (err) => {
                 if (err) {
@@ -554,33 +552,29 @@ class Renderer {
     * { noteResults   : ["perfect.png", "great.png", "cool.png", "bad.png", "miss.png"] },
     */
     loadSpritesForType(spriteInfo, key, callback) {
-        console.log('this second: ');
-        console.log(this);
-        console.log('load sprite');
-        // var _this = spriteInfo._this;
-        // async.each(spriteInfo, function (fileName, urlCallback) {
-        //     if (typeof fileName !== "string") return;
-        //     // console.log("sprite", key, "fetching ", fileName);
-        //     var img = new Image();
-        //     img.onload = function () {
-        //         if (typeof _this.sprites[key] === "undefined") {
-        //             _this.sprites[key] = [];
-        //         }
-        //         _this.sprites[key][spriteInfo.indexOf(fileName)] = img;
-        //         urlCallback();
-        //     };
-        //     img.src = _this.config.imagePath + fileName;
-        // },
-        // function (err) {
-        //     // loaded all images for one spriteInfo ok.
-        //     if (err) {
-        //         console.error("Meh. Error", err);
-        //     }
-        //     else {
-        //         console.log("Finished fetching images for object", key);
-        //         callback();
-        //     }
-        // });
+        async.each(spriteInfo, (fileName, urlCallback) => {
+            if (typeof fileName !== "string") return;
+            console.log("sprite", key, "fetching ", fileName);
+            var img = new Image();
+            img.onload = function () {
+                if (typeof this.sprites[key] === "undefined") {
+                    this.sprites[key] = [];
+                }
+                this.sprites[key][spriteInfo.indexOf(fileName)] = img;
+                urlCallback();
+            };
+            img.src = this.config.imagePath + fileName;
+        },
+        function (err) {
+            // loaded all images for one spriteInfo ok.
+            if (err) {
+                console.error("Meh. Error", err);
+            }
+            else {
+                console.log("Finished fetching images for object", key);
+                callback();
+            }
+        });
     }
 
     /**
