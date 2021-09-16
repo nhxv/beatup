@@ -101,6 +101,7 @@ BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
 }
 
 BUJS.prototype.loadMenuShortcut_ = function(songListContainer) {
+    console.log('load event...');
     document.addEventListener('keydown', (e) => {
         if (e.code === 13) { // enter
             console.log(songListContainer);
