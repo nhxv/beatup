@@ -44,6 +44,7 @@ class Game {
     }
 
     onFinishLoading(game) {
+        console.log('LOADING DONEEEEEE');
         this.input = new Input(game, renderer);
         this.gl(); 
     }

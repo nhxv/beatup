@@ -2,7 +2,7 @@
 
 class Menu {
     constructor() {
-        this.loadedComponentCount = 0; // want this to be 2
+        this.loadedComponentCount = 0; // TODO: fix this shit
         this.game = null;
         this.songList = null;
     }
@@ -99,7 +99,6 @@ class Menu {
     setLoadedComponentCount(isLoaded) {
         if (isLoaded) this.loadedComponentCount++;
         if (this.loadedComponentCount == 2) {
-            console.log("Finished loading renderer and sound");
             this.game.onFinishLoading();
             this.loadedComponentCount = 0;
         } 
