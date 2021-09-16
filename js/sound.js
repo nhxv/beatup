@@ -59,6 +59,7 @@ class Sound {
             this.context.decodeAudioData(request.response, (buffer) => {
                 this.musicStartTime = this.context.currentTime;
                 this.playSound(buffer);
+                console.log('SOUND DONE');
                 this.menu.setLoadedComponentCount(true);
             },
             (error) => {

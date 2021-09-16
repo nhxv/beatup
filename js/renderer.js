@@ -112,6 +112,7 @@ class Renderer {
                     var height = this.config.canvasHeight * this.config.scaleRatio;
                     canvas.width = width;
                     canvas.height = height;
+                    console.log('RENDER DONE');
                     this.menu.setLoadedComponentCount(true);
                 }
             });
