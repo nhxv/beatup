@@ -98,6 +98,9 @@ class Menu {
 
     setLoadedComponentCount(isLoaded) {
         if (isLoaded) this.loadedComponentCount++;
-        if (this.loadedComponentCount == 2) this.game.onFinishLoading();
+        if (this.loadedComponentCount == 2) {
+            this.game.onFinishLoading();
+            this.loadedComponentCount = 0;
+        } 
     }
 }

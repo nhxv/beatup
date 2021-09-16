@@ -45,7 +45,7 @@ class Game {
 
     onFinishLoading(game) {
         this.input = new Input(game, renderer);
-       this.gl(); 
+        this.gl(); 
     }
 
     gl() {this.loop();}
