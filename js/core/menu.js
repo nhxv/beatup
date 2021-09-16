@@ -105,7 +105,7 @@ BUJS.prototype.loadMenuShortcut_ = function(songListContainer) {
     $(document).keydown(function (e) {
         if (e.which == '13') {
             e.preventDefault();
-            console.log('press enter...');
+            console.log(songListContainer);
         }
     });
 }
