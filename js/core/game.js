@@ -108,7 +108,7 @@ BUJS.Game_.prototype.draw_ = function () {
     _this.renderer_.writeText_(posFps, fps.toFixed(1) + ' fps');
     
     // song time
-    _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ - 2}, Math.round(_this.music_.getCurrTime_() / 1000) );
+    _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ - 2}, _this.processSongTime_() );
 
     // song name
     _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ - 2 - 16}, _this.music_.songInfo_.name + " - " + _this.music_.songInfo_.singer + " (" + Math.round(_this.music_.songInfo_.bpm) + " bpm)");
@@ -129,6 +129,14 @@ BUJS.Game_.prototype.draw_ = function () {
     _this.renderer_.drawTable_();
     // _this.renderer_.drawTouchArrows_(); remove this method by toggle later
 };
+
+BUJS.Game_.prototype.processSongTime_ = function() {
+    var _this = this;
+    var time = Math.round(_this.music_.getCurrTime_() / 1000); // in second
+    var minutes = Math.floor(time / 60);
+    var seconds = time - minutes * 60;
+    return minutes + ':' + seconds;
+}
 
 /**
  * Update game status
