@@ -2,8 +2,8 @@ BUJS.Input_ = function () {
     var _this = this;
     $("body")[0].onkeydown = function (e) {
         var keyCode = e.keyCode;
-        if (keycode !== 116) e.preventDefault(); // avoid prevent F5
-        _this.checkKeyboard_(keyCode, e);
+        if (keyCode === 144) e.preventDefault(); // prevent numlock
+        _this.checkKeyboard_(keyCode);
     };
     var el = document.getElementsByTagName("canvas")[0];
     el.addEventListener("touchstart", function (e) {
@@ -39,37 +39,49 @@ BUJS.Input_.prototype.checkKeyboard_ = function (keyCode) {
         case 82:    // r
         case 103:   // numpad7
         case 36:    // home
-            if (!bujs.game_.autoplay_) _this.keyDown_(7);
+            if(!bujs.game_.autoplay_) {
+                _this.keyDown_(7);
+            } 
             break;
         case 52:    // 4
         case 70:    // f
         case 100:   // numpad4
         case 37:    // left
-            if (!bujs.game_.autoplay_) _this.keyDown_(4);
+            if(!bujs.game_.autoplay_) {
+                _this.keyDown_(4);
+            } 
             break;
         case 49:    // 1
         case 86:    // v
         case 97:    // numpad1
         case 35:    // en
-            if (!bujs.game_.autoplay_) _this.keyDown_(1);
+            if(!bujs.game_.autoplay_) {
+                _this.keyDown_(1);
+            }
             break;
         case 57:    // 9
         case 73:    // i
         case 105:   // numpad9
         case 33:    // pg up
-            if (!bujs.game_.autoplay_) _this.keyDown_(9);
+            if(!bujs.game_.autoplay_) {
+                _this.keyDown_(9);
+            }
             break;
         case 54:    // 6
         case 74:    // j
         case 102:   // numpad6
         case 39:    // right
-            if (!bujs.game_.autoplay_) _this.keyDown_(6);
+            if(!bujs.game_.autoplay_) {
+                _this.keyDown_(6);
+            }
             break;
         case 51:    // 3
         case 78:    // n
         case 99:    // numpad3
         case 34:    // pg dn
-            if (!bujs.game_.autoplay_) _this.keyDown_(3);
+            if(!bujs.game_.autoplay_) {
+                _this.keyDown_(3);
+            }
             break;
         case 17:    // ctrl
         case 48:    // 0
@@ -78,7 +90,9 @@ BUJS.Input_.prototype.checkKeyboard_ = function (keyCode) {
         case 71:    // b
         case 96:    // numpad0
         case 101:   // numpad5
-            if (!bujs.game_.autoplay_) _this.keyDown_(5);
+            if(!bujs.game_.autoplay_) {
+                _this.keyDown_(5);
+            }
             break;
 
     }
