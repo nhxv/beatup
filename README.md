@@ -10,6 +10,8 @@ https://nhxv.github.io/beatup
     - auto scroll to previous selected song
     - improve UI navigation (remove modal?)
     - fix note count bug in the song No Space
-    - autoplay
     - toggle background
-    - create note for music
+    - auto scroll to the end when in game
+    - prevent key default behavior when in game
+    - autoplay (dev mode)
+    - create note for music (dev mode)

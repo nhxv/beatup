@@ -2,7 +2,8 @@ BUJS.Input_ = function () {
     var _this = this;
     $("body")[0].onkeydown = function (e) {
         var keyCode = e.keyCode;
-        _this.checkKeyboard_(keyCode);
+        if (keycode !== 116) e.preventDefault(); // avoid prevent F5
+        _this.checkKeyboard_(keyCode, e);
     };
     var el = document.getElementsByTagName("canvas")[0];
     el.addEventListener("touchstart", function (e) {
