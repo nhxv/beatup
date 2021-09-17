@@ -66,6 +66,7 @@ BUJS.Music_.prototype.loadBackgroundMusic_ = function (url) {
                     _this.musicSource_.start(0);
                     if (typeof _this.onComponentFinishLoading_ !== 'undefined') {
                         _this.onComponentFinishLoading_.call(bujs.game_, _this);
+                        console.log('finish loading music...');
                     }
                 },
                 function (error) {
