@@ -8,7 +8,8 @@ Play here: https://nhxv.github.io/beatup
     - server for record (Firebase maybe?)
     - auto scroll to previous selected song
     - improve UI navigation (remove modal?)
-    - fix note count bug when double press (e.g No Space 138bpm) 
+    - fix note count bug when double press (e.g No Space 138bpm)
+    - key binding system 
     - toggle background
     - autoplay (dev mode)
     - create note for music (dev mode)

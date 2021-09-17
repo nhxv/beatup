@@ -84,7 +84,7 @@ BUJS.prototype.showSongListModal_ = function () {
     songlistModal.modal("show");
     
     // load menu shortcut
-    this.loadMenuShortcut_(selectedLi);
+    _this.loadMenuShortcut_(selectedLi);
 };
 
 BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
@@ -111,7 +111,7 @@ BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
 }
 
 /*
-** menu shortcut to quick start 
+** menu shortcut to quick start, load when menu is ready 
 */
 BUJS.prototype.loadMenuShortcut_ = function(selectedLi) {
     $(document).keydown(function (e) {

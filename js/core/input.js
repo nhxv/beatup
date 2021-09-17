@@ -93,6 +93,9 @@ BUJS.Input_.prototype.checkKeyboard_ = function (keyCode) {
                 _this.keyDown_(5);
             }
             break;
+        case 9:
+            $('#songlist-modal').modal("show");
+            break;    
 
     }
 };
