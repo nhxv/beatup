@@ -19,7 +19,7 @@ BUJS.prototype.start_ = function () {
     // open menu shortcut
     $(document).keydown(function (e) {
         if (e.which === 9) {
-            _this.loadSongList_(); // reload song list is very inefficient here
+            $("##songlist-modal").modal("show"); // have to set a new random
         }
     });
 
