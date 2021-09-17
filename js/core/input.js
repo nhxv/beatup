@@ -92,11 +92,7 @@ BUJS.Input_.prototype.checkKeyboard_ = function (keyCode) {
             if(!bujs.game_.autoplay_) {
                 _this.keyDown_(5);
             }
-            break;
-        case 9:
-            $('#songlist-modal').modal("show");
-            break;    
-
+            break;   
     }
 };
 
