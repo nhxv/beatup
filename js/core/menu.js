@@ -16,15 +16,6 @@ BUJS.prototype.start_ = function () {
         _this.loadSongList_();
     });
 
-    // open menu shortcut
-    $(document).keydown(function (e) {
-        if (e.which === 9) {
-            e.preventDefault();
-            _this.showSongListModal_();
-
-        }
-    });
-
     _this.iOS_ = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 };
 
@@ -99,7 +90,7 @@ BUJS.prototype.showSongListModal_ = function () {
     }
 
     songlistModal.modal("show");
-    _this.loadMenuShortcut_(selectedLi, isMenuEmpty);
+    _this.loadShortcutHandler_(selectedLi, isMenuEmpty);
 };
 
 BUJS.prototype.setSongAttr_ = function(songId) {
@@ -126,31 +117,40 @@ BUJS.prototype.setSongAttr_ = function(songId) {
 }
 
 /*
-** menu shortcut to quick start, load when menu is ready 
+** load shortcut handler to quick start, call when menu is ready 
 */
-BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
+BUJS.prototype.loadShortcutHandler_ = function(selectedLi, isMenuEmpty) {
     var _this = this;
-    var callBack = _this.quickStartSong_.bind(_this, selectedLi);
+    var f1 = _this.f1_.bind(_this, selectedLi);
     if (isMenuEmpty) {
-        $(document).on("keydown", callBack);
+        $(document).on("keydown", f1);
+        $(document).on("keydown", _this.tab_.bind(this));
     } else {
-        $(document).off();
-        console.log("document event all turn off");
-        $(document).keydown(function (e) {
-            if (e.which === 9) {
-                e.preventDefault();
-                _this.showSongListModal_();
-    
-            }
-        });
-        $(document).on("keydown", callBack);
+        $(document).off(); // turn off previous event handlers
+        $(document).on("keydown", _this.tab_.bind(this));
+        $(document).on("keydown", f1);
     }
 }
 
-BUJS.prototype.quickStartSong_ = function(selectedLi, e) {
+/*
+** quick start song by pressing F1/Enter
+*/
+BUJS.prototype.f1_ = function(selectedLi, e) {
     if (e.which === 13 || e.which === 112) { // F1 or Enter to start
         e.preventDefault();
         $(selectedLi).click();
+    }
+}
+
+/*
+** open menu by pressing tab
+*/
+BUJS.prototype.tab_ = function (e) {
+    var _this = this;
+    if (e.which === 9) {
+        e.preventDefault();
+        _this.showSongListModal_();
+
     }
 }
 
