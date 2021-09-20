@@ -129,16 +129,21 @@ BUJS.prototype.setSongAttr_ = function(songId) {
 ** menu shortcut to quick start, load when menu is ready 
 */
 BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
+    var _this = this;
     if (isMenuEmpty) {
-        $(document).on("keydown", function (e) {
-            if (e.which === 13 || e.which === 112) { // F1 or Enter to start
-                e.preventDefault();
-                $(selectedLi).click();
-            }
-        });
+        $(document).on("keydown", _this.quickStartSong_.bind(_this, selectedLi));
     } else {
-        console.log("When menu is not empty, selected item is: ");
-        console.log(selectedLi);
+        $(document).off("keydown", _this.quickStartSong_.bind(_this, selectedLi));
+        $(document).on("keydown", _this.quickStartSong_.bind(_this, selectedLi));
+    }
+}
+
+BUJS.prototype.quickStartSong_ = function(e, selectedLi) {
+    console.log("inside call back quickStartSong");
+    console.log(selectedLi);
+    if (e.which === 13 || e.which === 112) { // F1 or Enter to start
+        e.preventDefault();
+        $(selectedLi).click();
     }
 }
 
