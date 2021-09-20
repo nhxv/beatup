@@ -68,7 +68,7 @@ BUJS.Music_.prototype.loadBackgroundMusic_ = function (url) {
                         _this.onComponentFinishLoading_.call(bujs.game_, _this);
                     }
 
-                    _this.onStopSound_(buffer); // listen when to stop sound
+                    _this.onStopSound_(_this.musicSource_); // listen when to stop sound
                 },
                 function (error) {
                     console.error("Error decoding audio data", error);
@@ -88,15 +88,13 @@ BUJS.Music_.prototype.loadSound_ = function (buffer) {
     return source;
 };
 
-BUJS.Music_.prototype.onStopSound_ = function (buffer) {
-    var _this = this;
+BUJS.Music_.prototype.onStopSound_ = function (musicSource) {
      // open menu shortcut
      $(document).keydown(function (e) {
         if (e.which === 9) {
             e.preventDefault();
             $("#songlist-modal").modal("show"); // have to set a new random
-            _this.musicSource_ = _this.loadSound_(buffer);
-            _this.musicSource_.stop(0);
+            musicSource.stop(0);
             console.log("stop success??");
         }
     });
