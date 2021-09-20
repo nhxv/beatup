@@ -130,17 +130,15 @@ BUJS.prototype.setSongAttr_ = function(songId) {
 BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
     if (!isMenuEmpty) {
         console.log("Menu is not empty");
-        $(document).off("keydown");
     } else {
         console.log("menu is empty. first time load event");
+        $(document).on("keydown", function (e) {
+            if (e.which === 13 || e.which === 112) { // F1 or Enter to start
+                e.preventDefault();
+                $(selectedLi).click();
+            }
+        });
     }
-
-    $(document).on("keydown", function (e) {
-        if (e.which === 13 || e.which === 112) { // F1 or Enter to start
-            e.preventDefault();
-            $(selectedLi).click();
-        }
-    });
 }
 
 BUJS.prototype.loadTemplate_ = function (id) {
