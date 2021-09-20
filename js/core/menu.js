@@ -99,6 +99,9 @@ BUJS.prototype.showSongListModal_ = function () {
     }
 
     songlistModal.modal("show");
+    
+    console.log("previous selected item: ");
+    console.log(selectedLi);
     _this.loadMenuShortcut_(selectedLi, isMenuEmpty);
 };
 
