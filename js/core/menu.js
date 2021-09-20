@@ -130,11 +130,14 @@ BUJS.prototype.setSongAttr_ = function(songId) {
 */
 BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
     var _this = this;
+    var callBack = _this.quickStartSong_.bind(_this, selectedLi);
     if (isMenuEmpty) {
-        $(document).on("keydown", _this.quickStartSong_.bind(_this, selectedLi));
+        $(document).on("keydown", callBack);
     } else {
-        $(document).off("keydown", _this.quickStartSong_.bind(_this, selectedLi));
-        $(document).on("keydown", _this.quickStartSong_.bind(_this, selectedLi));
+        $(document).off("keydown", callBack);
+        console.log("delete old listener");
+        $(document).on("keydown", callBack);
+        console.log("create new listener");
     }
 }
 
