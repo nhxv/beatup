@@ -99,9 +99,6 @@ BUJS.prototype.showSongListModal_ = function () {
     }
 
     songlistModal.modal("show");
-    
-    console.log("previous selected item: ");
-    console.log(selectedLi);
     _this.loadMenuShortcut_(selectedLi, isMenuEmpty);
 };
 
@@ -113,7 +110,6 @@ BUJS.prototype.setSongAttr_ = function(songId) {
         if (sessionStorage.getItem('selected') === "random" || 
             sessionStorage.getItem('selected') === null) {
             li.setAttribute("class", "songListItem selected");
-            console.log("previous selected: " + songId);
         } else {
             li.setAttribute("class", "songListItem");
         }
@@ -122,7 +118,6 @@ BUJS.prototype.setSongAttr_ = function(songId) {
 
     if (songId === sessionStorage.getItem('selected')) {
         li.setAttribute("class", "songListItem selected");
-        console.log("previous selected: " + songId);
     } else {
         li.setAttribute("class", "songListItem");
     }
@@ -141,6 +136,9 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
                 $(selectedLi).click();
             }
         });
+    } else {
+        console.log("When menu is not empty, selected item is: ");
+        console.log(selectedLi);
     }
 }
 
