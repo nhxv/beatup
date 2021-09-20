@@ -134,10 +134,7 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
     if (isMenuEmpty) {
         $(document).on("keydown", callBack);
     } else {
-        $(document).off("keydown", callBack);
-        console.log("delete old listener");
-        $(document).on("keydown", callBack);
-        console.log("create new listener");
+        console.log("TODO...");
     }
 }
 
