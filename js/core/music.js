@@ -97,6 +97,7 @@ BUJS.Music_.prototype.onStopSound_ = function (buffer) {
             $("#songlist-modal").modal("show"); // have to set a new random
             _this.musicSource_ = _this.loadSound_(buffer);
             _this.musicSource_.stop(0);
+            console.log("stop success??");
         }
     });
     
