@@ -134,15 +134,12 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
     if (isMenuEmpty) {
         $(document).on("keydown", callBack);
     } else {
-        _this.quickStartSong_(selectedLi);
+        $(document).off("keydown", callBack);
+        console.log("F1/Enter not allowed");
     }
 }
 
 BUJS.prototype.quickStartSong_ = function(selectedLi, e) {
-    console.log("item: ");
-    console.log(selectedLi);
-    console.log("event: ");
-    console.log(e);
     if (e.which === 13 || e.which === 112) { // F1 or Enter to start
         e.preventDefault();
         $(selectedLi).click();
