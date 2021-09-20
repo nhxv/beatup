@@ -98,10 +98,7 @@ BUJS.prototype.showSongListModal_ = function () {
     }
     songlistModal.modal("show");
 
-    if (isMenuEmpty) {
-        // load menu shortcut listener if menu is empty (first load)
-        _this.loadMenuShortcut_(selectedLi);
-    }
+    _this.loadMenuShortcut_(selectedLi, isMenuEmpty);
 };
 
 BUJS.prototype.setSongAttr_ = function(songId) {
@@ -130,8 +127,13 @@ BUJS.prototype.setSongAttr_ = function(songId) {
 /*
 ** menu shortcut to quick start, load when menu is ready 
 */
-BUJS.prototype.loadMenuShortcut_ = function(selectedLi) {
-    $(document).keydown(function (e) {
+BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
+    if (!isMenuEmpty) {
+        console.log("Menu is not empty");
+        $(document).off("keydown");
+    }
+
+    $(document).on("keydown", function (e) {
         if (e.which === 13 || e.which === 112) { // F1 or Enter to start
             e.preventDefault();
             $(selectedLi).click();
