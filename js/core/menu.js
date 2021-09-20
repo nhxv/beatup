@@ -126,9 +126,7 @@ BUJS.prototype.loadTemplate_ = function (id) {
 };
 
 BUJS.prototype.songItemClick_ = function () {
-    // var songFileNames = Object.keys(_this.songList_);
-    // var randomId = songFileNames[Math.floor(Math.random() * songFileNames.length)];
-
+    var _this = this;
     var songId = this.getAttribute("songid");
 
     if (songId === "random") {
