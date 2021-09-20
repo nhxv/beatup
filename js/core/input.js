@@ -1,8 +1,7 @@
 BUJS.Input_ = function () {
     var _this = this;
     $("body")[0].onkeydown = function (e) {
-        var keyCode = e.keyCode;
-        _this.checkKeyboard_(keyCode);
+        _this.checkKeyboard_(e);
     };
     var el = document.getElementsByTagName("canvas")[0];
     el.addEventListener("touchstart", function (e) {
@@ -15,9 +14,9 @@ BUJS.Input_ = function () {
     }
 };
 
-BUJS.Input_.prototype.checkKeyboard_ = function (keyCode) {
+BUJS.Input_.prototype.checkKeyboard_ = function (e) {
     var _this = this;
-    switch (keyCode) {
+    switch (e.which) {
             // open menu shortcut
         case 9: 
             e.preventDefault();
