@@ -135,9 +135,14 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
         $(document).on("keydown", callBack);
     } else {
         $(document).off();
-        console.log("F1/Enter not allowed");
         $(document).on("keydown", callBack);
-        console.log("Allow again");
+        $(document).keydown(function (e) {
+            if (e.which === 9) {
+                e.preventDefault();
+                _this.showSongListModal_();
+    
+            }
+        });
     }
 }
 
