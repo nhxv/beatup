@@ -134,7 +134,7 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
     if (isMenuEmpty) {
         $(document).on("keydown", callBack);
     } else {
-        _this.quickStartSong_(selectedLi, e);
+        _this.quickStartSong_(selectedLi);
     }
 }
 
