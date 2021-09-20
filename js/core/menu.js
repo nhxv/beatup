@@ -68,8 +68,8 @@ BUJS.prototype.showSongListModal_ = function () {
     var selectedLi = _this.songItemClick_.bind(this, selectedLi);
 
     var isMenuEmpty = true;
-    console.log("First child: ");
-    console.log($("#songlist-container").firstChild);
+    console.log("Container: ");
+    console.log($("#songlist-container"));
 
     // remove all child element of songlistContainer if exists
     if ($("#songlist-container").firstChild) {
