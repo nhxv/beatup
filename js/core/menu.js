@@ -68,7 +68,7 @@ BUJS.prototype.showSongListModal_ = function () {
     var selectedLi = _this.songItemClick_.bind(this, selectedLi);
 
     // remove all child element of songlistContainer if exists
-    if ($("#songlist-container").hasChildNodes()) {
+    if ($("#songlist-container").firstChild) {
         $('#songlist-container').empty();
     } else {
         // load menu shortcut listener
