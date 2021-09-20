@@ -27,7 +27,6 @@ BUJS.Music_ = function (onComponentFinishLoading_) {
     });
 
     _this.parse_("notes/" + bujs.game_.songId_ + ".json");
-    _this.onStopSound_(); // listen when stop sound
 };
 
 /**
@@ -68,6 +67,8 @@ BUJS.Music_.prototype.loadBackgroundMusic_ = function (url) {
                     if (typeof _this.onComponentFinishLoading_ !== 'undefined') {
                         _this.onComponentFinishLoading_.call(bujs.game_, _this);
                     }
+
+                    _this.onStopSound_(buffer); // listen when to stop sound
                 },
                 function (error) {
                     console.error("Error decoding audio data", error);
@@ -87,12 +88,11 @@ BUJS.Music_.prototype.loadSound_ = function (buffer) {
     return source;
 };
 
-BUJS.Music_.prototype.onStopSound_ = function () {
+BUJS.Music_.prototype.onStopSound_ = function (buffer) {
     var _this = this;
      // open menu shortcut
      $(document).keydown(function (e) {
         if (e.which === 9) {
-            console.log('stopping sound...');
             e.preventDefault();
             $("#songlist-modal").modal("show"); // have to set a new random
             _this.musicSource_ = _this.loadSound_(buffer);
