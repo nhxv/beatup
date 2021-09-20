@@ -63,6 +63,8 @@ BUJS.prototype.showSongListModal_ = function () {
     _this.loadTemplate_("#songlist-template");
     var songlistModal = $('#songlist-modal');
     var songlistContainer = songlistModal.find("#songlist-container");
+    console.log(songlistContainer);
+    // remove all child element of songlistContainer
 
     // previously selected element; default to random if nothing else is selected
     var selectedLi = _this.songItemClick_;
@@ -96,12 +98,11 @@ BUJS.prototype.showSongListModal_ = function () {
 
 BUJS.prototype.setSongAttr_ = function(songId) {
     var li = document.createElement("li");
-    
+
     if (songId === "random") {
         li.setAttribute("songid", songId);
         if (sessionStorage.getItem('selected') === "random" || 
             sessionStorage.getItem('selected') === null) {
-            console.log("previous selected song is random");
             li.setAttribute("class", "songListItem selected");
         } else {
             li.setAttribute("class", "songListItem");
@@ -110,7 +111,6 @@ BUJS.prototype.setSongAttr_ = function(songId) {
     }
 
     if (songId === sessionStorage.getItem('selected')) {
-        console.log("previous selected song is " + songId);
         li.setAttribute("class", "songListItem selected");
     } else {
         li.setAttribute("class", "songListItem");
