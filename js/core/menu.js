@@ -64,7 +64,9 @@ BUJS.prototype.showSongListModal_ = function () {
     var songlistModal = $('#songlist-modal');
     var songlistContainer = songlistModal.find("#songlist-container");
     console.log(songlistContainer);
+
     // remove all child element of songlistContainer
+    $('#songlist-container').empty();
 
     // previously selected element; default to random if nothing else is selected
     var selectedLi = _this.songItemClick_;
