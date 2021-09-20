@@ -67,12 +67,12 @@ BUJS.prototype.showSongListModal_ = function () {
     // previously selected element; default to random if nothing else is selected
     var selectedLi = _this.songItemClick_.bind(this, selectedLi);
 
+    var isMenuEmpty = true;
+
     // remove all child element of songlistContainer if exists
     if ($("#songlist-container").firstChild) {
+        isMenuEmpty = false;
         $('#songlist-container').empty();
-    } else {
-        // load menu shortcut listener
-        _this.loadMenuShortcut_(selectedLi);
     }
 
     // create random selected choice
@@ -97,6 +97,11 @@ BUJS.prototype.showSongListModal_ = function () {
         songlistContainer.append(li);
     }
     songlistModal.modal("show");
+
+    if (isEmpty) {
+        // load menu shortcut listener if menu is empty (first load)
+        _this.loadMenuShortcut_(selectedLi);
+    }
 };
 
 BUJS.prototype.setSongAttr_ = function(songId) {
