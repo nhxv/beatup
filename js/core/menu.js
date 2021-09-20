@@ -68,13 +68,11 @@ BUJS.prototype.showSongListModal_ = function () {
     var selectedLi = _this.songItemClick_.bind(this, selectedLi);
 
     var isMenuEmpty = true;
-    console.log("First child: ");
-    console.log(songlistContainer[0].firstChild);
 
     // remove all child element of songlistContainer if exists
     if (songlistContainer[0].firstChild) {
         isMenuEmpty = false;
-        songlistContainer[0].empty();
+        songlistContainer[0].innerHTML = "";
     }
 
     // create random selected choice
