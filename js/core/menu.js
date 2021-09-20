@@ -64,7 +64,7 @@ BUJS.prototype.showSongListModal_ = function () {
         selectedLi = randomLi;
     }
     randomLi.innerText = "Random (Normal)";
-    randomLi.onclick = _this.songItemClick_;
+    randomLi.onclick = _this.songItemClick_.bind(this);
     songlistContainer.append(randomLi);
 
     // create song list
@@ -76,7 +76,7 @@ BUJS.prototype.showSongListModal_ = function () {
             selectedLi = li;
         }
         li.innerText =  song.singer + " " + song.name + " (" + song.slkauthor + ") " + Math.round(song.bpm) + " bpm";
-        li.onclick = _this.songItemClick_;
+        li.onclick = _this.songItemClick_.bind(this);
         songlistContainer.append(li);
     }
     songlistModal.modal("show");
