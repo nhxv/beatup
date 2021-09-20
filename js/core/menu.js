@@ -134,7 +134,7 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
     if (isMenuEmpty) {
         $(document).on("keydown", callBack);
     } else {
-        $(document).off("keydown", callBack);
+        $(document).off();
         console.log("F1/Enter not allowed");
     }
 }
