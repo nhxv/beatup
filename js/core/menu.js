@@ -68,7 +68,7 @@ BUJS.prototype.showSongListModal_ = function () {
     var selectedLi = _this.songItemClick_;
 
     // create random selected choice
-    var randomLi = _this.setSongAttr_("random", true);
+    var randomLi = _this.setSongAttr_("random");
     if (randomLi.classList.contains('selected')) {
         selectedLi = randomLi;
     }
@@ -96,10 +96,12 @@ BUJS.prototype.showSongListModal_ = function () {
 
 BUJS.prototype.setSongAttr_ = function(songId) {
     var li = document.createElement("li");
+    
     if (songId === "random") {
         li.setAttribute("songid", songId);
         if (sessionStorage.getItem('selected') === "random" || 
             sessionStorage.getItem('selected') === null) {
+            console.log("previous selected song is random");
             li.setAttribute("class", "songListItem selected");
         } else {
             li.setAttribute("class", "songListItem");
@@ -108,6 +110,7 @@ BUJS.prototype.setSongAttr_ = function(songId) {
     }
 
     if (songId === sessionStorage.getItem('selected')) {
+        console.log("previous selected song is " + songId);
         li.setAttribute("class", "songListItem selected");
     } else {
         li.setAttribute("class", "songListItem");
