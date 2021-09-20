@@ -69,7 +69,7 @@ BUJS.prototype.showSongListModal_ = function () {
 
     var isMenuEmpty = true;
     console.log("Container: ");
-    console.log($("#songlist-container"));
+    console.log(songlistContainer);
 
     // remove all child element of songlistContainer if exists
     if ($("#songlist-container").firstChild) {
