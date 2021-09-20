@@ -16,14 +16,6 @@ BUJS.prototype.start_ = function () {
         _this.loadSongList_();
     });
 
-    // open menu shortcut
-    $(document).keydown(function (e) {
-        if (e.which === 9) {
-            e.preventDefault();
-            $("#songlist-modal").modal("show"); // have to set a new random
-        }
-    });
-
     _this.iOS_ = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 };
 

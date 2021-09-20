@@ -87,6 +87,13 @@ BUJS.Music_.prototype.loadSound_ = function (buffer) {
     return source;
 };
 
+BUJS.Music_.prototype.stopSound_ = function () {
+    var _this = this;
+    _this.musicSource_ = _this.loadSound_(buffer);
+    _this.musicSource_.stop(0);
+    
+}
+
 /**
  * Load a sound then play it
  */
