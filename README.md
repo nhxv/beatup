@@ -1,9 +1,6 @@
 # Beat Up
 Play here: https://nhxv.github.io/beatup
 
-# todo
-    - regenerate random when open menu
-
 ## (wishful) features
 
     - screenshot shortcut

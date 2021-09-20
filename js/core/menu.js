@@ -20,7 +20,8 @@ BUJS.prototype.start_ = function () {
     $(document).keydown(function (e) {
         if (e.which === 9) {
             e.preventDefault();
-            $("#songlist-modal").modal("show");
+            _this.showSongListModal_();
+
         }
     });
 
