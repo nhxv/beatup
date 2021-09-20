@@ -132,7 +132,8 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
         $(document).on("keydown", function (e) {
             if (e.which === 13 || e.which === 112) { // F1 or Enter to start
                 e.preventDefault();
-                console.log("song select with F1/Enter: " + selectedLi);
+                console.log("song select with F1/Enter: ");
+                console.log(selectedLi);
                 $(selectedLi).click();
             }
         });
