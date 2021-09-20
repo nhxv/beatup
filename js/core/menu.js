@@ -128,13 +128,11 @@ BUJS.prototype.setSongAttr_ = function(songId) {
 ** menu shortcut to quick start, load when menu is ready 
 */
 BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
-    if (!isMenuEmpty) {
-        console.log("Menu is not empty");
-    } else {
-        console.log("menu is empty. first time load event");
+    if (isMenuEmpty) {
         $(document).on("keydown", function (e) {
             if (e.which === 13 || e.which === 112) { // F1 or Enter to start
                 e.preventDefault();
+                console.log("song select with F1/Enter: " + selectedLi);
                 $(selectedLi).click();
             }
         });
