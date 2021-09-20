@@ -76,7 +76,7 @@ BUJS.prototype.showSongListModal_ = function () {
             selectedLi = li;
         }
         li.innerText =  song.singer + " " + song.name + " (" + song.slkauthor + ") " + Math.round(song.bpm) + " bpm";
-        li.onclick = _this.songItemClick_.bind(this);
+        li.onclick = _this.songItemClick_.bind(this, li);
         songlistContainer.append(li);
     }
     songlistModal.modal("show");
@@ -125,10 +125,10 @@ BUJS.prototype.loadTemplate_ = function (id) {
     document.body.appendChild(clone);
 };
 
-BUJS.prototype.songItemClick_ = function (that, randomLi) {
-    console.log('that: ' + that);
-    var _this = that;
-    var songId = randomLi.getAttribute("songid");
+BUJS.prototype.songItemClick_ = function (li) {
+    console.log("context: ");
+    console.log(this);
+    var songId = li.getAttribute("songid");
 
     if (songId === "random") {
         sessionStorage.setItem("selected", "random"); // store selected value
