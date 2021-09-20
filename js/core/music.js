@@ -89,11 +89,9 @@ BUJS.Music_.prototype.loadSound_ = function (buffer) {
 };
 
 BUJS.Music_.prototype.onStopSound_ = function (musicSource) {
-     // open menu shortcut
+     // stop song when open menu shortcut
      $(document).keydown(function (e) {
         if (e.which === 9) {
-            e.preventDefault();
-            $("#songlist-modal").modal("show"); // have to set a new random
             musicSource.stop(0);
         }
     });

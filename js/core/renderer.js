@@ -8,6 +8,7 @@
     _this.setupConfig_();
     _this.setupSpriteInfo_();
     _this.setupSpriteConsts_();
+    _this.onClear_();
 };
 
 /**
@@ -175,6 +176,15 @@ BUJS.Renderer_.prototype.clear_ = function () {
     _this.ctx_.fillStyle = "black";
     _this.ctx_.clearRect(0, 0, _this.config_.canvasWidth_, _this.config_.canvasHeight_);
 };
+
+BUJS.Renderer_.prototype.onClear_ = function() {
+    var _this = this;
+    $(document).keydown(function (e) {
+        if (e.which === 9) {
+            _this.clear_();
+        }
+    });
+}
 
 /**
  * A wrapper to write some text on canvas
