@@ -98,7 +98,7 @@ BUJS.prototype.showSongListModal_ = function () {
     }
     songlistModal.modal("show");
 
-    if (isEmpty) {
+    if (isMenuEmpty) {
         // load menu shortcut listener if menu is empty (first load)
         _this.loadMenuShortcut_(selectedLi);
     }
