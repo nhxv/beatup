@@ -66,7 +66,6 @@ BUJS.Music_.prototype.loadBackgroundMusic_ = function (url) {
                     _this.musicSource_.start(0);
                     if (typeof _this.onComponentFinishLoading_ !== 'undefined') {
                         _this.onComponentFinishLoading_.call(bujs.game_, _this);
-                        console.log('finish loading music...');
                     }
                 },
                 function (error) {
@@ -89,8 +88,16 @@ BUJS.Music_.prototype.loadSound_ = function (buffer) {
 
 BUJS.Music_.prototype.stopSound_ = function () {
     var _this = this;
-    _this.musicSource_ = _this.loadSound_(buffer);
-    _this.musicSource_.stop(0);
+     // open menu shortcut
+     $(document).keydown(function (e) {
+        if (e.which === 9) {
+            console.log('stopping sound...');
+            e.preventDefault();
+            $("#songlist-modal").modal("show"); // have to set a new random
+            _this.musicSource_ = _this.loadSound_(buffer);
+            _this.musicSource_.stop(0);
+        }
+    });
     
 }
 

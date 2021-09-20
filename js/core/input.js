@@ -17,13 +17,6 @@ BUJS.Input_ = function () {
 BUJS.Input_.prototype.checkKeyboard_ = function (e) {
     var _this = this;
     switch (e.which) {
-            // open menu shortcut
-        case 9: 
-            e.preventDefault();
-            $('#songlist-modal').modal("show");
-            bujs.music_.stopSound();
-            console.log("open menu, stop sound!");
-            break;
         case 112:   // f1: toggle help
             bujs.game_.showHelp_ = !bujs.game_.showHelp_;
             break;
