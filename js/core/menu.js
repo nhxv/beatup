@@ -134,11 +134,15 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
     if (isMenuEmpty) {
         $(document).on("keydown", callBack);
     } else {
-        console.log("TODO...");
+        _this.quickStartSong_(selectedLi, e);
     }
 }
 
 BUJS.prototype.quickStartSong_ = function(selectedLi, e) {
+    console.log("item: ");
+    console.log(selectedLi);
+    console.log("event: ");
+    console.log(e);
     if (e.which === 13 || e.which === 112) { // F1 or Enter to start
         e.preventDefault();
         $(selectedLi).click();
