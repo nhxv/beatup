@@ -65,8 +65,7 @@ BUJS.prototype.showSongListModal_ = function () {
     var songlistContainer = songlistModal.find("#songlist-container");
 
     // previously selected element; default to random if nothing else is selected
-    var selectedLi = _this.songItemClick_.bind(this, selectedLi);
-
+    var selectedLi = null;
     var isMenuEmpty = true;
 
     // remove all child element of songlistContainer if exists
@@ -77,27 +76,29 @@ BUJS.prototype.showSongListModal_ = function () {
 
     // create random selected choice
     var randomLi = _this.setSongAttr_("random");
-    if (randomLi.classList.contains('selected')) {
-        selectedLi = randomLi;
-    }
     randomLi.innerText = "Random (Normal)";
     randomLi.onclick = _this.songItemClick_.bind(this, randomLi);
     songlistContainer.append(randomLi);
+
+    if (randomLi.classList.contains('selected')) {
+        selectedLi = randomLi;
+    }
 
     // create song list
     for (var id in _this.songList_) {
         // id is json filename
         var song = _this.songList_[id];
         var li = _this.setSongAttr_(id, false);
-        if (li.classList.contains('selected')) {
-            selectedLi = li;
-        }
         li.innerText =  song.singer + " " + song.name + " (" + song.slkauthor + ") " + Math.round(song.bpm) + " bpm";
         li.onclick = _this.songItemClick_.bind(this, li);
         songlistContainer.append(li);
-    }
-    songlistModal.modal("show");
 
+        if (li.classList.contains('selected')) {
+            selectedLi = li;
+        }
+    }
+
+    songlistModal.modal("show");
     _this.loadMenuShortcut_(selectedLi, isMenuEmpty);
 };
 
@@ -132,8 +133,6 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
         $(document).on("keydown", function (e) {
             if (e.which === 13 || e.which === 112) { // F1 or Enter to start
                 e.preventDefault();
-                console.log("song select with F1/Enter: ");
-                console.log(selectedLi);
                 $(selectedLi).click();
             }
         });
