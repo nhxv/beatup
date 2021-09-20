@@ -110,6 +110,7 @@ BUJS.prototype.setSongAttr_ = function(songId) {
         if (sessionStorage.getItem('selected') === "random" || 
             sessionStorage.getItem('selected') === null) {
             li.setAttribute("class", "songListItem selected");
+            console.log("previous selected: " + songId);
         } else {
             li.setAttribute("class", "songListItem");
         }
@@ -118,6 +119,7 @@ BUJS.prototype.setSongAttr_ = function(songId) {
 
     if (songId === sessionStorage.getItem('selected')) {
         li.setAttribute("class", "songListItem selected");
+        console.log("previous selected: " + songId);
     } else {
         li.setAttribute("class", "songListItem");
     }
