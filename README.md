@@ -10,5 +10,6 @@ Play here: https://nhxv.github.io/beatup
     - fix note count bug when double press (e.g No Space 138bpm)
     - key binding system 
     - toggle background
+    - optimize loading
     - autoplay (dev mode)
     - create note for music (dev mode)
