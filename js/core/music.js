@@ -95,7 +95,6 @@ BUJS.Music_.prototype.onStopSound_ = function (musicSource) {
             e.preventDefault();
             $("#songlist-modal").modal("show"); // have to set a new random
             musicSource.stop(0);
-            console.log("stop success??");
         }
     });
     

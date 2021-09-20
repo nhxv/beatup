@@ -1,13 +1,15 @@
 # Beat Up
 Play here: https://nhxv.github.io/beatup
 
+# todo
+    - regenerate random when open menu
+
 ## (wishful) features
 
     - screenshot shortcut
     - volume adjustment for notes and musics
     - server for record (Firebase maybe?)
     - auto scroll to previous selected song
-    - improve UI navigation (remove modal?)
     - fix note count bug when double press (e.g No Space 138bpm)
     - key binding system 
     - toggle background
