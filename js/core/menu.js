@@ -64,7 +64,7 @@ BUJS.prototype.showSongListModal_ = function () {
         selectedLi = randomLi;
     }
     randomLi.innerText = "Random (Normal)";
-    randomLi.onclick = _this.songItemClick_.bind(this);
+    randomLi.onclick = _this.songItemClick_.bind(this, randomLi);
     songlistContainer.append(randomLi);
 
     // create song list
@@ -125,9 +125,10 @@ BUJS.prototype.loadTemplate_ = function (id) {
     document.body.appendChild(clone);
 };
 
-BUJS.prototype.songItemClick_ = function () {
-    var _this = this;
-    var songId = this.getAttribute("songid");
+BUJS.prototype.songItemClick_ = function (that, randomLi) {
+    console.log('that: ' + that);
+    var _this = that;
+    var songId = randomLi.getAttribute("songid");
 
     if (songId === "random") {
         sessionStorage.setItem("selected", "random"); // store selected value
