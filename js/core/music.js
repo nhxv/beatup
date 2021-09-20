@@ -27,6 +27,7 @@ BUJS.Music_ = function (onComponentFinishLoading_) {
     });
 
     _this.parse_("notes/" + bujs.game_.songId_ + ".json");
+    _this.onStopSound_(); // listen when stop sound
 };
 
 /**
@@ -86,7 +87,7 @@ BUJS.Music_.prototype.loadSound_ = function (buffer) {
     return source;
 };
 
-BUJS.Music_.prototype.stopSound_ = function () {
+BUJS.Music_.prototype.onStopSound_ = function () {
     var _this = this;
      // open menu shortcut
      $(document).keydown(function (e) {
