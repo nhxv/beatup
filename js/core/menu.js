@@ -38,6 +38,9 @@ BUJS.prototype.showLoadingMsg_ = function (msg) {
     ctx.fillText(msg, width / 2, height / 2);
 };
 
+/*
+** get song list from list.json
+*/
 BUJS.prototype.loadSongList_ = function () {
     var _this = this;
     _this.showLoadingMsg_("Loading songs");
@@ -48,6 +51,9 @@ BUJS.prototype.loadSongList_ = function () {
     });
 };
 
+/*
+** load song list to modal
+*/
 BUJS.prototype.showSongListModal_ = function () {
     var _this = this;
     _this.showLoadingMsg_("");
@@ -93,6 +99,9 @@ BUJS.prototype.showSongListModal_ = function () {
     _this.loadShortcutHandler_(selectedLi, isMenuEmpty);
 };
 
+/* 
+** store selected song to session, load song audio file based on songId attr
+*/
 BUJS.prototype.setSongAttr_ = function(songId) {
     var li = document.createElement("li");
 
@@ -133,7 +142,7 @@ BUJS.prototype.loadShortcutHandler_ = function(selectedLi, isMenuEmpty) {
 }
 
 /*
-** quick start song by pressing F1/Enter
+** start game by pressing F1/Enter
 */
 BUJS.prototype.f1_ = function(selectedLi, e) {
     if (e.which === 13 || e.which === 112) { // F1 or Enter to start
