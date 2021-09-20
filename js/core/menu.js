@@ -68,7 +68,7 @@ BUJS.prototype.showSongListModal_ = function () {
     $('#songlist-container').empty();
 
     // previously selected element; default to random if nothing else is selected
-    var selectedLi = _this.songItemClick_;
+    var selectedLi = _this.songItemClick_.bind(this, selectedLi);
 
     // create random selected choice
     var randomLi = _this.setSongAttr_("random");
