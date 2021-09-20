@@ -131,6 +131,8 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
     if (!isMenuEmpty) {
         console.log("Menu is not empty");
         $(document).off("keydown");
+    } else {
+        console.log("menu is empty. first time load event");
     }
 
     $(document).on("keydown", function (e) {
