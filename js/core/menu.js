@@ -140,6 +140,7 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
 
 BUJS.prototype.quickStartSong_ = function(e, selectedLi) {
     console.log("inside call back quickStartSong");
+    console.log(e);
     console.log(selectedLi);
     if (e.which === 13 || e.which === 112) { // F1 or Enter to start
         e.preventDefault();
