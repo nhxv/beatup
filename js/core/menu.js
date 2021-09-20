@@ -59,9 +59,7 @@ BUJS.prototype.showSongListModal_ = function () {
     var selectedLi = _this.songItemClick_;
 
     // create random selected choice
-    var songFileNames = Object.keys(_this.songList_);
-    var randomId = songFileNames[Math.floor(Math.random() * songFileNames.length)];
-    var randomLi = _this.setSongAttr_(randomId, true);
+    var randomLi = _this.setSongAttr_("random", true);
     if (randomLi.classList.contains('selected')) {
         selectedLi = randomLi;
     }
@@ -87,10 +85,9 @@ BUJS.prototype.showSongListModal_ = function () {
     _this.loadMenuShortcut_(selectedLi);
 };
 
-BUJS.prototype.setSongAttr_ = function(songId, isRandom) {
+BUJS.prototype.setSongAttr_ = function(songId) {
     var li = document.createElement("li");
-    if (isRandom) {
-        li.setAttribute("choice", "random");
+    if (songId === "random") {
         li.setAttribute("songid", songId);
         if (sessionStorage.getItem('selected') === "random" || 
             sessionStorage.getItem('selected') === null) {
@@ -129,9 +126,15 @@ BUJS.prototype.loadTemplate_ = function (id) {
 };
 
 BUJS.prototype.songItemClick_ = function () {
+    // var songFileNames = Object.keys(_this.songList_);
+    // var randomId = songFileNames[Math.floor(Math.random() * songFileNames.length)];
+
     var songId = this.getAttribute("songid");
-    if (this.getAttribute("choice") === "random") {
-        sessionStorage.setItem("selected", "random");
+
+    if (songId === "random") {
+        sessionStorage.setItem("selected", "random"); // store selected value
+        var songFileNames = Object.keys(_this.songList_);
+        songId = songFileNames[Math.floor(Math.random() * songFileNames.length)]; // generate songId when click
     } else {
         sessionStorage.setItem("selected", songId);
     }
