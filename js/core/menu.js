@@ -63,7 +63,6 @@ BUJS.prototype.showSongListModal_ = function () {
     _this.loadTemplate_("#songlist-template");
     var songlistModal = $('#songlist-modal');
     var songlistContainer = songlistModal.find("#songlist-container");
-    console.log(songlistContainer);
 
     // remove all child element of songlistContainer
     $('#songlist-container').empty();
