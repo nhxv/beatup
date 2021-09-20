@@ -135,6 +135,7 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
         $(document).on("keydown", callBack);
     } else {
         $(document).off();
+        console.log("document event all turn off");
         $(document).keydown(function (e) {
             if (e.which === 9) {
                 e.preventDefault();
