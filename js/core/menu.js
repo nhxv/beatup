@@ -135,7 +135,6 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
         $(document).on("keydown", callBack);
     } else {
         $(document).off();
-        $(document).on("keydown", callBack);
         $(document).keydown(function (e) {
             if (e.which === 9) {
                 e.preventDefault();
@@ -143,6 +142,7 @@ BUJS.prototype.loadMenuShortcut_ = function(selectedLi, isMenuEmpty) {
     
             }
         });
+        $(document).on("keydown", callBack);
     }
 }
 
