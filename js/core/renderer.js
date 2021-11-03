@@ -171,10 +171,11 @@ BUJS.Renderer_.prototype.loadSpritesForType_ = function (spriteInfo, key, callba
  * Clear the whole canvas
  */
 BUJS.Renderer_.prototype.clear_ = function () {
-    // TODO: console error here
     var _this = this;
-    _this.ctx_.fillStyle = "black";
-    _this.ctx_.clearRect(0, 0, _this.config_.canvasWidth_, _this.config_.canvasHeight_);
+    if (_this.ctx_) {
+        _this.ctx_.fillStyle = "black";
+        _this.ctx_.clearRect(0, 0, _this.config_.canvasWidth_, _this.config_.canvasHeight_);
+    }
 };
 
 /**

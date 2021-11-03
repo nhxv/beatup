@@ -142,10 +142,10 @@ BUJS.prototype.loadShortcutHandler_ = function(selectedLi, isMenuEmpty) {
 }
 
 /*
-** start game by pressing F1/Enter
+** start game by pressing F1
 */
 BUJS.prototype.f1_ = function(selectedLi, e) {
-    if (e.which === 13 || e.which === 112) { // F1 or Enter to start
+    if (e.which === 112) { // F1
         e.preventDefault();
         $(selectedLi).click();
     }
@@ -184,6 +184,9 @@ BUJS.prototype.songItemClick_ = function (li) {
     $('#songlist-modal').modal("hide");
 };
 
+/*
+** Main
+*/
 bujs = new BUJS();
 $(window).on('load', function () {
     bujs.start_();

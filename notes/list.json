@@ -1,4 +1,11 @@
 {
+  "Sea": {
+    "ogg": "Sea.ogg",
+    "singer": "UP",
+    "name": "Sea",
+    "slkauthor": "T3",
+    "bpm": 126.0
+  },
   "TwilightZone": {
     "ogg": "TwilightZone.aac",
     "singer": "2 Unlimited",
