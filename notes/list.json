@@ -3,6 +3,48 @@
     "ogg": "Sea.ogg",
     "singer": "UP",
     "name": "Sea",
+    "slkauthor": "RonBWL",
+    "bpm": 126.0
+  },
+  "TheBlackCat": {
+    "ogg": "TheBlackCat.ogg",
+    "singer": "Turbo",
+    "name": "The Black Cat",
+    "slkauthor": "T3",
+    "bpm": 131.0
+  },
+  "CanonGroove": {
+    "ogg": "CanonGroove.ogg",
+    "singer": "Audition",
+    "name": "Canon Groove",
+    "slkauthor": "T3",
+    "bpm": 105.0
+  },
+  "LetsGoOnAVacation": {
+    "ogg": "LetsGoOnAVacation.mp3",
+    "singer": "SM Town",
+    "name": "Let's go on vacation",
+    "slkauthor": "T3",
+    "bpm": 159.0
+  },
+  "WhoWho": {
+    "ogg": "WhoWho.ogg",
+    "singer": "Audition",
+    "name": "Who Who",
+    "slkauthor": "T3",
+    "bpm": 109.0
+  },
+  "WhenYouLookAtMe": {
+    "ogg": "WhenYouLookAtMe.ogg",
+    "singer": "Christina Milian",
+    "name": "When You Look At Me",
+    "slkauthor": "T3",
+    "bpm": 109.0
+  },
+  "Mister": {
+    "ogg": "Mister.mp3",
+    "singer": "Kara",
+    "name": "Mister",
     "slkauthor": "T3",
     "bpm": 126.0
   },
