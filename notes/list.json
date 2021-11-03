@@ -6,13 +6,6 @@
     "slkauthor": "RonBWL",
     "bpm": 126.0
   },
-  "TheBlackCat": {
-    "ogg": "TheBlackCat.ogg",
-    "singer": "Turbo",
-    "name": "The Black Cat",
-    "slkauthor": "T3",
-    "bpm": 131.0
-  },
   "CanonGroove": {
     "ogg": "CanonGroove.ogg",
     "singer": "Audition",
@@ -41,12 +34,19 @@
     "slkauthor": "T3",
     "bpm": 109.0
   },
+  "LoveLockdown": {
+    "ogg": "LoveLockdown.ogg",
+    "singer": "Kanye West",
+    "name": "Love Lockdown",
+    "slkauthor": "T3",
+    "bpm": 120.0
+  },
   "TwilightZone": {
-    "ogg": "TwilightZone.aac",
+    "ogg": "TwilightZone.ogg",
     "singer": "2 Unlimited",
     "name": "Twilight Zone (Club Mix)",
     "slkauthor": "T3",
-    "bpm": 127.9
+    "bpm": 128.0
   },
   "Why": {
     "ogg": "WHY.ogg",
