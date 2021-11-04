@@ -41,6 +41,34 @@
     "slkauthor": "T3",
     "bpm": 120.0
   },
+  "Lie": {
+    "ogg": "Lie.ogg",
+    "singer": "BIGBANG",
+    "name": "Lie",
+    "slkauthor": "Yo Yo Monkey",
+    "bpm": 125.0
+  },
+  "180": {
+    "ogg": "180.ogg",
+    "singer": "MC Mong",
+    "name": "180°",
+    "slkauthor": "Yo Yo Monkey",
+    "bpm": 100.0
+  },
+  "Low": {
+    "ogg": "Low.ogg",
+    "singer": "Flo Rida",
+    "name": "Low",
+    "slkauthor": "Yo Yo Monkey",
+    "bpm": 128.0
+  },
+  "WhenWeAreTogether": {
+    "ogg": "WhenWeAreTogether.ogg",
+    "singer": "Show Luo",
+    "name": "When we're together",
+    "slkauthor": "RonBWL",
+    "bpm": 103.0
+  },
   "TwilightZone": {
     "ogg": "TwilightZone.ogg",
     "singer": "2 Unlimited",
