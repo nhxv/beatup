@@ -160,6 +160,13 @@
     "slkauthor": "T3",
     "bpm": 130.0
   },
+  "SwanLake": {
+    "ogg": "SwanLake.ogg",
+    "singer": "Audition",
+    "name": "Swan Lake",
+    "slkauthor": "Yo Yo Monkey",
+    "bpm": 118.0
+  },
   "UKnow": {
     "ogg": "UKnow.aac",
     "singer": "Audition",
@@ -300,6 +307,13 @@
     "slkauthor": "ticanpertrum",
     "bpm": 132.0
   },
+  "WGACA": {
+    "ogg": "WGACA.ogg",
+    "singer": "Justin Timberlake",
+    "name": "What goes around... comes around",
+    "slkauthor": "RonBWL",
+    "bpm": 76.0
+  },
   "LoveLockdown": {
     "ogg": "LoveLockdown.ogg",
     "singer": "Kanye West",
@@ -321,7 +335,7 @@
     "slkauthor": "Ohno",
     "bpm": 103.0
   },
-  "180": {
+  "OneEighty": {
     "ogg": "180.ogg",
     "singer": "MC Mong",
     "name": "180°",
@@ -384,6 +398,13 @@
     "slkauthor": "RonBWL",
     "bpm": 117.0
   },
+  "Sugar": {
+    "ogg": "Sugar.ogg",
+    "singer": "SIC",
+    "name": "Sugar",
+    "slkauthor": "RonBWL",
+    "bpm": 118.0
+  },
   "Bonamana": {
     "ogg": "Bonamana.ogg",
     "singer": "Super Junior",
@@ -418,6 +439,13 @@
     "name": "Come On",
     "slkauthor": "T3",
     "bpm": 125.0
+  },
+  "WhatHappen": {
+    "ogg": "WhatHappen.ogg",
+    "singer": "Turtles",
+    "name": "What Happen",
+    "slkauthor": "RonBWL",
+    "bpm": 130.0
   },
   "Sea": {
     "ogg": "Sea.ogg",
