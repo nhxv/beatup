@@ -258,6 +258,13 @@
     "slkauthor": "RonBWL",
     "bpm": 143.0
   },
+  "Champion": {
+    "ogg": "Champion.ogg",
+    "singer": "Cy",
+    "name": "Champion",
+    "slkauthor": "T3",
+    "bpm": 116.0
+  },
   "Fan": {
     "ogg": "Fan.ogg",
     "singer": "Epik High",
