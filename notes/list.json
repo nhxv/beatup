@@ -1,10 +1,17 @@
 {
+  "IDontCare": {
+    "ogg": "IDontCare.mp3",
+    "singer": "2NE1",
+    "name": "I Don't Care",
+    "slkauthor": "T3",
+    "bpm": 132.0
+  },
   "TwilightZone": {
-    "ogg": "TwilightZone.aac",
+    "ogg": "TwilightZone.ogg",
     "singer": "2 Unlimited",
     "name": "Twilight Zone (Club Mix)",
     "slkauthor": "T3",
-    "bpm": 127.9
+    "bpm": 128.0
   },
   "Why": {
     "ogg": "WHY.ogg",
@@ -55,12 +62,26 @@
     "slkauthor": "T3",
     "bpm": 150.0
   },
+  "CanonGroove": {
+    "ogg": "CanonGroove.ogg",
+    "singer": "Audition",
+    "name": "Canon Groove",
+    "slkauthor": "T3",
+    "bpm": 105.0
+  },
   "DanceDance": {
     "ogg": "DanceDance.aac",
     "singer": "Audition",
     "name": "Dance Dance",
     "slkauthor": "Crazy",
     "bpm": 132.0
+  },
+  "DanceFlower": {
+    "ogg": "DanceFlower.mp3",
+    "singer": "Audition",
+    "name": "Dance Flower",
+    "slkauthor": "T3",
+    "bpm": 130.0
   },
   "Destiny": {
     "ogg": "Destiny.mp3",
@@ -139,12 +160,26 @@
     "slkauthor": "T3",
     "bpm": 130.0
   },
+  "SwanLake": {
+    "ogg": "SwanLake.ogg",
+    "singer": "Audition",
+    "name": "Swan Lake",
+    "slkauthor": "Yo Yo Monkey",
+    "bpm": 118.0
+  },
   "UKnow": {
     "ogg": "UKnow.aac",
     "singer": "Audition",
     "name": "U Know",
     "slkauthor": "RonBWL & whyred10",
     "bpm": 90.0
+  },
+  "WhoWho": {
+    "ogg": "WhoWho.ogg",
+    "singer": "Audition",
+    "name": "Who Who",
+    "slkauthor": "T3",
+    "bpm": 109.0
   },
   "WithYou": {
     "ogg": "WithYou.aac",
@@ -195,6 +230,20 @@
     "slkauthor": "Mad",
     "bpm": 168.0
   },
+  "Lie": {
+    "ogg": "Lie.ogg",
+    "singer": "BIGBANG",
+    "name": "Lie",
+    "slkauthor": "Yo Yo Monkey",
+    "bpm": 125.0
+  },
+  "WhenYouLookAtMe": {
+    "ogg": "WhenYouLookAtMe.ogg",
+    "singer": "Christina Milian",
+    "name": "When You Look At Me",
+    "slkauthor": "T3",
+    "bpm": 109.0
+  },
   "Aloha": {
     "ogg": "Aloha.aac",
     "singer": "Cool",
@@ -208,6 +257,13 @@
     "name": "Do it all night",
     "slkauthor": "RonBWL",
     "bpm": 143.0
+  },
+  "Champion": {
+    "ogg": "Champion.ogg",
+    "singer": "Cy",
+    "name": "Champion",
+    "slkauthor": "T3",
+    "bpm": 116.0
   },
   "Fan": {
     "ogg": "Fan.ogg",
@@ -230,6 +286,13 @@
     "slkauthor": "T3",
     "bpm": 130.0
   },
+  "Low": {
+    "ogg": "Low.ogg",
+    "singer": "Flo Rida",
+    "name": "Low",
+    "slkauthor": "Yo Yo Monkey",
+    "bpm": 128.0
+  },
   "TellMeTellMe": {
     "ogg": "TellMeTellMe.aac",
     "singer": "Garina Project",
@@ -251,6 +314,20 @@
     "slkauthor": "ticanpertrum",
     "bpm": 132.0
   },
+  "WGACA": {
+    "ogg": "WGACA.ogg",
+    "singer": "Justin Timberlake",
+    "name": "What goes around... comes around",
+    "slkauthor": "RonBWL",
+    "bpm": 76.0
+  },
+  "LoveLockdown": {
+    "ogg": "LoveLockdown.ogg",
+    "singer": "Kanye West",
+    "name": "Love Lockdown",
+    "slkauthor": "T3",
+    "bpm": 120.0
+  },
   "Cleopatra": {
     "ogg": "Cleopatra.mp3",
     "singer": "Lee Hyori",
@@ -264,6 +341,13 @@
     "name": "Người lạ nơi cuối con đường",
     "slkauthor": "Ohno",
     "bpm": 103.0
+  },
+  "OneEighty": {
+    "ogg": "180.ogg",
+    "singer": "MC Mong",
+    "name": "180°",
+    "slkauthor": "Yo Yo Monkey",
+    "bpm": 100.0
   },
   "SickEnoughToDie": {
     "ogg": "SickEnoughToDie.ogg",
@@ -293,6 +377,20 @@
     "slkauthor": "dnxp",
     "bpm": 132.0
   },
+  "WhenWeAreTogether": {
+    "ogg": "WhenWeAreTogether.ogg",
+    "singer": "Show Luo",
+    "name": "When we're together",
+    "slkauthor": "RonBWL",
+    "bpm": 103.0
+  },
+  "LetsGoOnAVacation": {
+    "ogg": "LetsGoOnAVacation.mp3",
+    "singer": "SM Town",
+    "name": "Let's go on vacation",
+    "slkauthor": "T3",
+    "bpm": 159.0
+  },
   "Hoot": {
     "ogg": "Hoot.ogg",
     "singer": "SNSD",
@@ -306,6 +404,13 @@
     "name": "Deja Vu",
     "slkauthor": "RonBWL",
     "bpm": 117.0
+  },
+  "Sugar": {
+    "ogg": "Sugar.ogg",
+    "singer": "SIC",
+    "name": "Sugar",
+    "slkauthor": "RonBWL",
+    "bpm": 118.0
   },
   "Bonamana": {
     "ogg": "Bonamana.ogg",
@@ -341,5 +446,19 @@
     "name": "Come On",
     "slkauthor": "T3",
     "bpm": 125.0
+  },
+  "WhatHappen": {
+    "ogg": "WhatHappen.ogg",
+    "singer": "Turtles",
+    "name": "What Happen",
+    "slkauthor": "RonBWL",
+    "bpm": 130.0
+  },
+  "Sea": {
+    "ogg": "Sea.ogg",
+    "singer": "UP",
+    "name": "Sea",
+    "slkauthor": "RonBWL",
+    "bpm": 126.0
   }
 }
