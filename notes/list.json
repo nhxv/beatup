@@ -405,6 +405,13 @@
     "slkauthor": "RonBWL",
     "bpm": 117.0
   },
+  "ImStupid": {
+    "ogg": "ImStupid.mp3",
+    "singer": "SS501",
+    "name": "Because I'm Stupid",
+    "slkauthor": "2Shin",
+    "bpm": 113.0
+  },
   "Sugar": {
     "ogg": "Sugar.ogg",
     "singer": "SIC",
@@ -465,7 +472,7 @@
     "ogg": "Nobody.mp3",
     "singer": "Wonder Girls",
     "name": "Nobody",
-    "slkauthor": "T3",
+    "slkauthor": "2Shin",
     "bpm": 131.0
   }
 }
