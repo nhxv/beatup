@@ -6,6 +6,27 @@
     "slkauthor": "T3",
     "bpm": 132.0
   },
+  "Nobody": {
+    "ogg": "Nobody.mp3",
+    "singer": "Wonder Girls",
+    "name": "Nobody",
+    "slkauthor": "T3",
+    "bpm": 131.0
+  },
+  "HorrorShow": {
+    "ogg": "HorrorShow.ogg",
+    "singer": "MC Mong",
+    "name": "Horror Show",
+    "slkauthor": "T3",
+    "bpm": 115.1
+  },
+  "ImStupid": {
+    "ogg": "ImStupid.mp3",
+    "singer": "SS501",
+    "name": "Because I'm stupid",
+    "slkauthor": "T3",
+    "bpm": 113.0
+  },
   "TwilightZone": {
     "ogg": "TwilightZone.ogg",
     "singer": "2 Unlimited",
