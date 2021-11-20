@@ -14,7 +14,7 @@ sort(songList, fs, 'singer', relativePath);
 function sort(songList, fs, attr, path) {
     const sortedSongEntries = Object.entries(songList).sort((a, b) => a[1][attr].localeCompare(b[1][attr]) );
     const sortedSongList = Object.fromEntries(sortedSongEntries);
-    const songListData = JSON.stringify(sortedSongList, null, 4);
+    const songListData = JSON.stringify(sortedSongList, null, 2);
     fs.writeFile(path, songListData, err => {
         if (err) { console.log(err); }
     });
