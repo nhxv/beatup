@@ -12,5 +12,6 @@ Unlock browser fps: https://www.reddit.com/r/KrunkerIO/comments/esz4gt/unlock_br
 
     - volume adjustment for notes and musics
     - server for record (Firebase maybe?)
-    - auto scroll to previous selected song
+    - auto scroll to previously selected song
     - key binding system
+    - pause note rendering
