@@ -6,6 +6,27 @@
     "slkauthor": "T3",
     "bpm": 132.0
   },
+  "BecauseILoveYou": {
+    "ogg": "BecauseILoveYou.ogg",
+    "singer": "Groove Coverage",
+    "name": "BecauseILoveYou",
+    "slkauthor": "RonBWL",
+    "bpm": 140.0
+  },
+  "Festival": {
+    "ogg": "Festival.ogg",
+    "singer": "Jung Hwa Um",
+    "name": "Festival",
+    "slkauthor": "RonBWL",
+    "bpm": 137.0
+  },
+  "RunToYou": {
+    "ogg": "RunToYou.ogg",
+    "singer": "DJ Doc",
+    "name": "Run To You",
+    "slkauthor": "RonBWL",
+    "bpm": 132.0
+  },
   "Nobody": {
     "ogg": "Nobody.mp3",
     "singer": "Wonder Girls",
