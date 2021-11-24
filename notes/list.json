@@ -1,4 +1,18 @@
 {
+  "BlackoutHouse": {
+    "ogg": "BlackoutHouse.mp3",
+    "singer": "Audition",
+    "name": "BlackoutHouse",
+    "slkauthor": "T3",
+    "bpm": 130.0
+  },
+  "Catch": {
+    "ogg": "Catch.mp3",
+    "singer": "Audition",
+    "name": "Catch",
+    "slkauthor": "T3",
+    "bpm": 120.0
+  },
   "TheBlackCat": {
     "ogg": "TheBlackCat.mp3",
     "singer": "Turbo",
