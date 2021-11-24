@@ -8,11 +8,11 @@ let listData = fs.readFileSync(relativePath);
 let songList = JSON.parse(listData); // list object, not array
 
 calculateStats(songList);
+sort(songList, fs, relativePath);
+console.log('Sorted!');
 
-// sort(songList, fs, 'singer', relativePath);
-
-function sort(songList, fs, attr, path) {
-    const sortedSongEntries = Object.entries(songList).sort((a, b) => a[1][attr].localeCompare(b[1][attr]) );
+function sort(songList, fs, path) {
+    let sortedSongEntries = Object.entries(songList).sort((a, b) => a[1]['singer'].localeCompare(b[1]['singer']));
     const sortedSongList = Object.fromEntries(sortedSongEntries);
     const songListData = JSON.stringify(sortedSongList, null, 2);
     fs.writeFile(path, songListData, err => {
@@ -30,5 +30,5 @@ function calculateStats(songList) {
     const average = Math.round((sum / count) * 10) / 10;
     console.log('--- BASIC STATS ---');
     console.log('Number of songs: ' + count);
-    console.log('Average spped: ' + average + ' bpm');
+    console.log('Average speed: ' + average + ' bpm');
 }

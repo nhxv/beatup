@@ -69,6 +69,13 @@
     "slkauthor": "Yo Yo Monkey",
     "bpm": 105
   },
+  "CantLetYouGo": {
+    "ogg": "CantLetYouGo.ogg",
+    "singer": "Audition",
+    "name": "Can't let you go",
+    "slkauthor": "T3",
+    "bpm": 145
+  },
   "DanceDance": {
     "ogg": "DanceDance.aac",
     "singer": "Audition",
@@ -89,6 +96,13 @@
     "name": "Destiny",
     "slkauthor": "T3",
     "bpm": 132
+  },
+  "DJEuroMix": {
+    "ogg": "DJEuroMix.ogg",
+    "singer": "Audition",
+    "name": "DJ Euro Mix",
+    "slkauthor": "T3",
+    "bpm": 140
   },
   "Euro2005": {
     "ogg": "Euro2005.aac",
@@ -124,6 +138,13 @@
     "name": "Happy Ending",
     "slkauthor": "T3",
     "bpm": 128
+  },
+  "HeavyMetal": {
+    "ogg": "HeavyMetal.ogg",
+    "singer": "Audition",
+    "name": "Heavy Metal Syndrome",
+    "slkauthor": "T3",
+    "bpm": 145
   },
   "ItsAlright": {
     "ogg": "ItsAlright.ogg",
@@ -433,6 +454,13 @@
     "slkauthor": "2Shin",
     "bpm": 113
   },
+  "NoReason": {
+    "ogg": "NoReason.ogg",
+    "singer": "Sum 41",
+    "name": "No Reason",
+    "slkauthor": "T3",
+    "bpm": 196
+  },
   "Bonamana": {
     "ogg": "Bonamana.ogg",
     "singer": "Super Junior",
@@ -453,6 +481,13 @@
     "name": "Cry Cry",
     "slkauthor": "Ohno",
     "bpm": 115
+  },
+  "TheBlackCat": {
+    "ogg": "TheBlackCat.mp3",
+    "singer": "Turbo",
+    "name": "The Black Cat",
+    "slkauthor": "T3",
+    "bpm": 131
   },
   "Airplane": {
     "ogg": "Airplane.aac",
