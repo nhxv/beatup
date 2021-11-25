@@ -46,7 +46,7 @@ BUJS.Renderer_.prototype.setupConfig_ = function () {
         imagePath_          : "img/",
         scaleRatio_         : 1,
         canvasWidth_        : 980,
-        canvasHeight_       : 400
+        canvasHeight_       : 450 // initial 400
     };
 };
 
@@ -119,7 +119,7 @@ BUJS.Renderer_.prototype.setupSpriteConsts_ = function () {
         tableWidth_         : 123,
         tableWidthTrans_    : 3,
         arrowLaneOfs_       : 1,
-        spaceMarginBottom_  : 90, // initial value 80
+        spaceMarginBottom_  : 80, // initial value 80
         beatupLetterDist_   : 46,
         dnxpLogoMargin_     : 20,
         textHeight_         : 20,

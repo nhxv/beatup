@@ -6,7 +6,7 @@ Unlock browser fps: https://www.reddit.com/r/KrunkerIO/comments/esz4gt/unlock_br
 ## bugs
 
     - note count when double press (e.g No Space 138bpm)
-    - renderer undefined ctx when open menu in game
+    - undefined game object issue when reload game with tab
 
 ## (wishful) features
 
@@ -14,4 +14,4 @@ Unlock browser fps: https://www.reddit.com/r/KrunkerIO/comments/esz4gt/unlock_br
     - server for record (Firebase maybe?)
     - auto scroll to previously selected song
     - key binding system
-    - pause note rendering
+    - pause note render when open menu mid-game
