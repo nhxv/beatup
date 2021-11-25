@@ -2,20 +2,22 @@
  
  main
 
-    state: when user load up the page
-    - create BUJS object and start the app by first setting up menu
+    state: when user load website
+    - create BUJS object and start app
+    - setup menu
 
  menu
 
     state: before user select song
     - create in-game canvas dimension (900 x 400) 
     - show loading message (e.g. "Loading extra UI components...")
-    - load song list from "notes/list.json" to modal
+    - load song list from "notes/list.json"
+    - show song list modal
     - load menu input system (Tab, F1 shortcut)
 
     state: after user select song
-    - store selected song in session after user select song
-    - create Game object, give it note file (e.g. "notes/Sea.json") of the selected song
+    - store selected song in session
+    - create Game object, give it note (e.g. "notes/Sea.json") of selected song
     - hide modal
 
 game
@@ -31,20 +33,20 @@ music
     - load beatup sound e.g. "sound/perfect.wav"
     - load song note e.g. "notes/Sea.json"
     - load music file e.g. "music/Sea.json"
-    - create event listener to stop music when menu is open mid-game
+    - create event listener to stop music when menu is open in-game
     
     state: when start music
-    - notify game object when finish loading
+    - notify game object after finish loading
     - get music start time
 
 renderer
 
     state: while loading render system
-    - create in-game canvas dimension (consider remove this step when setup menu?)
+    - create in-game canvas dimension (remove this step when setup menu?)
     - load images for table, space frame, etc
 
     state: when all images are loaded
-    - notify game object when finish loading
+    - notify game object after finish loading
 
 input
 
@@ -66,4 +68,8 @@ game
     - check miss
     - renderer draw table (draw last so arrow is above table)
 
+menu
+
+    state: open while in-game    
+    - load song list modal
  
