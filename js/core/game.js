@@ -302,7 +302,8 @@ BUJS.Game_.prototype.getKeyResult_ = function (diff) {
     if (_this.autoplay_) return 0;
     var ratio = 4;
     var tickTime = _this.music_.tickTime_;
-    
+
+    // initial value 80
     if (diff > 80 * (tickTime * ratio) / 100 || diff < -tickTime * ratio) return -1;	// don't process
     if (diff < 0) {
         diff = -diff;
