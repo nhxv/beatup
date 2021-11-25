@@ -12,7 +12,13 @@ sort(songList, fs, relativePath);
 console.log('Sorted!');
 
 function sort(songList, fs, path) {
-    let sortedSongEntries = Object.entries(songList).sort((a, b) => a[1]['singer'].localeCompare(b[1]['singer']));
+    let sortedSongEntries = Object.entries(songList).sort((a, b) =>  {
+        if (a[1]['singer'].localeCompare(b[1]['singer']) === 0) {
+            return a[1]['ogg'].localeCompare(b[1]['ogg']);
+        } else {
+           return a[1]['singer'].localeCompare(b[1]['singer']);
+        }    
+    });
     const sortedSongList = Object.fromEntries(sortedSongEntries);
     const songListData = JSON.stringify(sortedSongList, null, 2);
     fs.writeFile(path, songListData, err => {

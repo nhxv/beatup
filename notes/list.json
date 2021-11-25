@@ -55,6 +55,13 @@
     "slkauthor": "RonBWL",
     "bpm": 120
   },
+  "BlackoutHouse": {
+    "ogg": "BlackoutHouse.mp3",
+    "singer": "Audition",
+    "name": "Blackout House",
+    "slkauthor": "T3",
+    "bpm": 130
+  },
   "CanCan": {
     "ogg": "CanCan.aac",
     "singer": "Audition",
@@ -75,6 +82,13 @@
     "name": "Can't let you go",
     "slkauthor": "T3",
     "bpm": 145
+  },
+  "Catch": {
+    "ogg": "Catch.mp3",
+    "singer": "Audition",
+    "name": "Catch",
+    "slkauthor": "T3",
+    "bpm": 120
   },
   "DanceDance": {
     "ogg": "DanceDance.aac",
@@ -199,7 +213,7 @@
     "ogg": "WhoWho.ogg",
     "singer": "Audition",
     "name": "Who Who",
-    "slkauthor": "T3",
+    "slkauthor": "2Shin",
     "bpm": 109
   },
   "WithYou": {
@@ -384,12 +398,26 @@
     "slkauthor": "Ohno",
     "bpm": 103
   },
+  "Lucky": {
+    "ogg": "Lucky.mp3",
+    "singer": "Lucky Twice",
+    "name": "Lucky",
+    "slkauthor": "T3",
+    "bpm": 130
+  },
   "OneEighty": {
     "ogg": "180.ogg",
     "singer": "MC Mong",
     "name": "180°",
     "slkauthor": "Yo Yo Monkey",
     "bpm": 100
+  },
+  "IceCream": {
+    "ogg": "IceCream.mp3",
+    "singer": "MC Mong",
+    "name": "Ice Cream",
+    "slkauthor": "T3",
+    "bpm": 110
   },
   "SickEnoughToDie": {
     "ogg": "SickEnoughToDie.ogg",
@@ -404,6 +432,13 @@
     "name": "Despre Tine",
     "slkauthor": "T3",
     "bpm": 130
+  },
+  "Easy": {
+    "ogg": "Easy.mp3",
+    "singer": "Paula DeAnda ft Lil Wayne",
+    "name": "Easy",
+    "slkauthor": "T3",
+    "bpm": 121
   },
   "GangnamStyle": {
     "ogg": "GNS.aac",
