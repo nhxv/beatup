@@ -1,4 +1,11 @@
 {
+  "DeathMoon": {
+    "ogg": "DeathMoon.ogg",
+    "singer": "DM",
+    "name": "Death Moon",
+    "slkauthor": "Pleskin85",
+    "bpm": 160
+  },
   "TwilightZone": {
     "ogg": "TwilightZone.ogg",
     "singer": "2 Unlimited",
