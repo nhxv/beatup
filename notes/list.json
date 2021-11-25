@@ -440,19 +440,19 @@
     "slkauthor": "T3",
     "bpm": 130
   },
+  "DeathMoon": {
+    "ogg": "DeathMoon.ogg",
+    "singer": "O2",
+    "name": "Death Moon",
+    "slkauthor": "Plestkin85",
+    "bpm": 160
+  },
   "Easy": {
     "ogg": "Easy.mp3",
     "singer": "Paula DeAnda ft Lil Wayne",
     "name": "Easy",
     "slkauthor": "T3",
     "bpm": 121
-  },
-  "GangnamStyle": {
-    "ogg": "GNS.aac",
-    "singer": "PSY",
-    "name": "Gangnam Style",
-    "slkauthor": "dnxp",
-    "bpm": 132
   },
   "WhenWeAreTogether": {
     "ogg": "WhenWeAreTogether.ogg",

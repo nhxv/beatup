@@ -46,7 +46,7 @@ BUJS.Renderer_.prototype.setupConfig_ = function () {
         imagePath_          : "img/",
         scaleRatio_         : 1,
         canvasWidth_        : 980,
-        canvasHeight_       : 400
+        canvasHeight_       : 450 // initial 400
     };
 };
 
