@@ -1,4 +1,4 @@
- ### App flow
+ ### Game flow
  
  main
 
@@ -42,7 +42,7 @@ music
 renderer
 
     state: while loading render system
-    - create in-game canvas dimension (remove this step when setup menu?)
+    - create in-game canvas dimension
     - load images for table, space frame, etc
 
     state: when all images are loaded
@@ -59,14 +59,14 @@ input
 game
 
     state: after all components finish loading
-    - update _this context (? new game?)
+    - update _this context
     - reset / clear in-game graphic with renderer object
     - renderer object draw background if it exists (default black, no draw)
     - renderer object draw fps, song info, logo, b-e-a-t-u-p space text, scoreboard
     - process animation (delete completed animations, load on-going animation)
     - renderer object draw notes
     - check miss
-    - renderer draw table (draw last so arrow is above table)
+    - renderer draw table (draw last)
 
 menu
 

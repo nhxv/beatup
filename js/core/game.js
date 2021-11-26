@@ -28,7 +28,7 @@ BUJS.Game_ = function (songId) {
     _this.animations_ = [];
     _this.players_ = [];
 
-    _this.autoplay_ = true;
+    _this.autoplay_ = false;
     _this.alwaysCorrect_ = false;
 
     _this.noteScores_ = [520, 260, 130, 26, 0];
@@ -80,7 +80,9 @@ function gl_() {
     if (bujs.game_.isOn_) {
         bujs.game_.loop_();
     } else {
-        // TODO: end game stuffs
+        // TODO: handle end game stuffs
+        console.log(bujs.game_);
+        bujs.game_.drawMotionless_();
     }
 }
 
@@ -109,6 +111,21 @@ BUJS.Game_.prototype.draw_ = function () {
         bujs.showLoadingMsg_("Touch/click to start music");
     }
 
+    _this.drawMotionless_();
+
+    _this.processAnimations_();
+    _this.renderer_.drawNotes_(_this.music_.getCurrTime_());
+    _this.renderer_.drawBigNoteResultText_();
+
+    _this.checkMiss_();
+
+    _this.renderer_.drawTable_(); // draw last to cover arrow
+    // _this.renderer_.drawTouchArrows_(); remove this method by toggle later
+};
+
+BUJS.Game_.prototype.drawMotionless_ = function () {
+    var _this = this;
+
     // fps
     var fps = _this.calcFps_();
     var posFps = {x: 20, y: 10};
@@ -132,18 +149,11 @@ BUJS.Game_.prototype.draw_ = function () {
     _this.renderer_.drawFixContent_(_this.combo_);
     _this.renderer_.drawBeatupText_(_this.combo_);
 
-    if (_this.showPerfArrows_) {
-        _this.renderer_.drawPerfectArrows_();
+    // when game stop, draw table
+    if (!_this.isOn_) {
+        _this.renderer_.drawTable_();
     }
-    _this.processAnimations_();
-    _this.renderer_.drawNotes_(_this.music_.getCurrTime_());
-    _this.renderer_.drawBigNoteResultText_();
-
-    _this.checkMiss_();
-
-    _this.renderer_.drawTable_();
-    // _this.renderer_.drawTouchArrows_(); remove this method by toggle later
-};
+}
 
 BUJS.Game_.prototype.processSongTime_ = function(time) {
     var minutes = Math.floor(time / 60);

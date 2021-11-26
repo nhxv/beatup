@@ -61,7 +61,6 @@ BUJS.Music_.prototype.loadBackgroundMusic_ = function (url) {
         }
         else {
             _this.context_.decodeAudioData(request.response, function (buffer) {
-                    console.log('Buffer duration: ' + buffer.duration);
                     _this.musicSource_ = _this.loadSound_(buffer);
                     _this.musicStartTime_ = _this.context_.currentTime; // ms
                     _this.musicEndTime_ = buffer.duration;
