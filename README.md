@@ -9,7 +9,7 @@
  menu
 
     state: before user select song
-    - create in-game canvas dimension (900 x 400) 
+    - create in-game canvas dimension to show loading message
     - show loading message (e.g. "Loading extra UI components...")
     - load song list from "notes/list.json"
     - show song list modal
@@ -72,4 +72,8 @@ menu
 
     state: open while in-game    
     - load song list modal
+
+game
+    state: stop while in-game
+    - stop game loop, draw final frame    
  

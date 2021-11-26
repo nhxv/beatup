@@ -79,6 +79,8 @@ BUJS.Game_.prototype.onFinishLoading_ = function () {
 function gl_() {
     if (bujs.game_.isOn_) {
         bujs.game_.loop_();
+    } else {
+        // TODO: end game stuffs
     }
 }
 

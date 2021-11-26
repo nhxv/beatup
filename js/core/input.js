@@ -32,11 +32,6 @@ BUJS.Input_.prototype.checkKeyboard_ = function (e) {
         case 115:   // f4: background
             bujs.game_.showBg_ = (bujs.game_.showBg_ + 1) % (bujs.game_.renderer_.sprites_.background_.length + 1);
             break;
-        case 16:    // lshift: toggle arrow perfect position
-            bujs.game_.showPerfArrows_ = !bujs.game_.showPerfArrows_;
-            break;
-        case 93:    // rcommand/rwin: toggle autoplay
-            bujs.game_.autoplay_ = !bujs.game_.autoplay_;
         case 55:    // 7
         case 82:    // r
         case 103:   // numpad7
