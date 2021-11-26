@@ -21,7 +21,7 @@ BUJS.Renderer_.prototype.asyncLoadSprites_ = function () {
                 console.error("Meh. Error", err);
             }
             else {
-                console.log("Finished loading sprites.");
+                // console.log("Finished loading sprites.");
                 _this.initSpritePos_();
                 // resize canvas
                 var canvas = document.getElementById("cvs");
@@ -46,7 +46,7 @@ BUJS.Renderer_.prototype.setupConfig_ = function () {
         imagePath_          : "img/",
         scaleRatio_         : 1,
         canvasWidth_        : 980,
-        canvasHeight_       : 450 // initial 400
+        canvasHeight_       : 400 // initial 400
     };
 };
 
@@ -161,7 +161,7 @@ BUJS.Renderer_.prototype.loadSpritesForType_ = function (spriteInfo, key, callba
                 console.error("Meh. Error", err);
             }
             else {
-                console.log("Finished fetching images for object", key);
+                // console.log("Finished fetching images for object", key);
                 callback();
             }
         });

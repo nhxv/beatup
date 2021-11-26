@@ -16,7 +16,7 @@ BUJS.Music_ = function (onComponentFinishLoading_) {
         request.responseType = 'arraybuffer';
         request.onload = function () {
             _this.context_.decodeAudioData(request.response, function (buffer) {
-                console.log("Loaded sound", sound);
+                // console.log("Loaded sound", sound);
                 _this.sounds_[index] = buffer;
             }, function (error) {
                 console.error("Error decoding audio data", error);

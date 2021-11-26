@@ -3,6 +3,7 @@ BUJS.Game_ = function (songId) {
     _this.songId_ = songId;
     _this.loadedComponent_ = [];
     _this.isOn_ = false; // game state
+    _this.isTab_ = false // dont save record when player use tab to turn game off;
 
     _this.frameCount_ = 0;
     _this.fps_ = 0;
@@ -26,7 +27,7 @@ BUJS.Game_ = function (songId) {
 
     _this.numSelect_ = 0;
     _this.animations_ = [];
-    _this.players_ = [];
+    _this.players_ = []; 
 
     _this.autoplay_ = false;
     _this.alwaysCorrect_ = false;
@@ -54,7 +55,7 @@ BUJS.Game_.prototype.onComponentFinishLoading_ = function (component) {
     var _this = this;
     if (typeof component !== "undefined") {
         var componentType = component.constructor.name;
-        console.log("Component finished loading", componentType);
+        // console.log("Component finished loading " + componentType);
         if (_this.loadedComponent_.indexOf(component) < 0) {
             _this.loadedComponent_.push(componentType);
         }
@@ -80,9 +81,19 @@ function gl_() {
     if (bujs.game_.isOn_) {
         bujs.game_.loop_();
     } else {
-        // TODO: handle end game stuffs
-        console.log(bujs.game_);
         bujs.game_.drawMotionless_();
+
+        // TODO: save final result; print to console for now - dont save when player use tab to turn game off
+        if (!bujs.game_.isTab_) {
+            console.log('Song: ' + bujs.game_.songId_);
+            console.log('Score: ' + Math.round(bujs.game_.score_));
+            console.log('Combo: ' + bujs.game_.highestCombo_);
+            console.log('Perfect: ' + bujs.game_.pgcbm_[0]);
+            console.log('Great: ' + bujs.game_.pgcbm_[1]);
+            console.log('Cool: ' + bujs.game_.pgcbm_[2]);
+            console.log('Bad: ' + bujs.game_.pgcbm_[3]);
+            console.log('Miss: ' + bujs.game_.pgcbm_[4]);
+        }
     }
 }
 
@@ -101,15 +112,6 @@ BUJS.Game_.prototype.loop_ = function () {
  */
 BUJS.Game_.prototype.draw_ = function () {
     var _this = this;
-    _this.renderer_.clear_();
-
-    if (bujs.game_.showBg_ !== 0) {
-        _this.renderer_.drawSprite_(_this.sprites_.background_[bujs.game_.showBg_ - 1]);
-    }
-
-    if (typeof _this.music_.musicStartTime_ === 'undefined' || _this.music_.musicStartTime_ === null) {
-        bujs.showLoadingMsg_("Touch/click to start music");
-    }
 
     _this.drawMotionless_();
 
@@ -126,17 +128,39 @@ BUJS.Game_.prototype.draw_ = function () {
 BUJS.Game_.prototype.drawMotionless_ = function () {
     var _this = this;
 
+    _this.renderer_.clear_();
+
+    if (bujs.game_.showBg_ !== 0) {
+        _this.renderer_.drawSprite_(_this.sprites_.background_[bujs.game_.showBg_ - 1]);
+    }
+
+    if (typeof _this.music_.musicStartTime_ === 'undefined' || _this.music_.musicStartTime_ === null) {
+        bujs.showLoadingMsg_("Touch/click to start music");
+    }
+
     // fps
     var fps = _this.calcFps_();
     var posFps = {x: 20, y: 10};
     _this.renderer_.writeText_(posFps, fps.toFixed(1) + ' fps');
     
     // song time
-    _this.renderer_.writeText_(
-        {x: 20, y: _this.renderer_.config_.canvasHeight_ - 8}, 
-        _this.processSongTime_( Math.round(_this.music_.getCurrTime_() / 1000)) + " / " +
-        _this.processSongTime_(Math.ceil(_this.music_.musicEndTime_)) 
-    );
+    if (_this.music_.getCurrTime_() / 1000 >= _this.music_.musicEndTime_) {
+        _this.endGame_();
+    }
+
+    if (_this.isOn_) {
+        _this.renderer_.writeText_(
+            {x: 20, y: _this.renderer_.config_.canvasHeight_ - 8}, 
+            _this.processSongTime_(Math.round(_this.music_.getCurrTime_() / 1000)) + " / " +
+            _this.processSongTime_(Math.ceil(_this.music_.musicEndTime_)) 
+        );
+    } else {
+        _this.renderer_.writeText_(
+            {x: 20, y: _this.renderer_.config_.canvasHeight_ - 8}, 
+            _this.processSongTime_(Math.ceil(_this.music_.musicEndTime_)) 
+        );
+    }
+
 
     // song name
     _this.renderer_.writeText_(
@@ -145,7 +169,7 @@ BUJS.Game_.prototype.drawMotionless_ = function () {
         " (" + Math.round(_this.music_.songInfo_.bpm) + " bpm)"
     );
 
-    // lanes, landings, icons, logo, space frame...
+    // lanes, landings, icons, logo, space frame, scoreboard...
     _this.renderer_.drawFixContent_(_this.combo_);
     _this.renderer_.drawBeatupText_(_this.combo_);
 
@@ -416,9 +440,9 @@ BUJS.Game_.prototype.updateScore_ = function (key, keyResult) {
     }
 };
 
-BUJS.Game_.prototype.endGame_ = function() {
+BUJS.Game_.prototype.endGame_ = function(isTab) {
     var _this = this;
-    console.log('end game');
+    _this.isTab_ = isTab;
     _this.music_.musicSource_.stop(0);
-    _this.isOn_ = false; // drop in-game draw
+    _this.isOn_ = false; // stop game
 }
