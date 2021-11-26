@@ -1,39 +1,40 @@
 BUJS.Game_ = function (songId) {
     var _this = this;
-    this.songId_ = songId;
-    this.loadedComponent_ = [];
+    _this.songId_ = songId;
+    _this.loadedComponent_ = [];
+    _this.isOn_ = false; // game state
 
-    this.frameCount_ = 0;
-    this.fps_ = 0;
+    _this.frameCount_ = 0;
+    _this.fps_ = 0;
 
-    this.firstAvailNote_ = 0;
-    this.lastNoteResult_ = 0;
-    this.lastNoteTime_ = 0;
-    this.lastTime_ = 0;
+    _this.firstAvailNote_ = 0;
+    _this.lastNoteResult_ = 0;
+    _this.lastNoteTime_ = 0;
+    _this.lastTime_ = 0;
 
-    this.pgcbm_ = [0, 0, 0, 0, 0];
-    this.score_ = 0;
-    this.perx_ = 0;
-    this.highestCombo_ = 0;
-    this.combo_ = 0;
-    this.xmax_ = 0;
-    this.chance_ = 0;
+    _this.pgcbm_ = [0, 0, 0, 0, 0];
+    _this.score_ = 0;
+    _this.perx_ = 0;
+    _this.highestCombo_ = 0;
+    _this.combo_ = 0;
+    _this.xmax_ = 0;
+    _this.chance_ = 0;
 
-    this.showBg_ = 0;
-    this.showPerfArrows_ = false;
-    this.showHelp_ = false;
+    _this.showBg_ = 0;
+    _this.showPerfArrows_ = false;
+    _this.showHelp_ = false;
 
-    this.numSelect_ = 0;
-    this.animations_ = [];
-    this.players_ = [];
+    _this.numSelect_ = 0;
+    _this.animations_ = [];
+    _this.players_ = [];
 
-    this.autoplay_ = true;
-    this.alwaysCorrect_ = false;
+    _this.autoplay_ = true;
+    _this.alwaysCorrect_ = false;
 
-    this.noteScores_ = [520, 260, 130, 26, 0];
-    this.spaceScores_ = [2000, 1500, 1000, 500, 0];
-    this.yellowBeatupRatio_ = 1.2;
-    this.blueBeatupRatio_ = 1.55;
+    _this.noteScores_ = [520, 260, 130, 26, 0];
+    _this.spaceScores_ = [2000, 1500, 1000, 500, 0];
+    _this.yellowBeatupRatio_ = 1.2;
+    _this.blueBeatupRatio_ = 1.55;
 
 
     // load music and renderer; setTimeout for offset?
@@ -41,9 +42,9 @@ BUJS.Game_ = function (songId) {
         _this.music_ = new BUJS.Music_(_this.onComponentFinishLoading_);
     }, 0);
 
-    this.renderer_ = new BUJS.Renderer_(this.onComponentFinishLoading_);
-    this.renderer_.asyncLoadSprites_();
-    this.input_ = new BUJS.Input_();
+    _this.renderer_ = new BUJS.Renderer_(_this.onComponentFinishLoading_);
+    _this.renderer_.asyncLoadSprites_();
+    _this.input_ = new BUJS.Input_();
 };
 
 /**
@@ -69,11 +70,16 @@ BUJS.Game_.prototype.onComponentFinishLoading_ = function (component) {
  * Callback whenever we have ALL components (Renderer & Music) finished loading
  */
 BUJS.Game_.prototype.onFinishLoading_ = function () {
+    var _this = this;
+    _this.isOn_ = true;
     gl_();
 };
 
+// obviously not belong to game class
 function gl_() {
-    bujs.game_.loop_();
+    if (bujs.game_.isOn_) {
+        bujs.game_.loop_();
+    }
 }
 
 /**
@@ -83,9 +89,7 @@ BUJS.Game_.prototype.loop_ = function () {
     var _this = this;
     _this.update_();
     _this.draw_();
-    if (_this.music_.context_ !== null) {
-        window.requestAnimationFrame(gl_);
-    }
+    window.requestAnimationFrame(gl_);
 };
 
 /**
@@ -109,10 +113,18 @@ BUJS.Game_.prototype.draw_ = function () {
     _this.renderer_.writeText_(posFps, fps.toFixed(1) + ' fps');
     
     // song time
-    _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ - 2}, _this.processSongTime_() );
+    _this.renderer_.writeText_(
+        {x: 20, y: _this.renderer_.config_.canvasHeight_ - 8}, 
+        _this.processSongTime_( Math.round(_this.music_.getCurrTime_() / 1000)) + " / " +
+        _this.processSongTime_(Math.ceil(_this.music_.musicEndTime_)) 
+    );
 
     // song name
-    _this.renderer_.writeText_({x: 20, y: _this.renderer_.config_.canvasHeight_ - 16}, _this.music_.songInfo_.name + " - " + _this.music_.songInfo_.singer + " (" + Math.round(_this.music_.songInfo_.bpm) + " bpm)");
+    _this.renderer_.writeText_(
+        {x: 20, y: _this.renderer_.config_.canvasHeight_ - 24}, 
+        _this.music_.songInfo_.name + " - " + _this.music_.songInfo_.singer + 
+        " (" + Math.round(_this.music_.songInfo_.bpm) + " bpm)"
+    );
 
     // lanes, landings, icons, logo, space frame...
     _this.renderer_.drawFixContent_(_this.combo_);
@@ -131,9 +143,7 @@ BUJS.Game_.prototype.draw_ = function () {
     // _this.renderer_.drawTouchArrows_(); remove this method by toggle later
 };
 
-BUJS.Game_.prototype.processSongTime_ = function() {
-    var _this = this;
-    var time = Math.round(_this.music_.getCurrTime_() / 1000); // in second
+BUJS.Game_.prototype.processSongTime_ = function(time) {
     var minutes = Math.floor(time / 60);
     var seconds = time - minutes * 60;
     var formatSec = seconds.toLocaleString('en-US', {minimumIntegerDigits: 2});
@@ -392,6 +402,11 @@ BUJS.Game_.prototype.updateScore_ = function (key, keyResult) {
     if (_this.perx_ > _this.xmax_){
         _this.xmax_ = _this.perx_;
     }
-
-    // TODO: send to server
 };
+
+BUJS.Game_.prototype.endGame_ = function() {
+    var _this = this;
+    console.log('end game');
+    _this.music_.musicSource_.stop(0);
+    _this.isOn_ = false; // drop in-game draw
+}

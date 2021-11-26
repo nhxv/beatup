@@ -28,21 +28,21 @@
     "bpm": 130
   },
   "BackForMore": {
-    "ogg": "BackForMore.aac",
+    "ogg": "BackForMore.ogg",
     "singer": "A-Teens",
     "name": "Back for more",
     "slkauthor": "RonBWL",
     "bpm": 109
   },
   "HalfwayAroundTheWorld": {
-    "ogg": "HalfwayAroundTheWorld.aac",
+    "ogg": "HalfwayAroundTheWorld.ogg",
     "singer": "A-Teens",
     "name": "Halfway around the World",
     "slkauthor": "RonBWL",
     "bpm": 126.6
   },
   "TechnoParty": {
-    "ogg": "3254TechnoParty.aac",
+    "ogg": "3254TechnoParty.ogg",
     "singer": "Audition",
     "name": "3254 Techno Party",
     "slkauthor": "T3",
@@ -56,7 +56,7 @@
     "bpm": 110
   },
   "BeatCity": {
-    "ogg": "BeatCity.aac",
+    "ogg": "BeatCity.ogg",
     "singer": "Audition",
     "name": "Beat City",
     "slkauthor": "RonBWL",
@@ -70,7 +70,7 @@
     "bpm": 130
   },
   "CanCan": {
-    "ogg": "CanCan.aac",
+    "ogg": "CanCan.ogg",
     "singer": "Audition",
     "name": "Can Can",
     "slkauthor": "T3",
@@ -98,7 +98,7 @@
     "bpm": 120
   },
   "DanceDance": {
-    "ogg": "DanceDance.aac",
+    "ogg": "DanceDance.ogg",
     "singer": "Audition",
     "name": "Dance Dance",
     "slkauthor": "Crazy",
@@ -126,28 +126,28 @@
     "bpm": 140
   },
   "Euro2005": {
-    "ogg": "Euro2005.aac",
+    "ogg": "Euro2005.ogg",
     "singer": "Audition",
     "name": "Euro 2005",
     "slkauthor": "Pleskin85 - dnxp",
     "bpm": 138
   },
   "FunkyTown": {
-    "ogg": "FunkyTown.aac",
+    "ogg": "FunkyTown.ogg",
     "singer": "Audition",
     "name": "Funky Town",
     "slkauthor": "Losy",
     "bpm": 130
   },
   "GoGo": {
-    "ogg": "GoGo.aac",
+    "ogg": "GoGo.ogg",
     "singer": "Audition",
     "name": "Go Go",
     "slkauthor": "Tryo",
     "bpm": 150
   },
   "HandsUpT3": {
-    "ogg": "HandsUp.aac",
+    "ogg": "HandsUp.ogg",
     "singer": "Audition",
     "name": "Hands Up!!!",
     "slkauthor": "T3",
@@ -175,21 +175,21 @@
     "bpm": 120
   },
   "MovMov": {
-    "ogg": "MovMov.aac",
+    "ogg": "MovMov.ogg",
     "singer": "Audition",
     "name": "Mov Mov",
     "slkauthor": "T3",
     "bpm": 107
   },
   "NoSpace": {
-    "ogg": "NoSpace.aac",
+    "ogg": "NoSpace.ogg",
     "singer": "Audition",
     "name": "No Space",
     "slkauthor": "Mad",
     "bpm": 138
   },
   "PartyParty": {
-    "ogg": "PartyParty.aac",
+    "ogg": "PartyParty.ogg",
     "singer": "Audition",
     "name": "Party Party",
     "slkauthor": "T3",
@@ -210,7 +210,7 @@
     "bpm": 118
   },
   "UKnow": {
-    "ogg": "UKnow.aac",
+    "ogg": "UKnow.ogg",
     "singer": "Audition",
     "name": "U Know",
     "slkauthor": "RonBWL & whyred10",
@@ -224,49 +224,49 @@
     "bpm": 109
   },
   "WithYou": {
-    "ogg": "WithYou.aac",
+    "ogg": "WithYou.ogg",
     "singer": "Audition",
     "name": "With You",
     "slkauthor": "T3-Kr",
     "bpm": 150
   },
   "YoDJ": {
-    "ogg": "YoDJ.aac",
+    "ogg": "YoDJ.ogg",
     "singer": "Audition",
     "name": "Yo! DJ!",
     "slkauthor": "pleskin85",
     "bpm": 135
   },
   "You": {
-    "ogg": "You.aac",
+    "ogg": "You.ogg",
     "singer": "Audition",
     "name": "You",
     "slkauthor": "T3",
     "bpm": 136
   },
   "YouAreAlreadyGone": {
-    "ogg": "YouAreAlreadyGone.aac",
+    "ogg": "YouAreAlreadyGone.ogg",
     "singer": "Audition",
     "name": "You're Already Gone",
     "slkauthor": "T3",
     "bpm": 150
   },
   "SpaceCowboy": {
-    "ogg": "SpaceCowboy.aac",
+    "ogg": "SpaceCowboy.ogg",
     "singer": "Banaroo",
     "name": "Space Cowboy",
     "slkauthor": "dnxp",
     "bpm": 132
   },
   "BeethovenVirus": {
-    "ogg": "BeethovenVirus.aac",
+    "ogg": "BeethovenVirus.ogg",
     "singer": "Banya",
     "name": "Beethoven Virus",
     "slkauthor": "Mad",
     "bpm": 156
   },
   "Winter": {
-    "ogg": "Winter.aac",
+    "ogg": "Winter.ogg",
     "singer": "Banya",
     "name": "Winter",
     "slkauthor": "Mad",
@@ -287,7 +287,7 @@
     "bpm": 109
   },
   "Aloha": {
-    "ogg": "Aloha.aac",
+    "ogg": "Aloha.ogg",
     "singer": "Cool",
     "name": "Aloha",
     "slkauthor": "RonBWL",
@@ -308,7 +308,7 @@
     "bpm": 132
   },
   "DoItAllNight": {
-    "ogg": "DoItAllNight.aac",
+    "ogg": "DoItAllNight.ogg",
     "singer": "E-Rotic",
     "name": "Do it all night",
     "slkauthor": "RonBWL",
@@ -329,7 +329,7 @@
     "bpm": 118
   },
   "ProudOfYou": {
-    "ogg": "ProudOfYou.aac",
+    "ogg": "ProudOfYou.ogg",
     "singer": "Fiona Fung",
     "name": "Proud of you",
     "slkauthor": "T3",
@@ -343,7 +343,7 @@
     "bpm": 128
   },
   "TellMeTellMe": {
-    "ogg": "TellMeTellMe.aac",
+    "ogg": "TellMeTellMe.ogg",
     "singer": "Garina Project",
     "name": "Tell me Tell me",
     "slkauthor": "T3",
@@ -357,7 +357,7 @@
     "bpm": 140
   },
   "FourInTheMorning": {
-    "ogg": "4InTheMorning.aac",
+    "ogg": "4InTheMorning.ogg",
     "singer": "Gwen Stefani",
     "name": "4 in the morning",
     "slkauthor": "Losy",
@@ -371,7 +371,7 @@
     "bpm": 137
   },
   "GoingCrazy": {
-    "ogg": "GoingCrazy.aac",
+    "ogg": "GoingCrazy.ogg",
     "singer": "Jung Hyun Lee",
     "name": "Going Crazy",
     "slkauthor": "ticanpertrum",
@@ -434,7 +434,7 @@
     "bpm": 122
   },
   "Despretine": {
-    "ogg": "Despretine.aac",
+    "ogg": "Despretine.ogg",
     "singer": "O-Zone",
     "name": "Despre Tine",
     "slkauthor": "T3",
@@ -483,7 +483,7 @@
     "bpm": 128
   },
   "DejaVu": {
-    "ogg": "DejaVu.aac",
+    "ogg": "DejaVu.ogg",
     "singer": "SS501",
     "name": "Deja Vu",
     "slkauthor": "RonBWL",
@@ -511,7 +511,7 @@
     "bpm": 125
   },
   "Miracle": {
-    "ogg": "Miracle.aac",
+    "ogg": "Miracle.ogg",
     "singer": "Super Junior",
     "name": "Miracle",
     "slkauthor": "cdiu",
@@ -532,14 +532,14 @@
     "bpm": 131
   },
   "Airplane": {
-    "ogg": "Airplane.aac",
+    "ogg": "Airplane.ogg",
     "singer": "Turtles",
     "name": "Airplane",
     "slkauthor": "T3",
     "bpm": 120
   },
   "ComeOn": {
-    "ogg": "ComeOn.aac",
+    "ogg": "ComeOn.ogg",
     "singer": "Turtles",
     "name": "Come On",
     "slkauthor": "T3",

@@ -61,14 +61,16 @@ BUJS.Music_.prototype.loadBackgroundMusic_ = function (url) {
         }
         else {
             _this.context_.decodeAudioData(request.response, function (buffer) {
+                    console.log('Buffer duration: ' + buffer.duration);
                     _this.musicSource_ = _this.loadSound_(buffer);
-                    _this.musicStartTime_ = _this.context_.currentTime;
+                    _this.musicStartTime_ = _this.context_.currentTime; // ms
+                    _this.musicEndTime_ = buffer.duration;
                     _this.musicSource_.start(0);
                     if (typeof _this.onComponentFinishLoading_ !== 'undefined') {
                         _this.onComponentFinishLoading_.call(bujs.game_, _this);
                     }
 
-                    _this.onStopSound_(_this.musicSource_); // listen when to stop sound
+                    // _this.onStopSound_(_this.musicSource_); // listen when to stop sound
                 },
                 function (error) {
                     console.error("Error decoding audio data", error);
@@ -88,16 +90,6 @@ BUJS.Music_.prototype.loadSound_ = function (buffer) {
     return source;
 };
 
-BUJS.Music_.prototype.onStopSound_ = function (musicSource) {
-     // stop song when open menu shortcut
-     $(document).keydown(function (e) {
-        if (e.which === 9) {
-            musicSource.stop(0);
-        }
-    });
-    
-}
-
 /**
  * Load a sound then play it
  */
@@ -115,3 +107,7 @@ BUJS.Music_.prototype.convertTickToMs_ = function () {
 BUJS.Music_.prototype.getCurrTime_ = function () {
     return (this.context_.currentTime - this.musicStartTime_) * 1000;
 };// interesting read: https://webglfundamentals.org/webgl/lessons/webgl-2d-drawimage.html
+
+BUJS.Music_.prototype.getEndTime_ = function (buffer) {
+    return buffer.duration;
+}

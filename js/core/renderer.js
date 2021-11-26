@@ -121,7 +121,7 @@ BUJS.Renderer_.prototype.setupSpriteConsts_ = function () {
         arrowLaneOfs_       : 1,
         spaceMarginBottom_  : 80, // initial value 80
         beatupLetterDist_   : 46,
-        dnxpLogoMargin_     : 20,
+        dnxpLogoMargin_     : 50, // initial value 20
         textHeight_         : 20,
         textMarginTop_      : 64,
         numNotes_           : 14,

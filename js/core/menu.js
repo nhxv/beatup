@@ -7,7 +7,7 @@ BUJS.prototype.start_ = function () {
     var _this = this;
 
     // draw some "loading" things...
-    _this.initCanvas_();
+    // _this.initCanvas_();
     _this.showLoadingMsg_("Loading extra UI components");
 
     // load modal
@@ -19,11 +19,11 @@ BUJS.prototype.start_ = function () {
     _this.iOS_ = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 };
 
-BUJS.prototype.initCanvas_ = function () {
-    var canvas = document.getElementById("cvs");
-    canvas.width = 980;
-    canvas.height = 400;
-};
+// BUJS.prototype.initCanvas_ = function () {
+//     var canvas = document.getElementById("cvs");
+//     canvas.width = 980;
+//     canvas.height = 400;
+// };
 
 BUJS.prototype.showLoadingMsg_ = function (msg) {
     var canvas = document.getElementById("cvs");

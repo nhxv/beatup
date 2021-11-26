@@ -3,6 +3,7 @@ BUJS.Input_ = function () {
     $("body")[0].onkeydown = function (e) {
         _this.checkKeyboard_(e);
     };
+
     var el = document.getElementsByTagName("canvas")[0];
     el.addEventListener("touchstart", function (e) {
         _this.touchStart_(e);
@@ -17,6 +18,9 @@ BUJS.Input_ = function () {
 BUJS.Input_.prototype.checkKeyboard_ = function (e) {
     var _this = this;
     switch (e.which) {
+        case 9: // tab open menu
+            bujs.game_.endGame_();
+            break;
         case 112:   // f1: toggle help
             bujs.game_.showHelp_ = !bujs.game_.showHelp_;
             break;
@@ -95,6 +99,7 @@ BUJS.Input_.prototype.checkKeyboard_ = function (e) {
     }
 };
 
+// maybe move this to game class?
 BUJS.Input_.prototype.keyDown_ = function (keyMap) {
     var leftLane = true;
     var spriteLaneIndex = -1;
