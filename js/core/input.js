@@ -19,7 +19,7 @@ BUJS.Input_.prototype.checkKeyboard_ = function (e) {
     var _this = this;
     switch (e.which) {
         case 9: // tab open menu
-            bujs.game_.endGame_();
+            if (bujs.game_.isOn_) bujs.game_.endGame_(true);
             break;
         case 112:   // f1: toggle help
             bujs.game_.showHelp_ = !bujs.game_.showHelp_;

@@ -17,13 +17,13 @@ ul {
     background-color: black;
 }
 
+.text-gray {
+    color: var(--gray-300) !important;
+}
+
 .songlist-body {
     overflow-y: scroll;
     height: 700px;
-}
-
-.text-gray {
-    color: var(--gray-300) !important;
 }
 
 .songListItem {

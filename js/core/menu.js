@@ -22,7 +22,7 @@ BUJS.prototype.start_ = function () {
 BUJS.prototype.initCanvas_ = function () {
     var canvas = document.getElementById("cvs");
     canvas.width = 980;
-    canvas.height = 450;
+    canvas.height = 400;
 };
 
 BUJS.prototype.showLoadingMsg_ = function (msg) {
