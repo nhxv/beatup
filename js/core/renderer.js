@@ -109,13 +109,13 @@ BUJS.Renderer_.prototype.setupSpriteConsts_ = function () {
     _this.consts_ = {
         chanceDist_         : 90, // initial value 80
         baseResultLine_     : 150,
-        arrowAnimationTime_ : 135, // initial value 135
+        arrowAnimationTime_ : 135, // initial value 135, time arrow explode animate
         laneYStart_         : _this.config_.canvasHeight_ - 350,
         lane1Yofs_          : 3,
         lane2Yofs_          : 3+64,        // Renderer_.spritePos_.lane1Yofs + 64,
         lane3Yofs_          : 3+64+64,     // Renderer_.spritePos_.lane2Yofs + 64,
         lane2Xofs_          : 5,
-        laneWidth_          : 256,
+        laneWidth_          : 256, // initial value 256
         tableWidth_         : 123,
         tableWidthTrans_    : 3,
         arrowLaneOfs_       : 1,

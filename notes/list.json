@@ -160,6 +160,13 @@
     "slkauthor": "T3",
     "bpm": 145
   },
+  "ICannotAbandonIt": {
+    "ogg": "ICannotAbandonIt.mp3",
+    "singer": "Audition",
+    "name": "I cannot abandon it",
+    "slkauthor": "T3",
+    "bpm": 84
+  },
   "ItsAlright": {
     "ogg": "ItsAlright.ogg",
     "singer": "Audition",
@@ -293,6 +300,13 @@
     "slkauthor": "T3",
     "bpm": 116
   },
+  "BeWYWBe": {
+    "ogg": "BeWYWBe.mp3",
+    "singer": "Darin",
+    "name": "B What U Wanna B",
+    "slkauthor": "T3",
+    "bpm": 105
+  },
   "RunToYou": {
     "ogg": "RunToYou.ogg",
     "singer": "DJ Doc",
@@ -356,6 +370,13 @@
     "slkauthor": "Losy",
     "bpm": 92.4
   },
+  "HoangMang": {
+    "ogg": "HoangMang.ogg",
+    "singer": "Hồ Quỳnh Hương",
+    "name": "Hoang Mang",
+    "slkauthor": "T3",
+    "bpm": 128
+  },
   "Festival": {
     "ogg": "Festival.ogg",
     "singer": "Jung Hwa Um",
@@ -383,6 +404,13 @@
     "name": "Love Lockdown",
     "slkauthor": "T3",
     "bpm": 120
+  },
+  "10Minutes": {
+    "ogg": "10Minutes.mp3",
+    "singer": "Lee Hyori",
+    "name": "10 Minutes",
+    "slkauthor": "T3",
+    "bpm": 96.3
   },
   "Cleopatra": {
     "ogg": "Cleopatra.mp3",
@@ -435,7 +463,7 @@
   },
   "DeathMoon": {
     "ogg": "DeathMoon.ogg",
-    "singer": "O2",
+    "singer": "O2Jam",
     "name": "Death Moon",
     "slkauthor": "Plestkin85",
     "bpm": 160
@@ -558,5 +586,12 @@
     "name": "Nobody",
     "slkauthor": "2Shin",
     "bpm": 131
+  },
+  "TellMe": {
+    "ogg": "TellMe.mp3",
+    "singer": "Wonder Girls",
+    "name": "Tell Me",
+    "slkauthor": "T3",
+    "bpm": 127
   }
 }

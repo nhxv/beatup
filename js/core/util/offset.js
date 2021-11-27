@@ -1,8 +1,8 @@
 const fs = require('fs');
-const relativePath = '../../../notes/Easy.json';
+const relativePath = '../../../notes/TellMe.json';
 let listData = fs.readFileSync(relativePath);
 let notes = JSON.parse(listData); // array
-const offset = -10.5;
+const offset = 7.5;
 
 changeOffset(offset, fs, relativePath);
 
@@ -14,4 +14,5 @@ function changeOffset(offset, fs, path) {
     fs.writeFile(path, notesData, err => {
         if (err) { console.log(err); }
     });
+    console.log('offset: ' + offset);
 }
