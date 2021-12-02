@@ -34,6 +34,13 @@
     "slkauthor": "RonBWL",
     "bpm": 126.6
   },
+  "SmackThat": {
+    "ogg": "SmackThat.mp3",
+    "singer": "Akon",
+    "name": "Smack That",
+    "slkauthor": "T3",
+    "bpm": 119
+  },
   "TechnoParty": {
     "ogg": "3254TechnoParty.ogg",
     "singer": "Audition",
@@ -227,7 +234,7 @@
     "ogg": "WithYou.ogg",
     "singer": "Audition",
     "name": "With You",
-    "slkauthor": "T3-Kr",
+    "slkauthor": "T3",
     "bpm": 150
   },
   "YoDJ": {
@@ -278,6 +285,20 @@
     "name": "Lie",
     "slkauthor": "Yo Yo Monkey",
     "bpm": 125
+  },
+  "WeBelongTogether": {
+    "ogg": "WeBelongTogether.mp3",
+    "singer": "BIGBANG",
+    "name": "We belong together",
+    "slkauthor": "T3",
+    "bpm": 140
+  },
+  "SayTheWord": {
+    "ogg": "SayTheWord.mp3",
+    "singer": "Chirsty Carlson Romano",
+    "name": "Say the word",
+    "slkauthor": "RonBWL",
+    "bpm": 126
   },
   "WhenYouLookAtMe": {
     "ogg": "WhenYouLookAtMe.ogg",
@@ -355,6 +376,13 @@
     "name": "Tell me Tell me",
     "slkauthor": "T3",
     "bpm": 130
+  },
+  "AmericanIdiot": {
+    "ogg": "AmericanIdiot.mp3",
+    "singer": "Green Day",
+    "name": "American Idiot",
+    "slkauthor": "T3",
+    "bpm": 186
   },
   "BecauseILoveYou": {
     "ogg": "BecauseILoveYou.ogg",
@@ -475,6 +503,13 @@
     "slkauthor": "T3",
     "bpm": 121
   },
+  "Crazy": {
+    "ogg": "Crazy.mp3",
+    "singer": "Se7en",
+    "name": "Crazy",
+    "slkauthor": "T3",
+    "bpm": 110
+  },
   "WhenWeAreTogether": {
     "ogg": "WhenWeAreTogether.ogg",
     "singer": "Show Luo",
@@ -577,7 +612,7 @@
     "ogg": "Sea.ogg",
     "singer": "UP",
     "name": "Sea",
-    "slkauthor": "RonBWL",
+    "slkauthor": "T3",
     "bpm": 126
   },
   "Nobody": {
