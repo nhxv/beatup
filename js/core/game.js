@@ -29,7 +29,7 @@ BUJS.Game_ = function (songId) {
     _this.animations_ = [];
     _this.players_ = []; 
 
-    _this.autoplay_ = true;
+    _this.autoplay_ = false;
     _this.alwaysCorrect_ = false;
 
     _this.noteScores_ = [520, 260, 130, 26, 0];
