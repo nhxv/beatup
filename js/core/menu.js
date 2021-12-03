@@ -1,6 +1,14 @@
 function BUJS () {}
 
 /*
+** Main
+*/
+bujs = new BUJS();
+$(window).on('load', function () {
+    bujs.start_();
+});
+
+/*
 ** initialize UI
 */
 BUJS.prototype.start_ = function () {
@@ -183,11 +191,3 @@ BUJS.prototype.songItemClick_ = function (li) {
     bujs.game_ = new BUJS.Game_(songId);
     $('#songlist-modal').modal("hide");
 };
-
-/*
-** Main
-*/
-bujs = new BUJS();
-$(window).on('load', function () {
-    bujs.start_();
-});

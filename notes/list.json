@@ -34,6 +34,13 @@
     "slkauthor": "RonBWL",
     "bpm": 126.6
   },
+  "SmackThat": {
+    "ogg": "SmackThat.mp3",
+    "singer": "Akon",
+    "name": "Smack That",
+    "slkauthor": "T3",
+    "bpm": 119
+  },
   "TechnoParty": {
     "ogg": "3254TechnoParty.ogg",
     "singer": "Audition",
@@ -160,6 +167,13 @@
     "slkauthor": "T3",
     "bpm": 145
   },
+  "ICannotAbandonIt": {
+    "ogg": "ICannotAbandonIt.mp3",
+    "singer": "Audition",
+    "name": "I cannot abandon it",
+    "slkauthor": "T3",
+    "bpm": 84
+  },
   "ItsAlright": {
     "ogg": "ItsAlright.ogg",
     "singer": "Audition",
@@ -220,7 +234,7 @@
     "ogg": "WithYou.ogg",
     "singer": "Audition",
     "name": "With You",
-    "slkauthor": "T3-Kr",
+    "slkauthor": "T3",
     "bpm": 150
   },
   "YoDJ": {
@@ -272,6 +286,20 @@
     "slkauthor": "Yo Yo Monkey",
     "bpm": 125
   },
+  "WeBelongTogether": {
+    "ogg": "WeBelongTogether.mp3",
+    "singer": "BIGBANG",
+    "name": "We belong together",
+    "slkauthor": "T3",
+    "bpm": 140
+  },
+  "SayTheWord": {
+    "ogg": "SayTheWord.mp3",
+    "singer": "Chirsty Carlson Romano",
+    "name": "Say the word",
+    "slkauthor": "RonBWL",
+    "bpm": 126
+  },
   "WhenYouLookAtMe": {
     "ogg": "WhenYouLookAtMe.ogg",
     "singer": "Christina Milian",
@@ -292,6 +320,13 @@
     "name": "Champion",
     "slkauthor": "T3",
     "bpm": 116
+  },
+  "BeWYWBe": {
+    "ogg": "BeWYWBe.mp3",
+    "singer": "Darin",
+    "name": "B What U Wanna B",
+    "slkauthor": "T3",
+    "bpm": 105
   },
   "RunToYou": {
     "ogg": "RunToYou.ogg",
@@ -342,6 +377,13 @@
     "slkauthor": "T3",
     "bpm": 130
   },
+  "AmericanIdiot": {
+    "ogg": "AmericanIdiot.mp3",
+    "singer": "Green Day",
+    "name": "American Idiot",
+    "slkauthor": "T3",
+    "bpm": 186
+  },
   "BecauseILoveYou": {
     "ogg": "BecauseILoveYou.ogg",
     "singer": "Groove Coverage",
@@ -355,6 +397,13 @@
     "name": "4 in the morning",
     "slkauthor": "Losy",
     "bpm": 92.4
+  },
+  "HoangMang": {
+    "ogg": "HoangMang.ogg",
+    "singer": "Hồ Quỳnh Hương",
+    "name": "Hoang Mang",
+    "slkauthor": "T3",
+    "bpm": 128
   },
   "Festival": {
     "ogg": "Festival.ogg",
@@ -383,6 +432,13 @@
     "name": "Love Lockdown",
     "slkauthor": "T3",
     "bpm": 120
+  },
+  "10Minutes": {
+    "ogg": "10Minutes.mp3",
+    "singer": "Lee Hyori",
+    "name": "10 Minutes",
+    "slkauthor": "T3",
+    "bpm": 96.3
   },
   "Cleopatra": {
     "ogg": "Cleopatra.mp3",
@@ -435,7 +491,7 @@
   },
   "DeathMoon": {
     "ogg": "DeathMoon.ogg",
-    "singer": "O2",
+    "singer": "O2Jam",
     "name": "Death Moon",
     "slkauthor": "Plestkin85",
     "bpm": 160
@@ -446,6 +502,13 @@
     "name": "Easy",
     "slkauthor": "T3",
     "bpm": 121
+  },
+  "Crazy": {
+    "ogg": "Crazy.mp3",
+    "singer": "Se7en",
+    "name": "Crazy",
+    "slkauthor": "T3",
+    "bpm": 110
   },
   "WhenWeAreTogether": {
     "ogg": "WhenWeAreTogether.ogg",
@@ -549,7 +612,7 @@
     "ogg": "Sea.ogg",
     "singer": "UP",
     "name": "Sea",
-    "slkauthor": "RonBWL",
+    "slkauthor": "T3",
     "bpm": 126
   },
   "Nobody": {
@@ -558,5 +621,12 @@
     "name": "Nobody",
     "slkauthor": "2Shin",
     "bpm": 131
+  },
+  "TellMe": {
+    "ogg": "TellMe.mp3",
+    "singer": "Wonder Girls",
+    "name": "Tell Me",
+    "slkauthor": "T3",
+    "bpm": 127
   }
 }
