@@ -19,7 +19,7 @@ BUJS.prototype.start_ = function () {
     _this.showLoadingMsg_("Loading extra UI components");
 
     // load modal
-    $.get('template/modal.html', function (html) {
+    $.get('template/songlist-modal.html', function (html) {
         $('#template-container').html(html);
         _this.loadSongList_();
     });

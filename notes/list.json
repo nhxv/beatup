@@ -34,6 +34,13 @@
     "slkauthor": "RonBWL",
     "bpm": 126.6
   },
+  "Bang": {
+    "ogg": "Bang.mp3",
+    "singer": "After School",
+    "name": "Bang!",
+    "slkauthor": "Storm hell",
+    "bpm": 120
+  },
   "SmackThat": {
     "ogg": "SmackThat.mp3",
     "singer": "Akon",
@@ -129,7 +136,7 @@
     "ogg": "Euro2005.ogg",
     "singer": "Audition",
     "name": "Euro 2005",
-    "slkauthor": "Pleskin85 - dnxp",
+    "slkauthor": "Pleskin85 & dnxp",
     "bpm": 138
   },
   "FunkyTown": {
@@ -180,6 +187,13 @@
     "name": "It's alright",
     "slkauthor": "T3",
     "bpm": 120
+  },
+  "IWillBeVeryGoodToYou": {
+    "ogg": "IWillBeVeryGoodToYou.mp3",
+    "singer": "Audition",
+    "name": "I will be very good to you",
+    "slkauthor": "T3",
+    "bpm": 140
   },
   "MovMov": {
     "ogg": "MovMov.ogg",
@@ -241,7 +255,7 @@
     "ogg": "YoDJ.ogg",
     "singer": "Audition",
     "name": "Yo! DJ!",
-    "slkauthor": "pleskin85",
+    "slkauthor": "Pleskin85",
     "bpm": 135
   },
   "You": {
@@ -293,6 +307,13 @@
     "slkauthor": "T3",
     "bpm": 140
   },
+  "Three": {
+    "ogg": "Three.mp3",
+    "singer": "Britney Spears",
+    "name": "3",
+    "slkauthor": "Oxhin",
+    "bpm": 135
+  },
   "SayTheWord": {
     "ogg": "SayTheWord.mp3",
     "singer": "Chirsty Carlson Romano",
@@ -318,7 +339,7 @@
     "ogg": "Champion.ogg",
     "singer": "Cy",
     "name": "Champion",
-    "slkauthor": "T3",
+    "slkauthor": "Yo Yo Monkey",
     "bpm": 116
   },
   "BeWYWBe": {
@@ -369,6 +390,13 @@
     "name": "Low",
     "slkauthor": "Yo Yo Monkey",
     "bpm": 128
+  },
+  "BelieveMe": {
+    "ogg": "BelieveMe.mp3",
+    "singer": "Fort Minor",
+    "name": "Believe me",
+    "slkauthor": "Tryo",
+    "bpm": 110
   },
   "TellMeTellMe": {
     "ogg": "TellMeTellMe.ogg",
@@ -579,6 +607,13 @@
     "name": "Cry Cry",
     "slkauthor": "Ohno",
     "bpm": 115
+  },
+  "TheWayIAre": {
+    "ogg": "TheWayIAre.mp3",
+    "singer": "Timbaland",
+    "name": "The Way I Are",
+    "slkauthor": "T3",
+    "bpm": 114.7
   },
   "TheBlackCat": {
     "ogg": "TheBlackCat.mp3",

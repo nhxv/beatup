@@ -145,7 +145,8 @@ BUJS.Game_.prototype.drawMotionless_ = function () {
     
     // song time
     if (_this.music_.getCurrTime_() / 1000 >= _this.music_.musicEndTime_) {
-        _this.endGame_();
+        const isTab = false; // game end naturally
+        _this.endGame_(isTab);
     }
 
     if (_this.isOn_) {
@@ -350,15 +351,15 @@ BUJS.Game_.prototype.getKeyResult_ = function (diff) {
     var tickTime = _this.music_.tickTime_;
 
     // initial value 80
-    if (diff > 80 * (tickTime * ratio) / 100 || diff < -tickTime * ratio) return -1;	// don't process
+    if (diff > 60 * (tickTime * ratio) / 100 || diff < -tickTime * ratio) return -1;	// don't process
     if (diff < 0) {
         diff = -diff;
     }
     // initial values: 5 15 27 40, change difficulty here
     if (diff <= 5 * (tickTime * ratio) / 100) return 0;		// p
     if (diff <= 15 * (tickTime * ratio) / 100) return 1;	// g
-    if (diff <= 27 * (tickTime * ratio) / 100) return 2;	// c
-    if (diff <= 40 * (tickTime * ratio) / 100) return 3;	// b
+    if (diff <= 25 * (tickTime * ratio) / 100) return 2;	// c
+    if (diff <= 35 * (tickTime * ratio) / 100) return 3;	// b
     return 4;												// m
 };
 
@@ -444,5 +445,7 @@ BUJS.Game_.prototype.endGame_ = function(isTab) {
     var _this = this;
     _this.isTab_ = isTab;
     _this.music_.musicSource_.stop(0);
-    _this.isOn_ = false; // stop game
+    if (_this.isOn_) {
+        _this.isOn_ = false;
+    }
 }

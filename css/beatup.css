@@ -22,8 +22,8 @@ ul {
 }
 
 .songlist-body {
-    overflow-y: scroll;
     height: 700px;
+    overflow-y: scroll;
 }
 
 .songListItem {
