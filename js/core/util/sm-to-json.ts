@@ -2,10 +2,10 @@
 *
 * Convert sm to json
 
-* DOCS: 
+* DOCS:
 * http://jalz-cassieast.blogspot.com/2012/02/make-your-song-on-beat-up-mania.html
 
-* MEASURE: 
+* MEASURE:
 * 1 measure has 16 step; if 1 measure has X number of line -> 1 line counted as 16/X
 
 * OFFSET:
@@ -19,7 +19,7 @@
 * if keyTime <= 5 * (tickTime * ratio) / 100 -> perfect
 * if keyTime > 40 * (tickTime * ratio) / 100 -> miss
 
-* EXAMPLE: 
+* EXAMPLE:
 The Black Cat; bpm = 131; offset = 0
 tickTime = 1000 * 60 / (131 * 4) = 114.5
 t in sm = 16*7 + 0
@@ -48,40 +48,46 @@ t in sm * 132.74 = 22.123~ (milli second) (907.06 ms earlier than correct time)
 
 */
 
-const fs = require('fs');
-const readline = require('readline');
-const fileName = 'BecauseILoveYou';
-const src = 'sm/' + fileName + '.sm';
+import fs from "node:fs";
+import readline from "node:readline";
 
-let notes = [];
-let measures = [];
+interface Note {
+    n: number;
+    t: number;
+}
+
+const fileName = "BecauseILoveYou";
+const src = "sm/" + fileName + ".sm";
+
+const notes: Note[] = [];
+const measures: Record<number, number>[] = [];
 let beat = 0;
-let beatLimitInMeasure = 16;
-const noteCode = {
-    '00001000': 1, 
-    '01000000': 3, 
-    '00000100': 4, 
-    'M000000M': 5,
-    '00100000': 6, 
-    '00000010': 7, 
-    '00010000': 9
+const beatLimitInMeasure = 16;
+const noteCode: Record<string, number> = {
+    "00001000": 1,
+    "01000000": 3,
+    "00000100": 4,
+    "M000000M": 5,
+    "00100000": 6,
+    "00000010": 7,
+    "00010000": 9,
 };
-  
+
 processMeasures();
 
-async function processMeasures() {
+async function processMeasures(): Promise<void> {
     const fileStream = fs.createReadStream(src);
     const rl = readline.createInterface({
-      input: fileStream,
-      crlfDelay: Infinity
+        input: fileStream,
+        crlfDelay: Infinity,
     });
 
     let currentBeatLineInMeasure = 0;
     for await (const line of rl) {
-        if ( (line.length === 8 && line.includes('0')) || (line.includes(',') && !line.includes('.')) ) {
-            if (line.includes(',')) {
+        if ((line.length === 8 && line.includes("0")) || (line.includes(",") && !line.includes("."))) {
+            if (line.includes(",")) {
                 const measureOrder = measures.length + 1;
-                let measure = {};
+                const measure: Record<number, number> = {};
                 measure[measureOrder] = currentBeatLineInMeasure;
                 measures.push(measure);
                 currentBeatLineInMeasure = 0;
@@ -93,18 +99,18 @@ async function processMeasures() {
     processNotes();
 }
 
-async function processNotes() {
+async function processNotes(): Promise<void> {
     const fileStream = fs.createReadStream(src);
     const rl = readline.createInterface({
-      input: fileStream,
-      crlfDelay: Infinity
+        input: fileStream,
+        crlfDelay: Infinity,
     });
 
     let currentMeasure = 1;
     let beatInMeasure = 0;
     for await (const line of rl) {
-        if ( (line.length === 8 && line.includes('0')) || (line.includes(',') && !line.includes('.')) ) {
-            if (line.includes(',')) { // end of measure
+        if ((line.length === 8 && line.includes("0")) || (line.includes(",") && !line.includes("."))) {
+            if (line.includes(",")) { // end of measure
                 // switch to new measure
                 if (currentMeasure < measures.length) {
                     currentMeasure++;
@@ -115,24 +121,22 @@ async function processNotes() {
                 const measure = measures[currentMeasure - 1];
                 const measureLine = measure[currentMeasure];
                 // add note if there is one
-                if (line !== '00000000') {
+                if (line !== "00000000") {
                     const tempo = Math.ceil(beat + beatInMeasure);
 
                     if (!noteCode[line]) {
-                        console.log('ignore line ' + line);
+                        console.log("ignore line " + line);
                     } else {
-                        notes.push({'n': noteCode[line], 't': tempo});
+                        notes.push({ n: noteCode[line], t: tempo });
                     }
                 }
-                beatInMeasure += beatLimitInMeasure/measureLine;
+                beatInMeasure += beatLimitInMeasure / measureLine;
             }
         }
     }
 
-    const notesData = JSON.stringify(notes).split('},{').join('},\n {');
-    fs.writeFile('json/' + fileName + '.json', notesData, err => {
+    const notesData = JSON.stringify(notes).split("},{").join("},\n {");
+    fs.writeFile("json/" + fileName + ".json", notesData, (err) => {
         if (err) console.log(err);
     });
 }
-
-
