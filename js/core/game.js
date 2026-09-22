@@ -1,3 +1,5 @@
+import { BUJS, bujs } from './bujs.js';
+
 BUJS.Game_ = function (songId) {
     var _this = this;
     _this.songId_ = songId;
@@ -64,7 +66,7 @@ BUJS.Game_.prototype.onComponentFinishLoading_ = function (component) {
             _this.onFinishLoading_();
         }
     }
-    $('html,body').animate({scrollTop: document.body.scrollHeight}, "fast"); // auto scroll to bottom
+    window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'}); // auto scroll to bottom
 };
 
 /**

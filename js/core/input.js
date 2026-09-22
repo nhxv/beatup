@@ -1,6 +1,8 @@
+import { BUJS, bujs } from './bujs.js';
+
 BUJS.Input_ = function () {
     var _this = this;
-    $("body")[0].onkeydown = function (e) {
+    document.body.onkeydown = function (e) {
         _this.checkKeyboard_(e);
     };
 

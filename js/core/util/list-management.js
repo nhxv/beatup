@@ -3,7 +3,7 @@ To manage song list in list.json
 */
 
 const fs = require('fs');
-const relativePath = '../../../notes/list.json';
+const relativePath = '../../../public/notes/list.json';
 let listData = fs.readFileSync(relativePath);
 let songList = JSON.parse(listData); // list object, not array
 
