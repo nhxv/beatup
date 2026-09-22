@@ -1,10 +1,9 @@
-function BUJS () {}
+import { BUJS, bujs } from './bujs.js';
 
 /*
 ** Main
 */
-bujs = new BUJS();
-$(window).on('load', function () {
+window.addEventListener('load', function () {
     bujs.start_();
 });
 
@@ -19,10 +18,12 @@ BUJS.prototype.start_ = function () {
     _this.showLoadingMsg_("Loading extra UI components");
 
     // load modal
-    $.get('template/songlist-modal.html', function (html) {
-        $('#template-container').html(html);
-        _this.loadSongList_();
-    });
+    fetch('template/songlist-modal.html')
+        .then(function (resp) { return resp.text(); })
+        .then(function (html) {
+            document.getElementById('template-container').innerHTML = html;
+            _this.loadSongList_();
+        });
 
     _this.iOS_ = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 };
@@ -53,10 +54,12 @@ BUJS.prototype.loadSongList_ = function () {
     var _this = this;
     _this.showLoadingMsg_("Loading songs");
     // fetch list from server
-    $.get("notes/list.json", function (list) {
-        _this.songList_ = list; // List object, not array
-        _this.showSongListModal_();
-    });
+    fetch("notes/list.json")
+        .then(function (resp) { return resp.json(); })
+        .then(function (list) {
+            _this.songList_ = list; // List object, not array
+            _this.showSongListModal_();
+        });
 };
 
 /*
@@ -66,24 +69,24 @@ BUJS.prototype.showSongListModal_ = function () {
     var _this = this;
     _this.showLoadingMsg_("");
     _this.loadTemplate_("#songlist-template");
-    var songlistModal = $('#songlist-modal');
-    var songlistContainer = songlistModal.find("#songlist-container");
+    var songlistModal = document.getElementById('songlist-modal');
+    var songlistContainer = songlistModal.querySelector("#songlist-container");
 
     // previously selected element; default to random if nothing else is selected
     var selectedLi = null;
     var isMenuEmpty = true;
 
     // remove all child element of songlistContainer if exists
-    if (songlistContainer[0].firstChild) {
+    if (songlistContainer.firstChild) {
         isMenuEmpty = false;
-        songlistContainer[0].innerHTML = "";
+        songlistContainer.innerHTML = "";
     }
 
     // create random selected choice
     var randomLi = _this.setSongAttr_("random");
     randomLi.innerText = "Random (Normal)";
     randomLi.onclick = _this.songItemClick_.bind(this, randomLi);
-    songlistContainer.append(randomLi);
+    songlistContainer.appendChild(randomLi);
 
     if (randomLi.classList.contains('selected')) {
         selectedLi = randomLi;
@@ -96,15 +99,42 @@ BUJS.prototype.showSongListModal_ = function () {
         var li = _this.setSongAttr_(id, false);
         li.innerText =  song.singer + " " + song.name + " (" + song.slkauthor + ") " + Math.round(song.bpm) + " bpm";
         li.onclick = _this.songItemClick_.bind(this, li);
-        songlistContainer.append(li);
+        songlistContainer.appendChild(li);
 
         if (li.classList.contains('selected')) {
             selectedLi = li;
         }
     }
 
-    songlistModal.modal("show");
+    _this.showModal_(songlistModal);
     _this.loadShortcutHandler_(selectedLi, isMenuEmpty);
+};
+
+/*
+** vanilla replacements for Bootstrap's $(el).modal("show"/"hide")
+*/
+BUJS.prototype.showModal_ = function (el) {
+    el.classList.add('show');
+    el.style.display = 'block';
+    document.body.classList.add('modal-open');
+
+    var backdrop = document.createElement('div');
+    backdrop.className = 'modal-backdrop fade show';
+    backdrop.id = 'songlist-backdrop';
+    document.body.appendChild(backdrop);
+
+    var closeBtn = el.querySelector('[data-dismiss="modal"]');
+    if (closeBtn) {
+        closeBtn.onclick = this.hideModal_.bind(this, el);
+    }
+};
+
+BUJS.prototype.hideModal_ = function (el) {
+    el.classList.remove('show');
+    el.style.display = 'none';
+    document.body.classList.remove('modal-open');
+    var backdrop = document.getElementById('songlist-backdrop');
+    if (backdrop) backdrop.remove();
 };
 
 /* 
@@ -139,14 +169,16 @@ BUJS.prototype.setSongAttr_ = function(songId) {
 BUJS.prototype.loadShortcutHandler_ = function(selectedLi, isMenuEmpty) {
     var _this = this;
     var f1 = _this.f1_.bind(_this, selectedLi);
-    if (isMenuEmpty) {
-        $(document).on("keydown", f1);
-        $(document).on("keydown", _this.tab_.bind(this));
-    } else {
-        $(document).off(); // turn off previous event handlers
-        $(document).on("keydown", _this.tab_.bind(this));
-        $(document).on("keydown", f1);
+    var tab = _this.tab_.bind(this);
+    if (!isMenuEmpty && _this.keydownHandlers_) {
+        // turn off previous event handlers
+        _this.keydownHandlers_.forEach(function (handler) {
+            document.removeEventListener("keydown", handler);
+        });
     }
+    document.addEventListener("keydown", tab);
+    document.addEventListener("keydown", f1);
+    _this.keydownHandlers_ = [tab, f1];
 }
 
 /*
@@ -155,7 +187,7 @@ BUJS.prototype.loadShortcutHandler_ = function(selectedLi, isMenuEmpty) {
 BUJS.prototype.f1_ = function(selectedLi, e) {
     if (e.which === 112) { // F1
         e.preventDefault();
-        $(selectedLi).click();
+        selectedLi.click();
     }
 }
 
@@ -188,6 +220,6 @@ BUJS.prototype.songItemClick_ = function (li) {
     } else {
         sessionStorage.setItem("selected", songId);
     }
+    _this.hideModal_(document.getElementById('songlist-modal'));
     bujs.game_ = new BUJS.Game_(songId);
-    $('#songlist-modal').modal("hide");
 };

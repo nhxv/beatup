@@ -1,3 +1,5 @@
+import { BUJS, bujs } from './bujs.js';
+
 /**
  * A simple animation interpolation utility
  */

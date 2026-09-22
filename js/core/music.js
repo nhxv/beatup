@@ -1,3 +1,5 @@
+import { BUJS, bujs } from './bujs.js';
+
 BUJS.Music_ = function (onComponentFinishLoading_) {
     var _this = this;
     _this.sounds_ = {
@@ -9,19 +11,17 @@ BUJS.Music_ = function (onComponentFinishLoading_) {
     _this.context_ = new (window.AudioContext || window.webkitAudioContext)();
     _this.onComponentFinishLoading_ = onComponentFinishLoading_;
 
-    // from async.js
-    async.eachOf(_this.sounds_, function (sound, index, callback) {
+    Object.keys(_this.sounds_).forEach(function (index) {
+        var sound = _this.sounds_[index];
         var request = new XMLHttpRequest();
         request.open('GET', "sound/" + sound, true);
         request.responseType = 'arraybuffer';
         request.onload = function () {
             _this.context_.decodeAudioData(request.response, function (buffer) {
-                // console.log("Loaded sound", sound);
                 _this.sounds_[index] = buffer;
             }, function (error) {
                 console.error("Error decoding audio data", error);
             });
-            callback();
         };
         request.send();
     });
@@ -34,13 +34,15 @@ BUJS.Music_ = function (onComponentFinishLoading_) {
  */
 BUJS.Music_.prototype.parse_ = function (url) {
     var _this = this;
-    $.get(url, function (resp) {
-        _this.songInfo_ = bujs.songList_[bujs.game_.songId_];
-        _this.songInfo_.notes_ = resp;
-        _this.tickTime_ = 1000 * 60.0 / (_this.songInfo_.bpm * 4);
-        _this.convertTickToMs_();
-        _this.loadBackgroundMusic_("music/" + _this.songInfo_.ogg);
-    });
+    fetch(url)
+        .then(function (resp) { return resp.json(); })
+        .then(function (resp) {
+            _this.songInfo_ = bujs.songList_[bujs.game_.songId_];
+            _this.songInfo_.notes_ = resp;
+            _this.tickTime_ = 1000 * 60.0 / (_this.songInfo_.bpm * 4);
+            _this.convertTickToMs_();
+            _this.loadBackgroundMusic_("music/" + _this.songInfo_.ogg);
+        });
 };
 
 /**

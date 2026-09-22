@@ -1,3 +1,5 @@
+import { BUJS, bujs } from './bujs.js';
+
 /**
  * Constructor for this renderer
  */
@@ -15,27 +17,26 @@
  */
 BUJS.Renderer_.prototype.asyncLoadSprites_ = function () {
     var _this = this;
-    async.eachOf(_this.sprites_, _this.loadSpritesForType_,
-        function (err) {
-            if (err) {
-                console.error("Meh. Error", err);
-            }
-            else {
-                // console.log("Finished loading sprites.");
-                _this.initSpritePos_();
-                // resize canvas
-                var canvas = document.getElementById("cvs");
-                _this.ctx_ = canvas.getContext("2d");
-                var width = _this.config_.canvasWidth_ * _this.config_.scaleRatio_;
-                var height = _this.config_.canvasHeight_ * _this.config_.scaleRatio_;
-                canvas.width = width;
-                canvas.height = height;
+    var keys = Object.keys(_this.sprites_);
+    Promise.all(keys.map(function (key) {
+        return _this.loadSpritesForType_(_this.sprites_[key], key);
+    })).then(function () {
+        // console.log("Finished loading sprites.");
+        _this.initSpritePos_();
+        // resize canvas
+        var canvas = document.getElementById("cvs");
+        _this.ctx_ = canvas.getContext("2d");
+        var width = _this.config_.canvasWidth_ * _this.config_.scaleRatio_;
+        var height = _this.config_.canvasHeight_ * _this.config_.scaleRatio_;
+        canvas.width = width;
+        canvas.height = height;
 
-                if (typeof _this.onComponentFinishLoading_ !== "undefined") {
-                    _this.onComponentFinishLoading_.call(bujs.game_, _this);
-                }
-            }
-        });
+        if (typeof _this.onComponentFinishLoading_ !== "undefined") {
+            _this.onComponentFinishLoading_.call(bujs.game_, _this);
+        }
+    }).catch(function (err) {
+        console.error("Meh. Error", err);
+    });
 };
 
 /**
@@ -98,7 +99,6 @@ BUJS.Renderer_.prototype.setupSpriteInfo_ = function () {
         c3_        : ["c31.png"]
     };
 
-    for (var key in _this.sprites_) _this.sprites_[key]._this = _this;   // add _this...
 };
 
 /**
@@ -140,10 +140,11 @@ BUJS.Renderer_.prototype.setupSpriteConsts_ = function () {
  * Load a set of images for a type, e.g.
  * { noteResults   : ["perfect.png", "great.png", "cool.png", "bad.png", "miss.png"] },
  */
-BUJS.Renderer_.prototype.loadSpritesForType_ = function (spriteInfo, key, callback) {
-    var _this = spriteInfo._this;
-    async.each(spriteInfo, function (fileName, urlCallback) {
-            if (typeof fileName !== "string") return;
+BUJS.Renderer_.prototype.loadSpritesForType_ = function (spriteInfo, key) {
+    var _this = this;
+    var fileNames = spriteInfo.filter(function (fileName) { return typeof fileName === "string"; });
+    return Promise.all(fileNames.map(function (fileName) {
+        return new Promise(function (resolve, reject) {
             // console.log("sprite", key, "fetching ", fileName);
             var img = new Image();
             img.onload = function () {
@@ -151,20 +152,12 @@ BUJS.Renderer_.prototype.loadSpritesForType_ = function (spriteInfo, key, callba
                     _this.sprites_[key] = [];
                 }
                 _this.sprites_[key][spriteInfo.indexOf(fileName)] = img;
-                urlCallback();
+                resolve();
             };
+            img.onerror = reject;
             img.src = _this.config_.imagePath_ + fileName;
-        },
-        function (err) {
-            // loaded all images for one spriteInfo ok.
-            if (err) {
-                console.error("Meh. Error", err);
-            }
-            else {
-                // console.log("Finished fetching images for object", key);
-                callback();
-            }
         });
+    })); // loaded all images for one spriteInfo ok.
 };
 
 /**

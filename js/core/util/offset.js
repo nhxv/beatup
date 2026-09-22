@@ -1,8 +1,8 @@
 const fs = require('fs');
-const relativePath = '../../../notes/Winter.json';
+const relativePath = '../../../public/notes/CanCanSkill.json';
 let listData = fs.readFileSync(relativePath);
 let notes = JSON.parse(listData); // array
-const offset = 0.5;
+const offset = -1600;
 
 changeOffset(offset, fs, relativePath);
 
